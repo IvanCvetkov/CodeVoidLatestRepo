@@ -1,0 +1,99 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable.VarNext"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="VarNext">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="228"/>
+            <RowDefinition Height="556"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BackToVariables" Width="94" Height="52" Click="BackToVariables_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="0,69,-4,155" Height="4"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="As a software developer, practicing is an important activity to learn " Margin="42,162,26,474" Grid.RowSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,182,86,445" Text="a programming language. We will start from basic C# exercises to " Grid.RowSpan="2"></TextBlock>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,202,0,405" Text="more complex exercises.   " HorizontalAlignment="Left" Width="604" Grid.RowSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow"  Text="The Exercises will help you learn how to declare variables," Margin="42,0,10,428"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,22,10,407" Text="get input from the keyboard and output the results on the console."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,46,10,389" Text="In the field on the right we've declared 2 variables. Var. {a} and Var. {b}."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,70,10,365" Text="Then we take the sum of the two numbers to the console with "/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,94,10,341" Text="the method Console.WriteLine(). Don't forget that every line in C# "/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,118,10,317" Text="must end with a semicolon."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,156,10,279" Text="At the end, we write Console.ReadKey() so that our program doesn't"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,180,10,255" Text="close instantly after solving the equation."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,209,10,226" Text="As we mentioned previously, the method Console.ReadKey() awaits "/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,233,10,202" Text="a button to be pressed before closing the application."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,262,10,173" Text="Note that the variable name can't be the same as the built-in C#"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,286,10,149" Text="keywords like int, string etc."/>
+        <Button x:Name="NextVarPage" Width="94" Height="52" Click="Nextvarpage_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <RichTextBox FontSize="16" IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="580" Margin="683,87,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged" Grid.RowSpan="2">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="using System;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="namespace DataType"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="{}{"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    class Example"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        public static void Main(string[] args)"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int a = 24;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int b = 13;   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            Console.WriteLine(a+b);   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            Console.ReadKey();   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="}"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Page>

@@ -1,0 +1,102 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators.OperatorsExerciseTwo"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="OperatorsExerciseTwo">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Exercisez" Width="94" Height="52" Click="Operators_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,67,-20,680" Height="4" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="24" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="In the first WriteLine method we output true or false " Margin="42,128,26,572"/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,156,10,572" Text="IF A is bigger than B and IF B is lesser than A"/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,186,10,542" Text="This will output &quot;true&quot; only if both conditions are true."/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,246,10,480" Text="In the second method there is no need for both"/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,272,10,456" Text="conditions to be true."/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,210,10,516" Text="If one or more are false it will output &quot;false&quot;"/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,302,10,426" Text="The second method is different because it will output"/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,326,10,400" Text="&quot;true&quot; when one or more conditions are true."/>
+        <TextBlock FontSize="24" TextWrapping="WrapWithOverflow" Margin="42,363,10,363" Text="The third method simply outputs if A is different than B."/>
+
+
+        <RichTextBox FontSize="16"  IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="546" Margin="683,87,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="using System;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="namespace DataType"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="{}{"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    class Example"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        public static void Main(string[] args)"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="       {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int a = 3;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int b = 2;   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            Console.WriteLine((a&gt;b) &amp;&amp; (b&lt;a));   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            Console.WriteLine((a&gt;b) || (b&lt;a));   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            Console.WriteLine(a != b);   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="       }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="}"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="vs" Content="Open in Visual Studio" Width="288" FontSize="26" Height="52" Click="Vs_Click" Margin="190,581,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

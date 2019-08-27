@@ -1,0 +1,59 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops.For"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="For">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
+             <Run Foreground="CornflowerBlue">Loops</Run>
+        </TextBlock>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="First of all, the init is executed. This step allows you to " Margin="16,186,52,154" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="declare and initialize the variable with which the loop" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="is going to work with." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="after this we have the condition. It represents a boolean" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,274,32,435" Text="expression which returns either true or false." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,302,32,422" Text="The last part of it is the incremental or decremental." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,324,32,402" Text="It is up to you whether you want to increment or" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,347,32,402" Text="decrement the value." Grid.ColumnSpan="2"/>
+        <Button x:Name="ForTwobtn" Width="94" Height="52" Click="ForTwo_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
+            <Image Width = "417" Source = "C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\For.png"
+            VerticalAlignment = "Top" Margin = "515,260,0,0" Height="487"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

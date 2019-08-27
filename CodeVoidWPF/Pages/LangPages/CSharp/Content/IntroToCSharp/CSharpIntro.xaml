@@ -1,0 +1,89 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.CSharpIntro"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"  
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="CSharpIntro">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontWeight="SemiBold" Grid.Row="0" Padding="30" FontSize="38">Your First C# Program</TextBlock>
+        <RichTextBox IsReadOnly="True" FontSize="20" x:Name="txtStatus" HorizontalAlignment="Left" Height="617" Margin="37,97,0,0" VerticalAlignment="Top" Width="433" RenderTransformOrigin="0.56,0.6" Grid.RowSpan="2" TextChanged="txtStatus_TextChanged">
+            <FlowDocument>
+                <Paragraph IsEnabled="False">
+                    <Run Text="using System;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="namespace myApp"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="{}{"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    class Program"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        static void Main(string[] args)"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        {"/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                        <Run Text="  Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;Hello World!&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=");"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    Console.ReadKey();"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="}"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBlock TextWrapping="WrapWithOverflow" FontSize="28" Margin="515,10,15,183" Grid.Row="1">A C# console application
+            must contain a Main method, in which control starts and ends. The Main method is where you create objects and execute other methods.
+        </TextBlock>
+        <TextBlock TextWrapping="WrapWithOverflow" FontSize="28" Margin="515,363,15,-263" Grid.Row="1" Grid.RowSpan="5">Console.WriteLine() 
+            is a method that works with Console applications.  It prints the string argument to the console screen. The Console.ReadKey() Method makes the program wait for a key press and it prevents the screen until a key is pressed.
+        </TextBlock>
+        <Button x:Name="NextTutorial" Width="94" Height="52" Click="NextTutorial_Click" Margin="1043,54,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+    </Grid>
+</Page>

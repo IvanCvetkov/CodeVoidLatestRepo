@@ -1,0 +1,203 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators.OperatorsExercise"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="OperatorsExercise">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Exercisez" Width="94" Height="52" Click="Operators_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="vs" Content="Open in Visual Studio" Width="289" FontSize="26" Height="52" Click="Vs_Click" Margin="191,602,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,67,-20,680" Height="4" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="The IF statement is used to check IF something is right or wrong" Margin="52,102,16,597"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,130,0,597" Text="based on what we write in the if statement."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,160,0,567" Text="In the example on the right we have three conditions."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,273,0,454" Text="Note how we use &quot;>=&quot; when we want to see if A is bigger or"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,300,0,427" Text="equal to B. When we check if A is not equal to B we use &quot;!=&quot;."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,327,0,400" Text="When we write the &quot;!&quot; symbol it means that we are checking if"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,354,0,373" Text="something is different."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,381,0,346" Text="And when we want to see if something is equal to something"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,408,0,319" Text="else we always use &quot;==&quot;."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,441,0,286" Text="&quot;Else&quot; is used to display the opposite of what we want."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,469,0,258" Text="It displays something only if the"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="52,497,0,230" Text="condition in the If statement is not true."/>
+        <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="WrapWithOverflow" Margin="52,192,0,535" Text="1. If A is bigger or equal to B"/>
+        <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="WrapWithOverflow" Margin="52,216,0,511" Text="2. If A is not equal to B"/>
+        <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="WrapWithOverflow" Margin="52,243,0,486" Text="3. If A is equal to B"/>
+
+        <RichTextBox FontSize="16"  IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="567" Margin="683,87,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="using System;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="namespace DataType"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="{}{"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    class Example"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        public static void Main(string[] args)"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="       {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int a = 2;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int b = 3;   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            if(a &gt;= b) "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        {"/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                    <Run Text="      Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;Yes&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", a);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            else"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="               {"/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                    <Run Text="      Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;No&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", a);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="              }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            if(a != b) "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        {"/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                    <Run Text="      Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;Yes&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", a);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            else"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="               {"/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                    <Run Text="      Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;No&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", a);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="              }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            if(a == b) "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        {"/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                    <Run Text="      Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;Yes&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", a);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            else"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="               {"/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                    <Run Text="      Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;No&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", a);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="              }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="       }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="}"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Page>

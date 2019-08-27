@@ -1,0 +1,57 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops.While"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="While">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
+             <Run Foreground="CornflowerBlue">Loops</Run>
+        </TextBlock>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="When you need to execute a block of code several times" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="you will probably want to use a loop." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="The loop statement allows us to execute one or more" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="statements multiple times." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,274,32,435" Text="The image will give you the general idea of how a loop" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,302,32,422" Text="statement actually works." Grid.ColumnSpan="2"/>
+        <Button x:Name="Whilebtn" Width="94" Height="52" Click="While_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
+            <Image Width = "612" Source="C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\While.png"
+            VerticalAlignment = "Top" Margin = "515,260,0,0" Height="487"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeVoidWPF", "CodeVoidWPF\CodeVoidWPF.csproj", "{1AE5F12E-F6F1-49FD-8802-2B96717D543F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AE5F12E-F6F1-49FD-8802-2B96717D543F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE5F12E-F6F1-49FD-8802-2B96717D543F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE5F12E-F6F1-49FD-8802-2B96717D543F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE5F12E-F6F1-49FD-8802-2B96717D543F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD8D6336-354D-48E5-9880-8ED980390E8A}
+	EndGlobalSection
+EndGlobal

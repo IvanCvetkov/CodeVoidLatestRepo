@@ -1,0 +1,102 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable.Exercises"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      Background="{DynamicResource MaterialDesignPaper}"
+      TextOptions.TextRenderingMode="Auto"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      Title="Exercises" Height="3000" Width="3000">
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BackToVariables" Width="94" Height="52" Click="BackToVariables_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="vs" Content="Open in Visual Studio" Width="289" FontSize="26" Height="52" Click="Vs_Click" Margin="180,386,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+        </Button>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="0,69,-4,155" Height="4"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Let's start with the basic math exercises" Margin="42,210,26,426" Grid.RowSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,60,10,375" Text="In the following exercise we will have to multiply two numbers."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,89,10,346" Text="The two variables that we have multiplied will be showed on the console."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,142,10,293" Text="Note that when we want to multiply two numbers we use the * symbol."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,245,10,190" Text="You can also create a third variable and set the multiplication equal to it,"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,268,10,167" Text="this way you can simply write down variable {c}."/>
+        <Button x:Name="Exercise" Width="94" Height="52" Click="Exercise_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <RichTextBox FontSize="16" IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="580" Margin="683,87,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged" Grid.RowSpan="2">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="using System;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="namespace DataType"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="{}{"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    class Example"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        public static void Main(string[] args)"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int a = 2;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int b = 3;   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            int c = a * b;   "/>
+                </Paragraph>
+                <Paragraph FontFamily="Consolas" Margin="0">
+                        <Run Text="      Console.WriteLine("/>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;a is = {0}&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", a);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            Console.ReadKey();   "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="}"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Page>

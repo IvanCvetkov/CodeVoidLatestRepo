@@ -1,0 +1,30 @@
+﻿<Window WindowState="Maximized"
+        x:Class="CodeVoidWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodeVoidWPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        MinHeight="750" MinWidth="990" Height="700" Width="990" WindowStartupLocation="Manual">
+    <DockPanel>
+        <!--SIDE BUTTONS-->
+        <StackPanel DockPanel.Dock="Left" Background="Gray" x:Name="Bar" Width="150" Orientation="Vertical">
+            <Button x:Name="BtnHome" MouseEnter="BtnHome_MouseEnter" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnHome_Click" Margin="10" Content="Home"/>
+            <Button x:Name="BtnCources" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnCources_Click" Margin="10" Content="Courses"/>
+            <Button x:Name="BtnAchievements" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnAchievements_Click" Margin="10" Content="Achievements"/>
+            <Button x:Name="BtnLB" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnLB_Click" Margin="10" Content="Leaderboards"/>
+            <Button x:Name="BtnAccount" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnAccount_Click" Margin="10" Content="Account"/>
+            <Button x:Name="BtnShop" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnShop_Click" Margin="10" Content="Shop"/>
+            <Button x:Name="BtnNews" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnNews_Click" Margin="10" Content="News"/>
+            <Button x:Name="BtnLanguages" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnLanguages_Click" Margin="10" Content="Languages"/>
+            <Button x:Name="BtnProgress" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnProgress_Click" Margin="10" Content="Progress"/>
+            <Button x:Name="BtnDonate" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnDonate_Click" Margin="10" Content="Donate"/>
+            <Button x:Name="BtnWebsite" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnWebsite_Click" Margin="10" Content="Website"/>
+            <Button x:Name="BtnKids" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnKids_Click" Margin="10" Content="Coding for Kids"/>
+            <Button x:Name="BtnSett" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnSett_Click" Margin="10" Content="Settings"/>
+        </StackPanel>
+        <Frame x:Name="_mainFrame"/>
+    </DockPanel>
+</Window>

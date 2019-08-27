@@ -1,0 +1,86 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable.Exercise"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      Background="{DynamicResource MaterialDesignPaper}"
+      TextOptions.TextRenderingMode="Auto"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      Title="Exercise" Height="3000" Width="3000">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="0,69,-4,155" Height="4"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Let's make a simple program that outputs on the console our age." Margin="42,210,26,426" Grid.RowSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,60,10,375" Text="First of all we should make a variable named age."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,89,10,346" Text="But let's make it in a more interesting way."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,142,10,293" Text="Now write this on the console - int age = int.Parse(Console.ReadLine());"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,180,10,255" Text="This way the program will be waiting for an input from you."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,301,10,134" Text="The ReadLine Method is written so that the program reads the line."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,203,10,232" Text="The Parse method simply converts from one variable type to another."/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,228,10,207" Text="As you can see, we've written int.Parse so our program will be waiting"/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,253,10,182" Text="for an input of type int. If we write something else, like a variable of "/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,278,10,157" Text="type double, float or string an exception will show up. "/>
+        <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,333,10,101" Text="We'll go deeper into exceptions later."/>
+        <Button x:Name="Exercisez" Width="94" Height="52" Click="Exercise_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
+            <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="685,304,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="BtnCompile"  Width="450" FontSize="28" Height="40" Content="Compile" Click="BtnCompile_Click"  Margin="683,365,1867,56" Grid.Row="1" Grid.Column="0" Background="Red"></Button>
+        <RichTextBox FontSize="16" IsReadOnly="False" x:Name="txtStatus" HorizontalAlignment="Left" Height="446" Margin="683,87,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged" Grid.RowSpan="2">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="using System;"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="namespace DataType"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="{}{"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    class Example"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        public static void Main(string[] args)"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        {"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="        }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="    }"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="}"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Page>

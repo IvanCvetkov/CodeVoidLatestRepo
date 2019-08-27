@@ -1,0 +1,74 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.CSharpInfo"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+     Title="CSharpInfo" Height="3000" Width="3000">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Padding="30" FontSize="30" Grid.Row="0" Text="Let's get started with programming in C#!" Margin="1,0,-151,106"/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Grid.Column="3" Height="4" Margin="10,84,-104,114" Grid.ColumnSpan="2"/>
+        <Button x:Name="Variables" Width="155" Height="63" Click="Variables_Click" Margin="45,6,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Background="#FF7806B9">
+            <materialDesign:PackIcon Kind="Variable" Height="63" Width="126"></materialDesign:PackIcon>
+        </Button>
+        <TextBlock FontSize="26" Text="Variables" Margin="45,188,484,1175" Grid.RowSpan="2"/>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="45,188,0,0" VerticalAlignment="Top" Width="172" Grid.RowSpan="2"/>
+        <Button x:Name="Arrays" Width="155" Height="63" Click="Arrays_Click" Margin="293,6,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <materialDesign:PackIcon Kind="CodeBrackets" Height="56" Width="126"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="Operators" Width="155" Height="Auto" Click="Operators_Click" Margin="45,115,0,1015" HorizontalAlignment="Left" Grid.Row="1" Background="#FF7806B9">
+            <materialDesign:PackIcon Kind="Number0BoxMultipleOutline" Height="52" Width="126"></materialDesign:PackIcon>
+        </Button>
+        <TextBlock FontSize="26" Text="Arrays" Margin="293,183,236,1180" Grid.RowSpan="2"/>
+        <Button x:Name="NumSystems" Width="197" Height="Auto" Click="NumSystems_Click" Margin="871,150,0,0" HorizontalAlignment="Left" Grid.Row="0" BorderBrush="Black" Foreground="#DD7CFF10" Background="Black">
+            <materialDesign:PackIcon Kind="Matrix" Height="52" Width="126"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="Loops" Width="155" Height="Auto" Click="Loops_Click" Margin="45,221,0,909" HorizontalAlignment="Left" Grid.Row="1" Background="#FF7806B9">
+            <materialDesign:PackIcon Kind="Loop" Height="52" Width="126"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="Methods" Width="155" Height="63" Click="Methods_Click" Margin="45,342,0,787" HorizontalAlignment="Left" Grid.Row="1" Background="#FF7806B9">
+            <materialDesign:PackIcon Kind="Mastodon" Height="52" Width="126"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="Classes" Width="155" Height="57" Click="Classes_Click" Margin="293,221,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <materialDesign:PackIcon Kind="DesktopMac" Height="52" Width="126"/>
+        </Button>
+        <Button x:Name="ExceptionHandling" Width="155" Height="57" Click="ExceptionHandling_Click" Margin="293,115,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <materialDesign:PackIcon Kind="Error" Height="52" Width="126"/>
+        </Button>
+        <Button x:Name="TextFiles" Width="155" Height="64" Click="TextFiles_Click" Margin="293,339,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <materialDesign:PackIcon Kind="TooltipTextOutline" Height="52" Width="126"/>
+        </Button>
+        <TextBlock FontSize="26" Text="Operators" Margin="45,86,484,1075" Grid.Row="1"/>
+        <TextBlock FontSize="26" Text="Loops" Margin="45,194,484,952" Grid.Row="1"/>
+        <TextBlock FontSize="26" Text="Methods" Margin="45,308,484,832" Grid.Row="1"/>
+        <TextBlock FontSize="26" Margin="293,188,236,952" Grid.Row="1"><Run Text="Classes"/></TextBlock>
+        <TextBlock FontSize="26" Text="Number Systems" Margin="871,113,-342,57"/>
+        <TextBlock FontSize="26" Text="Exceptions" Margin="293,86,236,1054" Grid.Row="1"/>
+        <TextBlock FontSize="26" Text="Text Files" Margin="293,308,236,832" Grid.Row="1"/>
+        <TextBlock FontSize="26" Text="Introduction" Margin="45,92,484,77"/>
+        <Button x:Name="Introduction" Width="155" Height="63" Click="Introduction_Click" Margin="45,125,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF7806B9">
+            <materialDesign:PackIcon Kind="Dangerous" Height="53" Width="124"/>
+        </Button>
+
+    </Grid>
+</Page>

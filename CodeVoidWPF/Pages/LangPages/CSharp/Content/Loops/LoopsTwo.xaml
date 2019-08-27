@@ -1,0 +1,60 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops.LoopsTwo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="LoopsTwo">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="The following image will give you the general idea of" Margin="16,186,673,579" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,203,494" Text="how all types of loops actually work." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,376,494" Text="The buttons below will show you how each" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,817,494" Text="loop works." Grid.ColumnSpan="2"/>
+        <Button x:Name="LoopsThree" Width="94" Height="52" Click="LoopsThree_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
+            <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+
+        <StackPanel Orientation = "Horizontal" Margin="16,-155,-16,155" Grid.ColumnSpan="2">
+            <Image Width = "700" Source = "C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\LoopsDescription.png"
+            VerticalAlignment = "Top" Margin = "515,286,0,0" Height="305" RenderTransformOrigin="0.5,0.593"/>
+        </StackPanel>
+        <Button Content="While" x:Name="While" FontSize="19" Width="94" Height="52" Click="While_Click" Margin="16,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black">
+        </Button>
+        <Button FontSize="19" Content="For" x:Name="For" Width="94" Height="52" Click="For_Click" Margin="143,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.ColumnSpan="2">
+        </Button>
+        <Button FontSize="16" Content="DoWhile" x:Name="DoWhile" Width="94" Height="52" Click="DoWhile_Click" Margin="58,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+        </Button>
+        <Button FontSize="19" Content="Nested" x:Name="Nested" Width="94" Height="52" Click="Nested_Click" Margin="192,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+        </Button>
+    </Grid>
+</Page>

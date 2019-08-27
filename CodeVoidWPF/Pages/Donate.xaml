@@ -1,0 +1,27 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.Donate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="Donate">
+
+    <Grid>
+        <Button x:Name="BtnBackDonate" Content="{materialDesign:PackIcon ArrowLeft}"
+                IsEnabled="True" Click="BtnBackDonate_Click" Width="50" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <materialDesign:Card Padding="32" Margin="139,16,16,0">
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Donate</TextBlock>
+        </materialDesign:Card>
+    </Grid>
+</Page>
