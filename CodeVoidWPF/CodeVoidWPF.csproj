@@ -376,9 +376,6 @@
     <Resource Include="Images\CSharpHelloWorld.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\desktopTwo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\coding.png" />
   </ItemGroup>
   <ItemGroup>
@@ -386,6 +383,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LoopsDescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\desktopTwo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

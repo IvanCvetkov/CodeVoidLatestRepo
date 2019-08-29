@@ -38,19 +38,24 @@
         <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
              <Run Foreground="CornflowerBlue">Loops</Run>
         </TextBlock>
-        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="When you need to execute a block of code several times" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="you will probably want to use a loop." Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="The loop statement allows us to execute one or more" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="statements multiple times." Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,274,32,435" Text="The image will give you the general idea of how a loop" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,302,32,422" Text="statement actually works." Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="20,67,-83,972" Height="4" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="The while loop is used to execute code repeatedly." Margin="16,187,52,153" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,209,32,155" Text="The Syntax is pretty simple. It includes a boolean" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,230,32,134" Text="expression as a condition which will return true or false" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,250,32,116" Text="It executes the block of code, as long as the specified" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,270,32,439" Text="conditional expression returns true." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,302,32,422" Text="The initialization should be done before the loop starts" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,322,32,402" Text="and the increment or decrement steps should be inside the loop." Grid.ColumnSpan="2"/>
         <Button x:Name="Whilebtn" Width="94" Height="52" Click="While_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
-            <Image Width = "612" Source="C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\While.png"
-            VerticalAlignment = "Top" Margin = "515,260,0,0" Height="487"/>
+            <Image Width = "auto" Source="C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\While.png"
+            VerticalAlignment = "Top" Margin = "665,260,0,0" Height="auto"/>
+        </StackPanel>
+        <StackPanel Orientation = "Horizontal" Margin="0,140,-10,154" Grid.ColumnSpan="2">
+            <Image Width = "626" Source="C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\WhileDescCode.png"
+            VerticalAlignment = "Top" Margin = "5,238,0,0" Height="487"/>
         </StackPanel>
 
     </Grid>
