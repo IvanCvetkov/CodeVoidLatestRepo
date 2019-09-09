@@ -35,11 +35,11 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
         }
         private void Nested_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/NestedLoops.xaml", UriKind.Relative));
         }
         private void DoWhile_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/DoWhile.xaml", UriKind.Relative));
         }
        
         //Previous Page

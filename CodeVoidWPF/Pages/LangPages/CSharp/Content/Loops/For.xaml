@@ -36,13 +36,13 @@
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
         <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
-             <Run Foreground="CornflowerBlue">Loops</Run>
+             <Run Foreground="CornflowerBlue">For Loop</Run>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="First of all, the init is executed. This step allows you to " Margin="16,186,52,154" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="declare and initialize the variable with which the loop" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="is going to work with." Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="after this we have the condition. It represents a boolean" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,254,32,120" Text="after this we have the condition. It represents a boolean" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,274,32,435" Text="expression which returns either true or false." Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,302,32,422" Text="The last part of it is the incremental or decremental." Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,324,32,402" Text="It is up to you whether you want to increment or" Grid.ColumnSpan="2"/>
@@ -52,8 +52,7 @@
         </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
             <Image Width = "417" Source = "C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\For.png"
-            VerticalAlignment = "Top" Margin = "515,260,0,0" Height="487"/>
+            VerticalAlignment = "Top" Margin = "590,260,0,0" Height="487"/>
         </StackPanel>
-
     </Grid>
 </Page>

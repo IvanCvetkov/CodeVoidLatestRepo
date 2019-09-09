@@ -32,11 +32,11 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Button x:Name="Back" Width="94" Height="52" Click="Back_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
         <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
-             <Run Foreground="CornflowerBlue">Loops</Run>
+             <Run Foreground="CornflowerBlue">While Loop</Run>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="20,67,-83,972" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="The while loop is used to execute code repeatedly." Margin="16,187,52,153" Grid.ColumnSpan="2"/>
@@ -60,3 +60,11 @@
 
     </Grid>
 </Page>
+
+
+
+
+
+
+
+

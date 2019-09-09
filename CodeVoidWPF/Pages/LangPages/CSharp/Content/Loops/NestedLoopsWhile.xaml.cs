@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
 {
     /// <summary>
-    /// Interaction logic for While.xaml
+    /// Interaction logic for NestedLoopsWhile.xaml
     /// </summary>
-    public partial class While : Page
+    public partial class NestedLoopsWhile : Page
     {
-        public While()
+        public NestedLoopsWhile()
         {
             InitializeComponent();
-        }
-
-        private void While_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/WhileTwo.xaml", UriKind.Relative));
-        }
-
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/LoopsTwo.xaml", UriKind.Relative));
         }
     }
 }

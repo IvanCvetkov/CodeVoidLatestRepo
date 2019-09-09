@@ -68,11 +68,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\LangPages\CSharp\Content\Loops\DoWhile.xaml.cs">
+      <DependentUpon>DoWhile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Loops\DoWhileTwo.xaml.cs">
+      <DependentUpon>DoWhileTwo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Loops\ForTwo.xaml.cs">
       <DependentUpon>ForTwo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Loops\For.xaml.cs">
       <DependentUpon>For.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Loops\NestedLoops.xaml.cs">
+      <DependentUpon>NestedLoops.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Loops\NestedLoopsWhile.xaml.cs">
+      <DependentUpon>NestedLoopsWhile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Loops\While.xaml.cs">
       <DependentUpon>While.xaml</DependentUpon>
@@ -181,11 +193,27 @@
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Scripts\SettingsSaver.cs" />
+    <Page Include="Pages\LangPages\CSharp\Content\Loops\DoWhile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Loops\DoWhileTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LangPages\CSharp\Content\Loops\ForTwo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\LangPages\CSharp\Content\Loops\For.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Loops\NestedLoops.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Loops\NestedLoopsWhile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -379,13 +407,19 @@
     <Resource Include="Images\coding.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\While.png" />
+    <EmbeddedResource Include="Images\While.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LoopsDescription.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\desktopTwo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\For.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DoWhile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -37,7 +37,7 @@
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="The following image will give you the general idea of" Margin="16,186,673,579" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,203,494" Text="how all types of loops actually work." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,206,203,482" Text="how all types of loops actually work." Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,376,494" Text="The buttons below will show you how each" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,817,494" Text="loop works." Grid.ColumnSpan="2"/>
         <Button x:Name="LoopsThree" Width="94" Height="52" Click="LoopsThree_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
