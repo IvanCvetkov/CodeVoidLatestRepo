@@ -86,6 +86,9 @@
     <Compile Include="Pages\LangPages\CSharp\Content\Loops\NestedLoopsWhile.xaml.cs">
       <DependentUpon>NestedLoopsWhile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Loops\NestedNestedLoops.xaml.cs">
+      <DependentUpon>NestedNestedLoops.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Loops\While.xaml.cs">
       <DependentUpon>While.xaml</DependentUpon>
     </Compile>
@@ -214,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\LangPages\CSharp\Content\Loops\NestedLoopsWhile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Loops\NestedNestedLoops.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -420,6 +427,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\DoWhile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\LangPages\CSharp\Content\NumberSyS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loop_architecture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arithmetic.jpg" />
+    <Resource Include="Images\ForDescCode.png" />
+    <Resource Include="Images\logical.png" />
+    <Resource Include="Images\relational.png" />
+    <Resource Include="Images\WhileDescCode.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,8 +11,8 @@ namespace CodeVoidWPF
     //Scene Manager
     public enum CVScene
     {
-        NULL = -1, Home = 0, Courses = 1, LB = 2, Achievements = 3,
-        Account = 4, Shop = 5, News = 6, Languages = 7, Progress = 9,
+        NULL = -1, Home = 0, [System.Obsolete("This key is no more used in the program!")] Courses = 1,
+        LB = 2, Achievements = 3, Account = 4, Shop = 5, News = 6, Languages = 7, Progress = 9,
         Donate = 10, Website = 12, Settings = 11, Kids = 13
     }
         
@@ -60,9 +60,9 @@ namespace CodeVoidWPF
                 case CVScene.Home:
                     _mainFrame.NavigationService.Navigate(new Pages.MainPage());
                     break;
-                case CVScene.Courses:
-                    _mainFrame.NavigationService.Navigate(new Pages.Courses());
-                    break;
+                //case CVScene.Courses:
+                //    _mainFrame.NavigationService.Navigate(new Pages.Courses());
+                //    break;
                 case CVScene.LB:
                     _mainFrame.NavigationService.Navigate(new Pages.Leaderboards());
                     break;
@@ -119,7 +119,7 @@ namespace CodeVoidWPF
         void ButtonControl()
         {
             BtnHome.IsEnabled = true;
-            BtnCources.IsEnabled = true;
+            //BtnCources.IsEnabled = true;
             BtnAchievements.IsEnabled = true;
             BtnLB.IsEnabled = true;
             BtnAccount.IsEnabled = true;
@@ -137,9 +137,9 @@ namespace CodeVoidWPF
                 case CVScene.Home:
                     BtnHome.IsEnabled = false;
                     break;
-                case CVScene.Courses:
-                    BtnCources.IsEnabled = false;
-                    break;
+                //case CVScene.Courses:
+                //    BtnCources.IsEnabled = false;
+                //    break;
                 case CVScene.LB:
                     BtnLB.IsEnabled = false;
                     break;
@@ -188,17 +188,17 @@ namespace CodeVoidWPF
                 ButtonControl();
             }
         }
-        private void BtnCources_Click(object sender, RoutedEventArgs e)
-        {
-            if (CurrentScene != CVScene.Courses)
-            {
-                //Go to the Courses page
-                _mainFrame.NavigationService.Navigate(new Pages.Courses());
-                LastScene = CurrentScene;
-                CurrentScene = CVScene.Courses;
-                ButtonControl();
-            }
-        }
+        //private void BtnCources_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (CurrentScene != CVScene.Courses)
+        //    {
+        //        //Go to the Courses page
+        //        _mainFrame.NavigationService.Navigate(new Pages.Courses());
+        //        LastScene = CurrentScene;
+        //        CurrentScene = CVScene.Courses;
+        //        ButtonControl();
+        //    }
+        //}
         private void BtnAchievements_Click(object sender, RoutedEventArgs e)
         {
             if (CurrentScene != CVScene.Achievements)

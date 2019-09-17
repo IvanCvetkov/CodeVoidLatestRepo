@@ -51,7 +51,7 @@
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
-            <Image Width = "417" Source = "C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\For.png"
+            <Image Width = "417" Source = "pack://application:,,,/Images/For.png"
             VerticalAlignment = "Top" Margin = "590,260,0,0" Height="487"/>
         </StackPanel>
     </Grid>

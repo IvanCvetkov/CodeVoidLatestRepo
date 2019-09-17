@@ -43,11 +43,11 @@
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="16,302,36,62" Text="Because that expression is evaluated after each execution" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="16,320,36,54" Text="of the loop,a do-while loop executes one or more times." Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="16,346,36,380" Text="The following diagram shows you how it actually works." Grid.ColumnSpan="2"/>
-        <Button x:Name="DoWhileTwo" Width="94" Height="52" Click="DoWhileTwo_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
+        <Button x:Name="DoWhileTwo" Width="94" Height="52" Click="DoWhileTwo_Click" Margin="796,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
-            <Image Width = "417" Source = "C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\DoWhile.png"
+            <Image Width = "417" Source = "pack://application:,,,/Images/DoWhile.png"
             VerticalAlignment = "Top" Margin = "590,258,0,0" Height="489"/>
         </StackPanel>
     </Grid>

@@ -3,12 +3,278 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
       Title="NestedLoopsWhile">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <RichTextBox FontSize="16" IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="406" Margin="683,133,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged">
+            <FlowDocument>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Collections.Generic;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Linq;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Text;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Threading.Tasks;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0"/>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="namespace"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" NestedLoopsWhile"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="{}{"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="    "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="class"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" "/>
+                    </Span>
+                    <Span Foreground="#FF2B91AF">
+                        <Run Text="Program"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="    {"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="        "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="static"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="void"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" Main("/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="string"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text="[] args)"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="        {"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="            "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="int"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" i = 0;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="            "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="            "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="while"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" (i &lt; 5)"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="            {"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                Console.WriteLine("/>
+                    </Span>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;Value of i: {0}&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", i);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0"/>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="int"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" j = 1;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0"/>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                i++;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0"/>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="while"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" (j &lt; 5)"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                {"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                    Console.WriteLine("/>
+                    </Span>
+                    <Span Foreground="#FFA31515">
+                        <Run Text="&quot;Value of j: {0}&quot;"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=", j);"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                    j++;"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                }"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0"/>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="                Console.WriteLine();"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="            }"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="            Console.ReadLine();"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="        }"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="    }"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="}"/>
+                    </Span>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <Button x:Name="Back" Width="94" Height="52" Click="Back_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Height="4" Margin="-10,67,10,656"/>
+        <Button x:Name="Nested" Width="94" Height="52" Click="Nested_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+        </Button>
+        <Button x:Name="vs" Content="Open in Visual Studio" Width="302" FontSize="26" Height="52" Click="Vs_Click" Margin="147,492,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="BtnCompile" Content="Compile" Width="302" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="147,548,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
+        <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="685,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,272,143,410" Text="A nested while loop is a while statement inside another while statement."/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,294,143,388" Text="In a nested while loop, one iteration of the outer loop is first executed,"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,318,143,366" Text="after which the inner loop is executed. The execution of the inner loop"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,340,143,344" Text="continues till the condition described in the inner loop is satisfied."/>
     </Grid>
 </Page>

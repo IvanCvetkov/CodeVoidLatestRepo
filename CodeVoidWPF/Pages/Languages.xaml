@@ -33,5 +33,8 @@
         <Grid HorizontalAlignment="Left" Height="Auto" Margin="318,25,0,0" Grid.Row="1" VerticalAlignment="Top" Width="Auto" Background="#FF383838">
             <Button x:Name="BtnCSharp" Width="Auto" Height="Auto" Content="C#" Click="BtnCSharp_Click" Margin="48,10,45,186" FontSize="25"/>
         </Grid>
+        <materialDesign:Card Padding="8" Margin="318,326,319,0" Grid.Row="1">
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text=" Courses"/>
+        </materialDesign:Card>
     </Grid>
 </Page>

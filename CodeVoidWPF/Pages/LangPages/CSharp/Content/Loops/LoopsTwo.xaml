@@ -37,15 +37,13 @@
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="The following image will give you the general idea of" Margin="16,186,673,579" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,206,203,482" Text="how all types of loops actually work." Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,376,494" Text="The buttons below will show you how each" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,817,494" Text="loop works." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,206,203,482" Text="how all types of loops work." Grid.ColumnSpan="2"/>
         <Button x:Name="LoopsThree" Width="94" Height="52" Click="LoopsThree_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
 
         <StackPanel Orientation = "Horizontal" Margin="16,-155,-16,155" Grid.ColumnSpan="2">
-            <Image Width = "700" Source = "C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\LoopsDescription.png"
+            <Image Width = "700" Source = "pack://application:,,,/Images/LoopsDescription.png"
             VerticalAlignment = "Top" Margin = "515,286,0,0" Height="305" RenderTransformOrigin="0.5,0.593"/>
         </StackPanel>
         <Button Content="While" x:Name="While" FontSize="19" Width="94" Height="52" Click="While_Click" Margin="16,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black">

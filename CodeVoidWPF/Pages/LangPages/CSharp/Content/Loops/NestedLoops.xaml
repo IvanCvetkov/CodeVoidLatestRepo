@@ -218,11 +218,11 @@
         <Button x:Name="vs" Content="Open in Visual Studio" Width="302" FontSize="26" Height="52" Click="Vs_Click" Margin="149,488,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button x:Name="BtnCompile" Content="Compile" Width="302" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="149,544,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
         <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="685,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Nested loops are basically a loop in another loop. In this example" Margin="42,213,26,489"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,232,-138,448" Text="we will show you how the nested for loop works and onto the next"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,251,143,432" Text="pages we'll be showing you how the other types of nested loops work."/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,274,143,409" Text="If you have Visual Studio installed, you can directly open the program"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,295,143,388" Text="and modify it. Keep in mind that if you save something in the VS file it"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,319,143,364" Text="will stay like that until you change it manually."/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="The placing of one loop inside the body of another loop is called nesting." Margin="42,220,26,482"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,238,-138,442" Text="When you nest two loops, the outer loop takes control of the number of"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,256,143,427" Text="complete repetitions of the inner loop. While all types of loops may be"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,274,143,409" Text="nested, the most commonly nested loops are for loops."/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,295,143,388" Text=""/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,319,143,364" Text=""/>
     </Grid>
 </Page>

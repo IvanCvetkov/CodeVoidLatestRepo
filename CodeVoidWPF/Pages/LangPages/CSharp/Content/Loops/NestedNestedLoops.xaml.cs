@@ -1,35 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using Microsoft.CSharp;
-using System.Reflection;
 using System.CodeDom.Compiler;
-using System.Linq;
+using System.Reflection;
+using Microsoft.CSharp;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
+namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
 {
     /// <summary>
-    /// Interaction logic for OperatorsExercise.xaml
+    /// Interaction logic for NestedNestedLoops.xaml
     /// </summary>
-    public partial class OperatorsExercise : Page
+    public partial class NestedNestedLoops : Page
     {
-        public OperatorsExercise()
+        public NestedNestedLoops()
         {
             InitializeComponent();
         }
 
-        private void BackToExercises_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Operators/LogicalOperators.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/NestedLoopsWhile.xaml", UriKind.Relative));
+        }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
         }
 
-        private void Operators_Click(object sender, RoutedEventArgs e)
+        private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Operators/OperatorsExerciseTwo.xaml", UriKind.Relative));
+            Process.Start("C:\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\NestedNestedLoops\\NestedNestedLoops.sln");
         }
 
         static List<string> blueTags = new List<string>();
@@ -44,9 +48,9 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
 
 
         #region ctor
-        static OperatorsExercise()
+        static NestedNestedLoops()
         {
-            string[] blueWords = { "string", "char", "if", "else", "null", "namespace", "class", "using", "public", "static", "void", "int" };
+            string[] blueWords = { "string", "char", "for", "while", "do", "null", "namespace", "class", "using", "public", "static", "void", "int" };
             string[] greenWords = { "Console" };
             string[] yellowWords = { "ReadKey", "ReadLine", "WriteLine", "Write" };
             blueTags = new List<string>(blueWords);
@@ -350,13 +354,10 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
                 txtSource.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
                 Process.Start(StartupPath);
             }
+            
         }
-
-        private void Vs_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\Operators\\Operators.sln");
-        }
-
         
+
+
     }
 }

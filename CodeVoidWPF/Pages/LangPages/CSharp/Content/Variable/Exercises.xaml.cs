@@ -5,6 +5,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using System.Reflection;
+using System.CodeDom;
+using Microsoft.CSharp;
+using System.CodeDom.Compiler;
+using System.Linq;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 {
@@ -36,12 +41,13 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
         static List<char> yellowSpecials = new List<char>();
         static string yellowtext;
 
+
         #region ctor
         static Exercises()
         {
             string[] blueWords = { "string", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
             string[] greenWords = { "Console" };
-            string[] yellowWords = { "ReadKey", "WriteLine", "Write" };
+            string[] yellowWords = { "ReadKey", "ReadLine", "WriteLine", "Write" };
             blueTags = new List<string>(blueWords);
             grTags = new List<string>(greenWords);
             yellowTags = new List<string>(yellowWords);
@@ -129,6 +135,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
             public TextPointer yellowEndPosition;
             public string yellowWord;
         }
+
 
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -323,9 +330,35 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
             }
         }
 
+        private void BtnCompile_Click(object sender, RoutedEventArgs e)
+        {
+            string Framework = 'v' + Environment.Version.ToString();
+            string OutputConsoleApp = "Output.exe";
+            string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
+
+            txtSource.Clear();
+            CSharpCodeProvider csc = new CSharpCodeProvider();
+            CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
+            parameters.GenerateExecutable = true;
+            CompilerResults results = csc.CompileAssemblyFromSource(parameters, new TextRange
+                (txtStatus.Document.ContentStart, txtStatus.Document.ContentEnd).Text);
+            if (results.Errors.HasErrors)
+                results.Errors.Cast<CompilerError>().ToList().ForEach(error => txtSource.Text += error.ErrorText + "\r\n");
+            else
+            {
+                txtSource.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
+                Process.Start(StartupPath);
+            }
+        }
+
+
+
+
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\VariableMultiplication\\VariableMultiplication.sln");
         }
+
+        
     }
 }

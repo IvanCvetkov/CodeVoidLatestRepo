@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.CSharp;
+using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,23 +48,17 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
         static List<string> yellowTags = new List<string>();
         static List<char> yellowSpecials = new List<char>();
         static string yellowtext;
-        static List<string> purpleTags = new List<string>();
-        static List<char> purpleSpecials = new List<char>();
-        static string purpletext;
+
 
         #region ctor
         static OperatorsExerciseTwo()
         {
-            string[] blueWords = { "string", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
+            string[] blueWords = { "string", "char", "if", "else", "null", "namespace", "class", "using", "public", "static", "void", "int" };
             string[] greenWords = { "Console" };
-            string[] yellowWords = { "ReadKey", "WriteLine", "Write" };
-            string[] purpleWords = { "if", "while", "for", "else", "do" };
-
-
+            string[] yellowWords = { "ReadKey", "ReadLine", "WriteLine", "Write" };
             blueTags = new List<string>(blueWords);
             grTags = new List<string>(greenWords);
             yellowTags = new List<string>(yellowWords);
-            purpleTags = new List<string>(purpleWords);
             char[] chrs = {
             '.',
             ')',
@@ -79,7 +76,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
             blueSpecials = new List<char>(chrs);
             grspecials = new List<char>(chrs);
             yellowSpecials = new List<char>(chrs);
-            purpleSpecials = new List<char>(chrs);
         }
         #endregion
         public static bool IsKnownTag(string tag)
@@ -127,21 +123,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
             }
             return false;
         }
-        public static bool purpleIsKnownTag(string tag)
-        {
-            return purpleTags.Exists(delegate (string s) { return s.ToLower().Equals(tag.ToLower()); });
-        }
-        private static bool purpleGetSpecials(char i)
-        {
-            foreach (var item in purpleSpecials)
-            {
-                if (item.Equals(i))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
 
         //tags are used to indicate the beginning and the end of the keyword (place to color)
         new struct Tag
@@ -162,12 +143,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
             public TextPointer yellowEndPosition;
             public string yellowWord;
         }
-        struct PurpleTag
-        {
-            public TextPointer purpleStartPosition;
-            public TextPointer purpleEndPosition;
-            public string purpleWord;
-        }
+
 
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -175,19 +151,14 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
                 return;
             txtStatus.TextChanged -= txtStatus_TextChanged;
 
-            //sets the horizontal scrollbar's visibility to auto if the content is overflowing (currently it is)
-            txtStatus.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
-
             m_blueTags.Clear();
             gr_Tags.Clear();
             yellow_Tags.Clear();
-            purple_Tags.Clear();
 
             Console.WriteLine();
             TextPointer navigator = txtStatus.Document.ContentStart;
             TextPointer grnavigator = txtStatus.Document.ContentStart;
             TextPointer yellownavigator = txtStatus.Document.ContentStart;
-            TextPointer purplenavigator = txtStatus.Document.ContentStart;
             while (navigator.CompareTo(txtStatus.Document.ContentEnd) < 0)
             {
                 TextPointerContext context = navigator.GetPointerContext(LogicalDirection.Backward);
@@ -221,17 +192,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
                 }
                 yellownavigator = yellownavigator.GetNextContextPosition(LogicalDirection.Forward);
             }
-            while (purplenavigator.CompareTo(txtStatus.Document.ContentEnd) < 0)
-            {
-                TextPointerContext purplecontext = purplenavigator.GetPointerContext(LogicalDirection.Backward);
-                if (purplecontext == TextPointerContext.ElementStart && purplenavigator.Parent is Run)
-                {
-                    purpletext = ((Run)purplenavigator.Parent).Text; //fix 2
-                    if (purpletext != "")
-                        purpleCheckWordsInRun((Run)purplenavigator.Parent);
-                }
-                purplenavigator = purplenavigator.GetNextContextPosition(LogicalDirection.Forward);
-            }
             for (int i = 0; i < m_blueTags.Count; i++)
             {
                 try
@@ -264,23 +224,11 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
                 }
                 catch { }
             }
-            for (int i = 0; i < purple_Tags.Count; i++)
-            {
-                try
-                {
-                    Console.WriteLine();
-                    TextRange purplerange = new TextRange(purple_Tags[i].purpleStartPosition, purple_Tags[i].purpleEndPosition);
-                    purplerange.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Colors.Purple));
-                    purplerange.ApplyPropertyValue(TextElement.FontWeightProperty, FontWeights.Heavy);
-                }
-                catch { }
-            }
             txtStatus.TextChanged += txtStatus_TextChanged;
         }
         List<Tag> m_blueTags = new List<Tag>();
         List<GrTag> gr_Tags = new List<GrTag>();
         List<YellowTag> yellow_Tags = new List<YellowTag>();
-        List<PurpleTag> purple_Tags = new List<PurpleTag>();
         internal void CheckWordsInRun(Run theRun)
         {
             int sIndex = 0;
@@ -389,47 +337,32 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
                 yellow_Tags.Add(yellowt);
             }
         }
-        internal void purpleCheckWordsInRun(Run purpletheRun)
-        {
-            int purplesIndex = 0;
-            int purpleeIndex = 0;
 
-            for (int i = 0; i < purpletext.Length; i++)
+        private void BtnCompile_Click(object sender, RoutedEventArgs e)
+        {
+            string Framework = 'v' + Environment.Version.ToString();
+            string OutputConsoleApp = "Output.exe";
+            string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
+
+            txtSource.Clear();
+            CSharpCodeProvider csc = new CSharpCodeProvider();
+            CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
+            parameters.GenerateExecutable = true;
+            CompilerResults results = csc.CompileAssemblyFromSource(parameters, new TextRange
+                (txtStatus.Document.ContentStart, txtStatus.Document.ContentEnd).Text);
+            if (results.Errors.HasErrors)
+                results.Errors.Cast<CompilerError>().ToList().ForEach(error => txtSource.Text += error.ErrorText + "\r\n");
+            else
             {
-                if (Char.IsWhiteSpace(purpletext[i]) | purpleGetSpecials(purpletext[i]))
-                {
-                    if (i > 0 && !(Char.IsWhiteSpace(purpletext[i - 1]) | purpleGetSpecials(purpletext[i - 1])))
-                    {
-                        purpleeIndex = i - 1;
-                        string purpleword = purpletext.Substring(purplesIndex, purpleeIndex - purplesIndex + 1);
-                        if (purpleIsKnownTag(purpleword))
-                        {
-                            PurpleTag purpt = new PurpleTag();
-                            purpt.purpleStartPosition = purpletheRun.ContentStart.GetPositionAtOffset(purplesIndex, LogicalDirection.Forward);
-                            purpt.purpleEndPosition = purpletheRun.ContentStart.GetPositionAtOffset(purpleeIndex + 1, LogicalDirection.Backward);
-                            purpt.purpleWord = purpleword;
-                            purple_Tags.Add(purpt);
-                        }
-                    }
-                    purplesIndex = i + 1;
-                }
-            }
-            //last word case fix
-            string purplelastWord = purpletext.Substring(purplesIndex, purpletext.Length - purplesIndex);
-            if (purpleIsKnownTag(purplelastWord))
-            {
-                PurpleTag purpt = new PurpleTag();
-                purpt.purpleStartPosition = purpletheRun.ContentStart.GetPositionAtOffset(purplesIndex, LogicalDirection.Forward);
-                purpt.purpleEndPosition = purpletheRun.ContentStart.GetPositionAtOffset(purpletext.Length, LogicalDirection.Backward); //fix 1
-                purpt.purpleWord = purplelastWord;
-                purple_Tags.Add(purpt);
+                txtSource.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
+                Process.Start(StartupPath);
             }
         }
-
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\OperatorsTwo\\OperatorsTwo.sln");
         }
 
+       
     }
 }

@@ -25,13 +25,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
             InitializeComponent();
         }
 
-        
-
-        
-
-
-
-
         //Default Pages
         private void Variables_Click(object sender, RoutedEventArgs e)
         {
@@ -73,23 +66,14 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/TextFiles/TextFiles.xaml", UriKind.Relative));
         }
 
-
-        //****************************************************************//
-        //Bonus Pages                                                     //
-        private void NumSystems_Click(object sender, RoutedEventArgs e)
-        {
-            string messageBox = NewMethod();
-            MessageBox.Show(messageBox);
-        }//
-        //Message of the current page                                     //
-        private static string NewMethod()
-        {
-            return "You cannot access this content until you buy it from the shop page!";
-        }                              //
-        //****************************************************************//
         private void Introduction_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharp.xaml", UriKind.Relative));
+        }
+        //Bonus Pages
+        private void NumSystems_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

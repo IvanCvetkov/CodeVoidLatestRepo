@@ -30,6 +30,5 @@ namespace CodeVoidWPF.Pages
             navWIN.Content = new CSharp();
             navWIN.Show();*/
         }
-
     }
 }

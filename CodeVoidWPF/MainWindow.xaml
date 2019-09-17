@@ -12,7 +12,7 @@
         <!--SIDE BUTTONS-->
         <StackPanel DockPanel.Dock="Left" Background="Gray" x:Name="Bar" Width="150" Orientation="Vertical">
             <Button x:Name="BtnHome" MouseEnter="BtnHome_MouseEnter" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnHome_Click" Margin="10" Content="Home"/>
-            <Button x:Name="BtnCources" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnCources_Click" Margin="10" Content="Courses"/>
+            <!--<Button x:Name="BtnCources" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnCources_Click" Margin="10" Content="Courses"/>-->
             <Button x:Name="BtnAchievements" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnAchievements_Click" Margin="10" Content="Achievements"/>
             <Button x:Name="BtnLB" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnLB_Click" Margin="10" Content="Leaderboards"/>
             <Button x:Name="BtnAccount" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnAccount_Click" Margin="10" Content="Account"/>

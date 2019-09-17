@@ -24,5 +24,28 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Methods
         {
             InitializeComponent();
         }
+
+        private void Vs_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+        }
+        private void Forward_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        private void BtnCompile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }
