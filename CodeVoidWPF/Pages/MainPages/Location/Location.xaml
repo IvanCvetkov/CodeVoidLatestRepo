@@ -105,7 +105,7 @@
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Email_TextChanged"/>
         <TextBox  x:Name="Phone" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="355,508,-527,-515" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Phone_TextChanged"/>
-        <Rectangle  Grid.Column="4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="136,177,-527,-239" Grid.Row="4" Stroke="Black" VerticalAlignment="Top" Width="435"/>
+        <Rectangle  Grid.Column="4" Fill="#FF008AA0" HorizontalAlignment="Left" Height="100" Margin="136,177,-527,-239" Grid.Row="4" Stroke="Black" VerticalAlignment="Top" Width="435"/>
         <TextBlock FontStyle="Italic" FontWeight="DemiBold" Text="Contact Form" TextWrapping="WrapWithOverflow" Width="450" x:Name="Contact" FontSize="50" Grid.Column="4" Margin="205,184,-611,-262" Grid.Row="4"></TextBlock>
     </Grid>
 </Page>

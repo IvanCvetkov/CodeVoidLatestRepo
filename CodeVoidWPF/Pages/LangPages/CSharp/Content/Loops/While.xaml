@@ -50,11 +50,11 @@
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
-            <Image Width = "auto" Source="pack://application:,,,/Images/While.png"
-            VerticalAlignment = "Top" Margin = "665,260,0,0" Height="auto"/>
+            <Image Width = "612" Source="pack://application:,,,/Images/While.png"
+                VerticalAlignment = "Top" Margin = "515,260,0,0" Height="373"/>
         </StackPanel>
         <StackPanel Orientation = "Horizontal" Margin="0,140,-10,154" Grid.ColumnSpan="2">
-            <Image Width = "626" Source="C:\Users\ivan-\Desktop\CodeVoidProject\CodeVoid\CodeVoidWPF\Images\WhileDescCode.png"
+            <Image Width = "626" Source="pack://application:,,,/Images/WhileDescCode.png"
             VerticalAlignment = "Top" Margin = "5,238,0,0" Height="487"/>
         </StackPanel>
 

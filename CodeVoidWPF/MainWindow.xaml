@@ -27,4 +27,6 @@
         </StackPanel>
         <Frame x:Name="_mainFrame"/>
     </DockPanel>
+    
+    
 </Window>

@@ -56,54 +56,21 @@ namespace CodeVoidWPF.Pages.MainPages.Location
 
         }
 
-        //Submit button
-        //Sends an E-Mail from the user to us.
+       
+        private void MainPage_Click(object sender, RoutedEventArgs e)
+        {
+            CheckMethod();
+            HomeMethod();
+        }
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             email_send();
         }
-        public void email_send()
+
+        //page methods
+        public void CheckMethod()
         {
-            //MailMessage mail = new MailMessage();
-            //SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            //mail.From = new MailAddress("your mail@gmail.com");
-            //mail.To.Add("to_mail@gmail.com");
-            //mail.Subject = "Test Mail - 1";
-            //mail.Body = "mail with attachment";
-
-            //System.Net.Mail.Attachment attachment;
-            //attachment = new System.Net.Mail.Attachment("c:/textfile.txt");
-            //mail.Attachments.Add(attachment);
-
-            //SmtpServer.Port = 587;
-            //SmtpServer.Credentials = new System.Net.NetworkCredential("your mail@gmail.com", "your password");
-            //SmtpServer.EnableSsl = true;
-
-            //SmtpServer.Send(mail);
-            if (MainPage.IsEnabled == true)
-                MainPage.IsEnabled = false;
-
-            if (FirstName.IsEnabled == true)
-                FirstName.IsEnabled = false;
-
-            if (LastName.IsEnabled == true)
-                LastName.IsEnabled = false;
-
-            if (School.IsEnabled == true)
-                School.IsEnabled = false;
-
-            if (District.IsEnabled == true)
-                District.IsEnabled = false;
-
-            if (Email.IsEnabled == true)
-                Email.IsEnabled = false;
-
-            if (Phone.IsEnabled == true)
-                Phone.IsEnabled = false;
-        }
-
-        private void MainPage_Click(object sender, RoutedEventArgs e)
-        {
+            //Sets all toolbox items on the page to an inactive state.
             if (Submit.IsEnabled == true)
                 Submit.IsEnabled = false;
 
@@ -124,14 +91,50 @@ namespace CodeVoidWPF.Pages.MainPages.Location
 
             if (Phone.IsEnabled == true)
                 Phone.IsEnabled = false;
-
-            //calling the await method
-            HomeMethod();
         }
         public async void HomeMethod()
         {
-            await Task.Delay(1000);
+            await Task.Delay(700);
             this.NavigationService.Navigate(new Uri("Pages/MainPage.xaml", UriKind.Relative));
+        }
+        public void email_send()
+        {
+            if (MainPage.IsEnabled == true)
+                MainPage.IsEnabled = false;
+
+            if (FirstName.IsEnabled == true)
+                FirstName.IsEnabled = false;
+
+            if (LastName.IsEnabled == true)
+                LastName.IsEnabled = false;
+
+            if (School.IsEnabled == true)
+                School.IsEnabled = false;
+
+            if (District.IsEnabled == true)
+                District.IsEnabled = false;
+
+            if (Email.IsEnabled == true)
+                Email.IsEnabled = false;
+
+            if (Phone.IsEnabled == true)
+                Phone.IsEnabled = false;
+            //MailMessage mail = new MailMessage();
+            //SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            //mail.From = new MailAddress("your mail@gmail.com");
+            //mail.To.Add("to_mail@gmail.com");
+            //mail.Subject = "Test Mail - 1";
+            //mail.Body = "mail with attachment";
+
+            //System.Net.Mail.Attachment attachment;
+            //attachment = new System.Net.Mail.Attachment("c:/textfile.txt");
+            //mail.Attachments.Add(attachment);
+
+            //SmtpServer.Port = 587;
+            //SmtpServer.Credentials = new System.Net.NetworkCredential("your mail@gmail.com", "your password");
+            //SmtpServer.EnableSsl = true;
+
+            //SmtpServer.Send(mail);
         }
     }
 }

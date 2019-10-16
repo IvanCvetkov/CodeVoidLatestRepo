@@ -33,7 +33,7 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-
+        
         <Button x:Name="MainPage" Width="94" Height="57" Click="MainPage_Click" Margin="116,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="HomeCircle" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.Triggers>
@@ -60,6 +60,21 @@
                 <TranslateTransform x:Name="transTransformContact" X="0" Y="0"/>
             </Button.RenderTransform>
             <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="transTransformContact"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
                         <Storyboard>
@@ -82,6 +97,21 @@
                 <TranslateTransform x:Name="transTransform" X="0" Y="0"/>
             </Button.RenderTransform>
             <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="transTransform"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
                         <Storyboard>
@@ -99,11 +129,13 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
+       
         <TextBlock FontSize="39" FontStyle="Italic" FontWeight="Bold" TextWrapping="WrapWithOverflow"
                        Margin="313,10,77,547" Text="                 -Our Mission-"/>
         <TextBlock FontSize="28" FontStyle="Oblique" TextWrapping="WrapWithOverflow"
                        Margin="115,106,675,191" Width="900" Text="&#x0a; At CodeVoid, we provide you with resources, videos and quizes. Our goal is to teach people how to code, think and solve problems.&#x0a; &#x0a; CodeVoid is absolutely free! We believe that education should be freely available to everyone. &#x0a; &#x0a; Do you think you can support us in our mission? Head straight to the donate page and become our patron!"/>
+       
         <TextBlock FontSize="28" FontStyle="Oblique" TextWrapping="WrapWithOverflow"
-                       Margin="313,63,354,234" Text="To provide the best programming education."/>
+                       Margin="313,63,495,396" Text="To provide the best programming education."/>
     </Grid>
 </Page>
