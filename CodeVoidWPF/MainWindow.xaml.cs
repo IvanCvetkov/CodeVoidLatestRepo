@@ -118,8 +118,8 @@ namespace CodeVoidWPF
         /// </summary>
         void ButtonControl()
         {
-            BtnHome.IsEnabled = true;
             //BtnCources.IsEnabled = true;
+            BtnHome.IsEnabled = true;
             BtnAchievements.IsEnabled = true;
             BtnLB.IsEnabled = true;
             BtnAccount.IsEnabled = true;
@@ -134,12 +134,12 @@ namespace CodeVoidWPF
 
             switch (CurrentScene)
             {
-                case CVScene.Home:
-                    BtnHome.IsEnabled = false;
-                    break;
                 //case CVScene.Courses:
                 //    BtnCources.IsEnabled = false;
                 //    break;
+                case CVScene.Home:
+                    BtnHome.IsEnabled = false;
+                    break;
                 case CVScene.LB:
                     BtnLB.IsEnabled = false;
                     break;
@@ -176,18 +176,7 @@ namespace CodeVoidWPF
             }
 
 
-        }
-        private void BtnHome_Click(object sender, RoutedEventArgs e)
-        {
-            if (CurrentScene != CVScene.Home)
-            {
-                //Go to the Home page
-                _mainFrame.NavigationService.Navigate(new Pages.MainPage());
-                LastScene = CurrentScene;
-                CurrentScene = CVScene.Home;
-                ButtonControl();
-            }
-        }
+        } 
         //private void BtnCources_Click(object sender, RoutedEventArgs e)
         //{
         //    if (CurrentScene != CVScene.Courses)
@@ -199,6 +188,17 @@ namespace CodeVoidWPF
         //        ButtonControl();
         //    }
         //}
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentScene != CVScene.Home)
+            {
+                //Go to the Home page
+                _mainFrame.NavigationService.Navigate(new Pages.MainPage());
+                LastScene = CurrentScene;
+                CurrentScene = CVScene.Home;
+                ButtonControl();
+            }
+        }
         private void BtnAchievements_Click(object sender, RoutedEventArgs e)
         {
             if (CurrentScene != CVScene.Achievements)
@@ -315,29 +315,25 @@ namespace CodeVoidWPF
             Process.Start("https://website000020190624120045.azurewebsites.net/");
         }
 
-
-
-
         #endregion
-
-        private bool isSpinning = false;
+            //private bool isSpinning = false;
         private void BtnHome_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (!isSpinning)
-            {
-                isSpinning = true;
+            //if (!isSpinning)
+            //{
+            //    isSpinning = true;
 
-                DoubleAnimation dblAnim = new DoubleAnimation();
-                dblAnim.Completed += (o, s) => { isSpinning = false; };     
-                dblAnim.From = 120;
-                dblAnim.To = 0;
+            //    DoubleAnimation dblAnim = new DoubleAnimation();
+            //    dblAnim.Completed += (o, s) => { isSpinning = false; };     
+            //    dblAnim.From = 120;
+            //    dblAnim.To = 0;
 
-                RotateTransform rt = new RotateTransform();
-                rt.CenterX = BtnHome.ActualWidth;
-                BtnHome.RenderTransform = rt;
+            //    RotateTransform rt = new RotateTransform();
+            //    rt.CenterX = BtnHome.ActualWidth;
+            //    BtnHome.RenderTransform = rt;
 
-                rt.BeginAnimation(RotateTransform.AngleProperty, dblAnim);
-            }
+            //    rt.BeginAnimation(RotateTransform.AngleProperty, dblAnim);
+            //}
         }
     }
 }

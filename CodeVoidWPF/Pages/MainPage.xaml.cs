@@ -25,17 +25,17 @@ namespace CodeVoidWPF.Pages
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
-            //this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Operators/OperatorsExerciseTwo.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/MainPages/About/About.xaml", UriKind.Relative));
         }
 
         private void News_Click(object sender, RoutedEventArgs e)
         {
-            //this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Operators/OperatorsExerciseTwo.xaml", UriKind.Relative));
+
         }
 
         private void Location_Click(object sender, RoutedEventArgs e)
         {
-            //this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Operators/OperatorsExerciseTwo.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/MainPages/Location/Location.xaml", UriKind.Relative));
         }
 
     }

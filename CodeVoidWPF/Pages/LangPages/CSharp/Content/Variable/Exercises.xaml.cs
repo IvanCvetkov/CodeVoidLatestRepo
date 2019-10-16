@@ -10,6 +10,7 @@ using System.CodeDom;
 using Microsoft.CSharp;
 using System.CodeDom.Compiler;
 using System.Linq;
+using System.IO.Packaging;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 {
@@ -356,9 +357,14 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\VariableMultiplication\\VariableMultiplication.sln");
+            //********VISUAL STUDIO VARIABLES PAGE CODE********\\
+            
+            string strMachineName = Environment.MachineName.ToString();
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string Startup_Path = strMachineName + System.IO.Path.Combine
+                (path, "CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\VariableMultiplication\\VariableMultiplication.sln");
+            Process.Start(Startup_Path);
+            //********VISUAL STUDIO VARIABLES PAGE CODE********\\
         }
-
-        
     }
 }

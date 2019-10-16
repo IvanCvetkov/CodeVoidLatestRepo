@@ -4,6 +4,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,7 +33,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
         }
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\ForLoop\\ForLoop.sln");
+           Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\ForLoop\\ForLoop.sln");
         }
 
         static List<string> blueTags = new List<string>();

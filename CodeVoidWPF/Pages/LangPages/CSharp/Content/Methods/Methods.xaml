@@ -269,6 +269,7 @@
         <Button x:Name="Forward" Width="94" Height="52" Click="Forward_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
+        
         <Button x:Name="vs" Content="Open in Visual Studio" Width="302" FontSize="26" Height="52" Click="Vs_Click" Margin="147,492,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button x:Name="BtnCompile" Content="Compile" Width="302" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="147,548,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
         <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="685,544,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
@@ -276,5 +277,5 @@
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,294,143,388" Text="In a nested while loop, one iteration of the outer loop is first executed,"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,318,143,366" Text="after which the inner loop is executed. The execution of the inner loop"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,340,143,344" Text="continues till the condition described in the inner loop is satisfied."/>
-    </Grid> 
+    </Grid>
 </Page>
