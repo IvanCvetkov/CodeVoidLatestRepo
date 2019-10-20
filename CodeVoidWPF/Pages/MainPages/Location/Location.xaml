@@ -32,6 +32,9 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
+
+        <RichTextBox FontSize="20"  IsReadOnly="False" x:Name="txtStatus" HorizontalAlignment="Left" Height="230" Margin="131,160,-504,-311" VerticalAlignment="Top" Width="437" TextChanged="txtStatus_TextChanged" Grid.Column="4" Grid.Row="4" Background="#FF858585"></RichTextBox>
+
         <Button x:Name="MainPage" Width="94" Height="57" Click="MainPage_Click" Margin="1011,50,-1059,-67" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Grid.Row="4">
             <materialDesign:PackIcon Kind="HomeCircle" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.Triggers>
@@ -91,21 +94,21 @@
             </Button.Triggers>
         </Button>
         <TextBlock FontStyle="Italic" TextWrapping="WrapWithOverflow" Width="450" x:Name="alert" FontSize="30" Text="Fill in the short form and click on the submit button to send it to us." Grid.Column="4" Margin="656,295,-1062,-373" Grid.Row="4"></TextBlock>
-        <TextBox  x:Name="FirstName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="134,295,-306,-302" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox  x:Name="FirstName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,408,-295,-407" Grid.Row="4" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="FirstName_TextChanged">
         </TextBox>
-        <TextBox  x:Name="LastName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="355,295,-527,-302" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox  x:Name="LastName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,408,-516,-407" Grid.Row="4" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="LastName_TextChanged">
         </TextBox>
-        <TextBox  x:Name="School" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="134,400,-306,-407" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox  x:Name="School" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,458,-295,-457" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="School_TextChanged"/>
-        <TextBox  x:Name="District" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="355,400,-527,-407" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox  x:Name="District" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,458,-516,-457" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="District_TextChanged"/>
-        <TextBox  x:Name="Email" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="134,508,-306,-515" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox  x:Name="Email" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,508,-295,-507" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Email_TextChanged"/>
-        <TextBox  x:Name="Phone" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="355,508,-527,-515" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox  x:Name="Phone" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,508,-516,-507" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Phone_TextChanged"/>
-        <Rectangle  Grid.Column="4" Fill="#FF008AA0" HorizontalAlignment="Left" Height="100" Margin="136,177,-527,-239" Grid.Row="4" Stroke="Black" VerticalAlignment="Top" Width="435"/>
-        <TextBlock FontStyle="Italic" FontWeight="DemiBold" Text="Contact Form" TextWrapping="WrapWithOverflow" Width="450" x:Name="Contact" FontSize="50" Grid.Column="4" Margin="205,184,-611,-262" Grid.Row="4"></TextBlock>
+        <Rectangle  Grid.Column="4" Fill="#FF008AA0" HorizontalAlignment="Left" Height="100" Margin="133,55,-520,-113" Grid.Row="4" Stroke="Black" VerticalAlignment="Top" Width="435"/>
+        <TextBlock FontStyle="Italic" FontWeight="DemiBold" Text="Contact Form" TextWrapping="WrapWithOverflow" Width="450" x:Name="Contact" FontSize="50" Grid.Column="4" Margin="204,62,-606,-140" Grid.Row="4"></TextBlock>
     </Grid>
 </Page>
