@@ -5,17 +5,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using System.IO;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
 {
@@ -38,7 +34,11 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
         }
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\NestedLoopsWhile\\NestedLoopsWhile.sln");
+            string ComputerName = Environment.MachineName.ToString();
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string Startup_Path = ComputerName + Path.Combine
+                (path, "CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\NestedLoopsWhile\\NestedLoopsWhile.sln");
+            Process.Start(Startup_Path);
         }
 
         static List<string> blueTags = new List<string>();
