@@ -35,7 +35,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
             string ComputerName = Environment.MachineName.ToString();
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             string Startup_Path = ComputerName + Path.Combine
                 (path, "CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\NestedLoopsWhile\\NestedLoopsWhile.sln");
             Process.Start(Startup_Path);
