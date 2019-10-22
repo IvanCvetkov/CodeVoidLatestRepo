@@ -15,7 +15,7 @@
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
       d:DesignHeight="3000" d:DesignWidth="3000"
-      Title="MainPage">
+      Title="MainPage" Loaded="Page_Loaded">
 
     <Grid>
 
@@ -42,7 +42,7 @@
                 </LinearGradientBrush>
             </Grid.OpacityMask>
         </Grid>
-        <Grid HorizontalAlignment="Left" Margin="10,9,0,1" 
+        <Grid x:Name="BlueGrid" HorizontalAlignment="Left" Margin="10,9,0,1" 
               Grid.Row="4" Width="1196" Background="#FFB4CFFF">
             <Grid.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -52,11 +52,11 @@
             </Grid.OpacityMask>
             <TextBlock FontSize="28" TextWrapping="WrapWithOverflow"
                        Margin="114,181,661,396" Text="We Teach, We Code, We Develop"/>
-            <Image  Source="/CodeVoidWPF;component/Images/desktopTwo.png"
+            <Image  x:Name="MainPagePic" Source="/CodeVoidWPF;component/Images/desktopTwo.png"
                     Margin="570,10,66,330">
             </Image>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="401" Margin="10,325,0,-403"
+        <Grid x:Name="PurpleGrid" HorizontalAlignment="Left" Height="401" Margin="10,325,0,-403"
               Grid.Row="4" VerticalAlignment="Top" Width="1196" Background="#FF9C26FF">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="348*"/>
@@ -64,8 +64,8 @@
                 <ColumnDefinition Width="367*"/>
                 <ColumnDefinition Width="30*"/>
             </Grid.ColumnDefinitions>
-            
-            <Rectangle Height="4" Fill="Blue" StrokeThickness="4"
+
+            <Rectangle  x:Name="Rec" Fill="Blue" StrokeThickness="4"
                        Margin="0,0,0,397" Grid.ColumnSpan="4" />
             <Grid HorizontalAlignment="Left" Height="308" Margin="85,47,0,0"
                   VerticalAlignment="Top" Width="248" Background="#FFBA92FF">
@@ -81,8 +81,28 @@
                 <Button x:Name="AboutIcon" Width="162" Height="142"
                         Margin="44,41,0,0" HorizontalAlignment="Left"
                         VerticalAlignment="Top" Background="#FFBA92FF">
-                    
-<materialDesign:PackIcon Kind="MonitorSmartphone" Height="142" Width="116"/>
+                    <materialDesign:PackIcon Kind="MonitorSmartphone" Height="142" Width="116">
+                    </materialDesign:PackIcon>
+                    <Button.RenderTransform>
+                        <TranslateTransform x:Name="transTransform" X="0" Y="0"/>
+                    </Button.RenderTransform>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="transTransform"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                        <DoubleAnimation.EasingFunction>
+                                            <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="308" Margin="55,47,0,0"
@@ -98,7 +118,27 @@
                            Margin="62,188,42,42" Text=" Contact"/>
                 <Button x:Name="LocationIcon" Width="162" Height="142" Margin="44,41,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFBA92FF">
-                    <materialDesign:PackIcon Kind="Location" Height="142" Width="116"/>
+                    <materialDesign:PackIcon Kind="Location" Height="142" Width="116"></materialDesign:PackIcon>
+                    <Button.RenderTransform>
+                        <TranslateTransform x:Name="transTransform2" X="0" Y="0"/>
+                    </Button.RenderTransform>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="transTransform2"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                        <DoubleAnimation.EasingFunction>
+                                            <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="308" Margin="119.833,47,0,0"
@@ -112,11 +152,39 @@
                            TextWrapping="WrapWithOverflow" Margin="80,192,42,59" Text=" News"/>
                 <Button x:Name="NewsIcon" Width="162" Height="142" Margin="44,41,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFBA92FF">
-                    <materialDesign:PackIcon Kind="Newspaper" Height="142" Width="116"/>
+                    <materialDesign:PackIcon Kind="Newspaper" Height="142" Width="116"></materialDesign:PackIcon>
+                    <Button.RenderTransform>
+                        <TranslateTransform x:Name="transTransform1" X="0" Y="0"/>
+                    </Button.RenderTransform>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="transTransform1"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                        <DoubleAnimation.EasingFunction>
+                                            <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
                 </Button>
             </Grid>
         </Grid>
-
     </Grid>
-
 </Page>
+
+
+
+
+
+
+
+
+
+
