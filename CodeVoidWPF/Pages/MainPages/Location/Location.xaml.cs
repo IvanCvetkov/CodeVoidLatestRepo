@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -46,7 +47,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
 
         }
 
-        private void District_TextChanged(object sender, TextChangedEventArgs e)
+        private void City_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -88,8 +89,8 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (School.IsEnabled == true)
                 School.IsEnabled = false;
 
-            if (District.IsEnabled == true)
-                District.IsEnabled = false;
+            if (City.IsEnabled == true)
+                City.IsEnabled = false;
 
             if (Email.IsEnabled == true)
                 Email.IsEnabled = false;
@@ -116,39 +117,116 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (School.IsEnabled == true)
                 School.IsEnabled = false;
 
-            if (District.IsEnabled == true)
-                District.IsEnabled = false;
+            if (City.IsEnabled == true)
+                City.IsEnabled = false;
 
             if (Email.IsEnabled == true)
                 Email.IsEnabled = false;
 
             if (Phone.IsEnabled == true)
                 Phone.IsEnabled = false;
-            //string Eval = new TextRange(.Document.ContentStart, rtbsolution.Document.ContentEnd).Text;
+            string MessageTxT = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
 
-            //string MailTo = "ivan-dd@mail.bg";
-            //string MailFrom = "dsoplayerbg@mail.bg";
-            //string Subject = Phone.Text;
-            //string Password = District.Text;
+            string MailTo = "ivan-dd@mail.bg";
+            string MailFrom = Email.Text;
+            string FirstNameMessage = FirstName.Text;
+            string LastNameMessage = LastName.Text;
 
-            //// Send message using html format in Mail
-            //string MessageTosend = @"< html >< body > QUERY " + "< br /></ br />< br /></ br />"
-            //+ "SOLUTION: "
-            //+ "< br /></ br />< br /></ br />"
-            //+ "Regards, < br /></ br />"
-            //+ "Team </ body ></ html >";
+            string FullNameMessage = FirstNameMessage + LastNameMessage;
 
-            //SmtpClient smtpmail = new SmtpClient();
-            //smtpmail.Host = "smtp.gmail.com";
-            //smtpmail.Port = 587;
-            //smtpmail.EnableSsl = true;
-            //smtpmail.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //smtpmail.UseDefaultCredentials = false;
-            //smtpmail.Credentials = new NetworkCredential(MailFrom, Password);
-            //MailMessage message = new MailMessage(MailFrom, MailTo, Subject, MessageTosend);
-            //message.IsBodyHtml = true;
-            //smtpmail.Send(message);
-            //MessageBox.Show("Email Sent");
+            // Send message using html format in Mail
+            string MessageToSend = @"< html >< body > QUERY " + MessageTxT + "< br /></ br />< br /></ br />"
+            + "SOLUTION: "
+            + "< br /></ br />< br /></ br />"
+            + "Regards, < br /></ br />"
+            + "Team </ body ></ html >";
+            try
+            {
+                SmtpClient smtpmail = new SmtpClient();
+                smtpmail.Host = "smtp.gmail.com";
+                smtpmail.Port = 587;
+                smtpmail.EnableSsl = true;
+                smtpmail.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpmail.UseDefaultCredentials = false;
+                smtpmail.Credentials = new NetworkCredential(MailFrom, Phone.Text);
+                MailMessage message = new MailMessage(MailFrom, MailTo, FullNameMessage, MessageToSend);
+                message.IsBodyHtml = true;
+                smtpmail.Send(message);
+                MessageBox.Show("Email Sent");
+            }
+            catch (Exception exception)
+            {
+                if (exception is ArgumentNullException || exception is InvalidOperationException || exception is SmtpException
+                   ||exception is ObjectDisposedException || exception is SmtpFailedRecipientsException)
+                {
+                    MessageBox.Show("Mail send failed!");
+                }
+            }
+        }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Information Boxes CleanUp
+        private void Message_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            string Message = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
+            if (Message == "*Your Message")
+            {
+                MessageRTB = null;
+            }
+        }
+        private void FirstName_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (FirstName.Text == "*First Name")
+            {
+                FirstName.Clear();
+            }
+        }
+        private void LastName_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (LastName.Text == "*Last Name")
+            {
+                LastName.Clear();
+            }
+        }
+        private void School_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (School.Text == "*School")
+            {
+                School.Clear();
+            }
+        }
+        private void City_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (City.Text == "*City")
+            {
+                City.Clear();
+            }
+        }
+        private void Email_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Email.Text == "*Email")
+            {
+                Email.Clear();
+            }
+        }
+        private void Phone_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Phone.Text == "*Phone")
+            {
+                Phone.Clear();
+            }
+        }
+
+        //Information Boxes Redefinition
+        private void FirstName_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (FirstName.Text == null)
+            {
+                FirstName.Text = "*First Name";
+            }
         }
     }
 }

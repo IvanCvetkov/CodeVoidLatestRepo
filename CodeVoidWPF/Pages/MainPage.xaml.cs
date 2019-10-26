@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System;
 using System.Windows.Media.Animation;
+using System.Threading.Tasks;
 
 namespace CodeVoidWPF.Pages
 {
@@ -18,25 +19,27 @@ namespace CodeVoidWPF.Pages
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/MainPages/About/About.xaml", UriKind.Relative));
+            AboutPage();
         }
 
         private void News_Click(object sender, RoutedEventArgs e)
         {
-
+            NewsPage();
         }
 
         private void Location_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/MainPages/Location/Location.xaml", UriKind.Relative));
+            ContactPage();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            //On MainPage Load/Start
             BlueGridMethod();
             RectangleMethod();
             PurpleGridMethod();
         }
+        //Animation Methods
         public void BlueGridMethod()
         {
             DoubleAnimation db = new DoubleAnimation();
@@ -70,5 +73,23 @@ namespace CodeVoidWPF.Pages
 
             PurpleGrid.BeginAnimation(WidthProperty, db);
         }
+
+        //Linking Methods
+        public async void AboutPage()
+        {
+            await Task.Delay(250);
+            this.NavigationService.Navigate(new Uri("Pages/MainPages/About/About.xaml", UriKind.Relative));
+        }
+        public async void ContactPage()
+        {
+            await Task.Delay(250);
+            this.NavigationService.Navigate(new Uri("Pages/MainPages/Location/Location.xaml", UriKind.Relative));
+        }
+        public async void NewsPage()
+        {
+            await Task.Delay(250);
+            this.NavigationService.Navigate(new Uri("Pages/News.xaml", UriKind.Relative));
+        }
+
     }
 }

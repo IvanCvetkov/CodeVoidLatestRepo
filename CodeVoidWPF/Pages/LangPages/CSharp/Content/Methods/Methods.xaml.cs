@@ -29,8 +29,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Methods
 
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            string path = "CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\ForLoop\\ForLoop.sln";
-            Process.Start(Directory.GetCurrentDirectory() + path);
+
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {

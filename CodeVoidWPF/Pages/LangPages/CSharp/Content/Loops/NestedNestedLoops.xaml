@@ -26,6 +26,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
+             <Run Foreground="CornflowerBlue">Nested Loops</Run>
+        </TextBlock>
         <RichTextBox FontSize="16" IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="406" Margin="683,133,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged">
             <FlowDocument>
                 <Paragraph>

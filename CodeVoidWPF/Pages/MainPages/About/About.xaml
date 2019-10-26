@@ -35,7 +35,7 @@
 
         
         <Button x:Name="MainPage" Width="94" Height="57" Click="MainPage_Click" Margin="116,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <materialDesign:PackIcon Kind="HomeCircle" Height="52" Width="54"></materialDesign:PackIcon>
+            <materialDesign:PackIcon x:Name="Home" Kind="HomeCircle" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
@@ -49,6 +49,22 @@
                         Storyboard.TargetName="MainPage"
                         Storyboard.TargetProperty="Height"
                         From="72" To="80" Duration="0:0:0.5"
+                        AutoReverse="True" RepeatBehavior="Forever"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                        Storyboard.TargetName="Home"
+                        Storyboard.TargetProperty="Width"
+                        From="70" To="80" Duration="0:0:0.3"
+                        AutoReverse="True" RepeatBehavior="Forever"/>
+                            <DoubleAnimation
+                        Storyboard.TargetName="Home"
+                        Storyboard.TargetProperty="Height"
+                        From="50" To="70" Duration="0:0:0.5"
                         AutoReverse="True" RepeatBehavior="Forever"/>
                         </Storyboard>
                     </BeginStoryboard>

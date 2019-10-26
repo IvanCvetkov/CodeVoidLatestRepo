@@ -4,8 +4,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CodeVoidWPF"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
          WindowStartupLocation="CenterScreen">
     <DockPanel>
@@ -18,7 +16,15 @@
             <Button x:Name="BtnAccount" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnAccount_Click" Margin="10" Content="Account"/>
             <Button x:Name="BtnShop" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnShop_Click" Margin="10" Content="Shop"/>
             <Button x:Name="BtnNews" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnNews_Click" Margin="10" Content="News"/>
-            <Button x:Name="BtnLanguages" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnLanguages_Click" Margin="10" Content="Languages"/>
+            <Button x:Name="BtnLanguages" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnLanguages_Click" Content="Languages" Margin="10" Background="#FF663AB7">
+                <!--<Menu Height="32" Width="194">
+                    <MenuItem  Header="Languages" Background="#FF663AB7" Width="194" Height="31" BorderBrush="#FF673AB7">
+                        <MenuItem Header="C#"/>
+                        <MenuItem Header="Python"/>
+                        <MenuItem Header="Javascript"/>
+                    </MenuItem>
+                </Menu>-->
+            </Button>
             <Button x:Name="BtnProgress" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnProgress_Click" Margin="10" Content="Progress"/>
             <Button x:Name="BtnDonate" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnDonate_Click" Margin="10" Content="Donate"/>
             <Button x:Name="BtnWebsite" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnWebsite_Click" Margin="10" Content="Website"/>
@@ -27,6 +33,6 @@
         </StackPanel>
         <Frame x:Name="_mainFrame"/>
     </DockPanel>
-    
-    
+
+
 </Window>

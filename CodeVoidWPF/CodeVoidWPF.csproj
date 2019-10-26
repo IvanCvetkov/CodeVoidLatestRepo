@@ -446,7 +446,7 @@
     <Resource Include="Images\coding.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\While.png" />
+    <Resource Include="Images\While.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LoopsDescription.png" />
@@ -484,6 +484,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\monitor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
