@@ -37,7 +37,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Methods
         }
         private void Forward_Click(object sender, RoutedEventArgs e) 
         {
-
+            
         }
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
