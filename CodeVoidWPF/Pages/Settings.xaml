@@ -24,26 +24,30 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Left" Height="826" Margin="0,0,0,-25" VerticalAlignment="Top" Width="1221" Background="#FFC1C1C1" Grid.RowSpan="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="799*"/>
-                <ColumnDefinition Width="367*"/>
-                <ColumnDefinition Width="30*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="BtnBackSettings" Content="{materialDesign:PackIcon ArrowLeft}"
-                IsEnabled="True" Click="BtnBackSettings_Click" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-            <TextBlock Padding="30" FontSize="46" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="495,0,67,625" Foreground="#DD000000"><Run Text="Settings"/></TextBlock>
-            <ToggleButton x:Name="DarkModeTgl" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="False" Click="DarkModeTgl_Click" Height="Auto" Width="Auto" Margin="365,206,384,554"/>
-            <Label Content="Dark Mode" Height="30" Margin="292,206,427,544"/>
-            <Grid HorizontalAlignment="Left" Height="6" Margin="0,101,-0.373,0" VerticalAlignment="Top" Width="1222" Grid.ColumnSpan="3" Background="Black">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="13*"/>
-                    <RowDefinition Height="12*"/>
-                </Grid.RowDefinitions>
-            </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="BlueGrid"  Background="#FFB4CFFF" Grid.ColumnSpan="5" Margin="80,10,-76,-6" Grid.RowSpan="5">
+            <Border 
+            BorderBrush="Black"
+            BorderThickness="1"
+            CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect />
+                </Border.Effect>
+            </Border>
+            <TextBlock Padding="30" FontSize="46" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="178,10,384,625"><Run Text="Settings"/></TextBlock>
+        <ToggleButton x:Name="DarkModeTgl" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="False" Click="DarkModeTgl_Click" Height="Auto" Width="Auto" Margin="270,159,479,601" Checked="DarkModeTgl_Checked"/>
+        <Label Content="Dark Mode" Margin="197,159,522,592"/>
         </Grid>
-
-        <StackPanel Height="40" Margin="100,86,0,0" Orientation="Horizontal" HorizontalAlignment="left"  VerticalAlignment="Top" />
+        <Button x:Name="BtnBackSettings"
+                IsEnabled="True" Click="BtnBackSettings_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+        </Button>
     </Grid>
 
 </Page>

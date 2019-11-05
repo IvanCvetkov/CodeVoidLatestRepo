@@ -24,13 +24,15 @@
         </Grid.RowDefinitions>
 
 
-        <Button x:Name="BtnBackLanguages" Content="{materialDesign:PackIcon ArrowLeft}"
-                IsEnabled="True" Click="BtnBackLanguages_Click" Width="50" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
+        <Button x:Name="BtnBackLanguages"
+                IsEnabled="True" Click="BtnBackLanguages_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+        </Button>
+        
         <materialDesign:Card Padding="8" Margin="318,10,319,0">
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text=" Languages"/>
         </materialDesign:Card>
-        <Grid HorizontalAlignment="Left" Height="Auto" Margin="318,25,0,0" Grid.Row="1" VerticalAlignment="Top" Width="Auto" Background="#FF383838">
+        <Grid x:Name="LangGrid" HorizontalAlignment="Left" Height="Auto" Margin="318,25,0,0" Grid.Row="1" VerticalAlignment="Top" Width="Auto" Background="#FF383838">
             <Button x:Name="BtnCSharp" Width="Auto" Height="Auto" Content="C#" Click="BtnCSharp_Click" Margin="48,10,45,186" FontSize="25"/>
         </Grid>
     </Grid>

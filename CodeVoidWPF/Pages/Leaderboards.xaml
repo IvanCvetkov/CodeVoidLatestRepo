@@ -17,8 +17,10 @@
       Title="Leaderboards">
 
     <Grid>
-        <Button x:Name="BtnBackLB" Content="{materialDesign:PackIcon ArrowLeft}"
-                IsEnabled="True" Click="BtnBackLB_Click" Width="50" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="BtnBackLB"
+                IsEnabled="True" Click="BtnBackLB_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+        </Button>
 
         <materialDesign:Card Padding="32" Margin="85,90,70,0">
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Leaderboards Page</TextBlock>

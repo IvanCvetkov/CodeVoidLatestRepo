@@ -17,9 +17,10 @@
       Title="Cources">
 
     <Grid>
-        <Button x:Name="BtnBackCourses" Content="{materialDesign:PackIcon ArrowLeft}"
-                IsEnabled="True" Click="BtnBackCourses_Click" Width="50" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
+        <Button x:Name="BtnBackCourses"
+                IsEnabled="True" Click="BtnBackCourses_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+        </Button>
         <materialDesign:Card Padding="32" Margin="139,16,16,0">
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Cources</TextBlock>
         </materialDesign:Card>

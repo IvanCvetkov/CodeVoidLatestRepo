@@ -12,7 +12,7 @@ namespace CodeVoidWPF
     //Scene Manager
     public enum CVScene
     {
-        NULL = -1, Home = 0, [System.Obsolete("This key is no more used in the program!")] Courses = 1,
+        NULL = -1, Home = 0, [System.Obsolete("Unused key!")] Courses = 1,
         LB = 2, Achievements = 3, Account = 4, Shop = 5, News = 6, Languages = 7, Progress = 9,
         Donate = 10, Website = 12, Settings = 11, Kids = 13
     }
@@ -50,7 +50,7 @@ namespace CodeVoidWPF
         }
 
         /// <summary>
-        /// Navigates to the last active page like a 'Go Back' button.
+        /// Navigates to the last active page.
         /// </summary>
         public void NavigateLast()
         {

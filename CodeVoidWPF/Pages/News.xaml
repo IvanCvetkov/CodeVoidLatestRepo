@@ -17,9 +17,10 @@
       Title="News">
 
     <Grid>
-        <Button x:Name="BtnBackNews" Content="{materialDesign:PackIcon ArrowLeft}"
-                IsEnabled="True" Click="BtnBackNews_Click" Width="50" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
+        <Button x:Name="BtnBackNews"
+                IsEnabled="True" Click="BtnBackNews_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+        </Button>
 
         <materialDesign:Card Padding="32" Margin="139,16,16,0">
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">News</TextBlock>

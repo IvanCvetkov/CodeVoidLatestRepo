@@ -62,5 +62,10 @@ namespace CodeVoidWPF.Pages
         {
             MainWindow.win.NavigateLast();
         }
+
+        private void DarkModeTgl_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

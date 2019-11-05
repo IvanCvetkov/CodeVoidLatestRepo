@@ -138,10 +138,12 @@
                 </Grid>
             </materialDesign:Flipper.BackContent>
         </materialDesign:Flipper>
-        
+
         <!--BACK BUTTON-->
-        <Button x:Name="BtnBackAccount" Content="{materialDesign:PackIcon ArrowLeft}"
-                IsEnabled="True" Click="BtnBackAccount_Click" Width="50" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="BtnBackAccount"
+                IsEnabled="True" Click="BtnBackAccount_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+        </Button>
         <Grid HorizontalAlignment="Stretch" Margin="258,330,-171,-282" VerticalAlignment="Stretch"/>
 
     </Grid>
