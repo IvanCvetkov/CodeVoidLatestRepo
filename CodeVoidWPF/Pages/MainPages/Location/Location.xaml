@@ -106,7 +106,7 @@
                             <DoubleAnimation From="0" To="35" Duration="00:00:01"
                                 Storyboard.TargetName="transTransform"
                                 Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
+                                AutoReverse="True" RepeatBehavior="1x">
                                 <DoubleAnimation.EasingFunction>
                                     <BounceEase Bounces="1" EasingMode="EaseOut"
                                             Bounciness="2" />
@@ -124,13 +124,13 @@
         <TextBox PreviewMouseLeftButtonDown="LastName_PreviewMouseLeftButtonDown" Text="*Last Name"  x:Name="LastName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,408,-516,-407" Grid.Row="4" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="LastName_TextChanged">
         </TextBox>
-        <TextBox PreviewMouseLeftButtonDown="School_PreviewMouseLeftButtonDown" Text="*School"  x:Name="School" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,458,-295,-457" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="School_PreviewMouseLeftButtonDown" Text="*School"  x:Name="School" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,508,-276,-470" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="School_TextChanged"/>
-        <TextBox PreviewMouseLeftButtonDown="City_PreviewMouseLeftButtonDown" Text="*City"  x:Name="City" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,458,-516,-457" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="City_PreviewMouseLeftButtonDown" Text="*City"  x:Name="City" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,508,-494,-467" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="City_TextChanged"/>
-        <TextBox PreviewMouseLeftButtonDown="Email_PreviewMouseLeftButtonDown" Text="*Email"  x:Name="Email" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,508,-295,-507" Grid.Row="4" TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Email_TextChanged"/>
-        <TextBox PreviewMouseLeftButtonDown="Phone_PreviewMouseLeftButtonDown" Text="*Phone" x:Name="Phone" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,508,-516,-507" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="Subject_PreviewMouseLeftButtonDown" Text="*Subject"  x:Name="Subject" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,458,-277,-421" Grid.Row="4" TextWrapping="Wrap"
+            VerticalAlignment="Top" Width="216" Background="#FFBFBFBF"/>
+        <TextBox PreviewMouseLeftButtonDown="Phone_PreviewMouseLeftButtonDown" Text="*Phone" x:Name="Phone" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,458,-495,-418" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Phone_TextChanged"/>
         <Rectangle  Grid.Column="4" Fill="#FF008AA0" HorizontalAlignment="Left" Height="100" Margin="133,55,-520,-113" Grid.Row="4" Stroke="Black" VerticalAlignment="Top" Width="435"/>
         <TextBlock FontStyle="Italic" FontWeight="DemiBold" Text="Contact Form" TextWrapping="WrapWithOverflow" Width="450" x:Name="Contact" FontSize="50" Grid.Column="4" Margin="198,62,-581,-140" Grid.Row="4"></TextBlock>

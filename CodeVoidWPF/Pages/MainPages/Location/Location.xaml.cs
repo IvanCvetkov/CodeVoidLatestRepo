@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Configuration;
 
 namespace CodeVoidWPF.Pages.MainPages.Location
 {
@@ -52,7 +54,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
 
         }
 
-        private void Email_TextChanged(object sender, TextChangedEventArgs e)
+        private void Subject_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -70,7 +72,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         }
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            email_send();
+            Subject_send();
         }
 
         //page methods
@@ -92,8 +94,8 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (City.IsEnabled == true)
                 City.IsEnabled = false;
 
-            if (Email.IsEnabled == true)
-                Email.IsEnabled = false;
+            if (Subject.IsEnabled == true)
+                Subject.IsEnabled = false;
 
             if (Phone.IsEnabled == true)
                 Phone.IsEnabled = false;
@@ -103,7 +105,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             await Task.Delay(700);
             this.NavigationService.Navigate(new Uri("Pages/MainPage.xaml", UriKind.Relative));
         }
-        public void email_send()
+        public void Subject_send()
         {
             if (MainPage.IsEnabled == true)
                 MainPage.IsEnabled = false;
@@ -120,48 +122,39 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (City.IsEnabled == true)
                 City.IsEnabled = false;
 
-            if (Email.IsEnabled == true)
-                Email.IsEnabled = false;
+            if (Subject.IsEnabled == true)
+                Subject.IsEnabled = false;
 
             if (Phone.IsEnabled == true)
                 Phone.IsEnabled = false;
-            string MessageTxT = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
 
-            string MailTo = "ivan-dd@mail.bg";
-            string MailFrom = Email.Text;
-            string FirstNameMessage = FirstName.Text;
-            string LastNameMessage = LastName.Text;
+            //Initializing the information necessary
+            string subject = "\t\t|" + Subject.Text + "|";
+            string UserInformation = FirstName.Text + " " + LastName.Text + "\n" +
+                                     Phone.Text + "\n" +
+                                     School.Text + "\n" +
+                                     City.Text;
+            string RTBtext = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
+            string CodeVoidCopyRight = "CopyRight© CodeVoid";
+            string message = @"" + subject + "\n" +
+                             RTBtext + "\n" +
+                             UserInformation + "\n" +
+                             CodeVoidCopyRight;
+            string[] Credentials = new string[3]{ "codevoiddummy@gmail.com",
+                "codevoidauthentication", "codevoidreceiver@gmail.com" };
 
-            string FullNameMessage = FirstNameMessage + LastNameMessage;
-
-            // Send message using html format in Mail
-            string MessageToSend = @"< html >< body > QUERY " + MessageTxT + "< br /></ br />< br /></ br />"
-            + "SOLUTION: "
-            + "< br /></ br />< br /></ br />"
-            + "Regards, < br /></ br />"
-            + "Team </ body ></ html >";
-            try
+            var client = new SmtpClient("smtp.gmail.com", 587)
             {
-                SmtpClient smtpmail = new SmtpClient();
-                smtpmail.Host = "smtp.gmail.com";
-                smtpmail.Port = 587;
-                smtpmail.EnableSsl = true;
-                smtpmail.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpmail.UseDefaultCredentials = false;
-                smtpmail.Credentials = new NetworkCredential(MailFrom, Phone.Text);
-                MailMessage message = new MailMessage(MailFrom, MailTo, FullNameMessage, MessageToSend);
-                message.IsBodyHtml = true;
-                smtpmail.Send(message);
-                MessageBox.Show("Email Sent");
-            }
-            catch (Exception exception)
-            {
-                if (exception is ArgumentNullException || exception is InvalidOperationException || exception is SmtpException
-                   ||exception is ObjectDisposedException || exception is SmtpFailedRecipientsException)
-                {
-                    MessageBox.Show("Mail send failed!");
-                }
-            }
+                Credentials = new NetworkCredential(Credentials[0], Credentials[1]),
+                EnableSsl = true
+            };
+
+            //sending the E-mail to the receiver from the dummy
+            client.Send(Credentials[0], Credentials[2], subject, message);
+
+            //Alert Message
+            Alert alert = new Alert();
+            alert.Show();
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -191,6 +184,20 @@ namespace CodeVoidWPF.Pages.MainPages.Location
                 LastName.Clear();
             }
         }
+        private void Subject_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Subject.Text == "*Subject")
+            {
+                Subject.Clear();
+            }
+        }
+         private void Phone_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Phone.Text == "*Phone")
+            {
+                Phone.Clear();
+            }
+        }
         private void School_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (School.Text == "*School")
@@ -205,20 +212,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
                 City.Clear();
             }
         }
-        private void Email_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (Email.Text == "*Email")
-            {
-                Email.Clear();
-            }
-        }
-        private void Phone_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (Phone.Text == "*Phone")
-            {
-                Phone.Clear();
-            }
-        }
+        
 
         //Information Boxes Redefinition
         private void FirstName_PreviewMouseUp(object sender, MouseButtonEventArgs e)
@@ -228,5 +222,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
                 FirstName.Text = "*First Name";
             }
         }
+
+
     }
 }
