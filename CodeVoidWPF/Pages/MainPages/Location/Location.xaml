@@ -33,7 +33,7 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <RichTextBox x:Name="MessageRTB" PreviewMouseLeftButtonDown="Message_PreviewMouseLeftButtonDown" FontSize="20" IsReadOnly="False" HorizontalAlignment="Left" Height="230" Margin="131,160,-504,-311" VerticalAlignment="Top" Width="437" TextChanged="txtStatus_TextChanged" Grid.Column="4" Grid.Row="4" Background="#FF858585">
+        <RichTextBox x:Name="MessageRTB" PreviewMouseLeftButtonDown="Message_PreviewMouseLeftButtonDown" FontSize="20" IsReadOnly="False" HorizontalAlignment="Left" Height="230" Margin="131,160,-504,-311" VerticalAlignment="Top" Width="437" TextChanged="txtStatus_TextChanged" Grid.Column="4" Grid.Row="4" Background="#FFE4E4E4">
             <FlowDocument>
                 <Paragraph>
                     <Span Foreground="Black">

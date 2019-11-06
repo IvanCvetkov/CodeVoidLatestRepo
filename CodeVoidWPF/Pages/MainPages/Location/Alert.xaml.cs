@@ -24,10 +24,9 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonAlert_Click(object sender, RoutedEventArgs e)
         {
-            Alert alert = new Alert();
-            alert.Hide();
+
         }
     }
 }

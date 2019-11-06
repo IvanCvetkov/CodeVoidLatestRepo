@@ -17,6 +17,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Configuration;
+using System.Globalization;
+using System.Threading;
 
 namespace CodeVoidWPF.Pages.MainPages.Location
 {
@@ -25,9 +27,16 @@ namespace CodeVoidWPF.Pages.MainPages.Location
     /// </summary>
     public partial class Location : Page
     {
+
         public Location()
         {
             InitializeComponent();
+        }
+
+        //Animations control method
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -64,7 +73,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
 
         }
 
-       
+
         private void MainPage_Click(object sender, RoutedEventArgs e)
         {
             CheckMethod();
@@ -72,7 +81,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         }
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            Subject_send();
+            Email_send();
         }
 
         //page methods
@@ -105,29 +114,8 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             await Task.Delay(700);
             this.NavigationService.Navigate(new Uri("Pages/MainPage.xaml", UriKind.Relative));
         }
-        public void Subject_send()
+        public void Email_send()
         {
-            if (MainPage.IsEnabled == true)
-                MainPage.IsEnabled = false;
-
-            if (FirstName.IsEnabled == true)
-                FirstName.IsEnabled = false;
-
-            if (LastName.IsEnabled == true)
-                LastName.IsEnabled = false;
-
-            if (School.IsEnabled == true)
-                School.IsEnabled = false;
-
-            if (City.IsEnabled == true)
-                City.IsEnabled = false;
-
-            if (Subject.IsEnabled == true)
-                Subject.IsEnabled = false;
-
-            if (Phone.IsEnabled == true)
-                Phone.IsEnabled = false;
-
             //Initializing the information necessary
             string subject = "\t\t|" + Subject.Text + "|";
             string UserInformation = FirstName.Text + " " + LastName.Text + "\n" +
@@ -152,13 +140,13 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             //sending the E-mail to the receiver from the dummy
             client.Send(Credentials[0], Credentials[2], subject, message);
 
-            //Alert Message
-            Alert alert = new Alert();
-            alert.Show();
-        }
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
+            //Alert Message (First way(better way))
+            //Alert alert = new Alert();
+            //alert.Show();
 
+            //(Second way (temporary))
+            string msg = "the E-Mail has been sent successfully!";
+            MessageBox.Show(msg, "Contact Form");
         }
 
         //Information Boxes CleanUp
@@ -167,7 +155,14 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             string Message = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
             if (Message == "*Your Message")
             {
-                MessageRTB = null;
+                //# FFE4E4E4
+                string ColorCode = "#FFE4E4E4";
+                var brushConverter = new BrushConverter();
+                MessageRTB.Background = (Brush)brushConverter.ConvertFrom(ColorCode);
+            }
+            else
+            {
+                MessageRTB.Background = Brushes.Beige;
             }
         }
         private void FirstName_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -175,6 +170,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (FirstName.Text == "*First Name")
             {
                 FirstName.Clear();
+                FirstName.Background = Brushes.Beige;
             }
         }
         private void LastName_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -182,6 +178,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (LastName.Text == "*Last Name")
             {
                 LastName.Clear();
+                LastName.Background = Brushes.Beige;
             }
         }
         private void Subject_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -189,13 +186,15 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (Subject.Text == "*Subject")
             {
                 Subject.Clear();
+                Subject.Background = Brushes.Beige;
             }
         }
-         private void Phone_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Phone_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (Phone.Text == "*Phone")
             {
                 Phone.Clear();
+                Phone.Background = Brushes.Beige;
             }
         }
         private void School_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -203,6 +202,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (School.Text == "*School")
             {
                 School.Clear();
+                School.Background = Brushes.Beige;
             }
         }
         private void City_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -210,9 +210,10 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (City.Text == "*City")
             {
                 City.Clear();
+                City.Background = Brushes.Beige;
             }
         }
-        
+
 
         //Information Boxes Redefinition
         private void FirstName_PreviewMouseUp(object sender, MouseButtonEventArgs e)
