@@ -118,11 +118,11 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         {
             //Initializing the information necessary
             string subject = "\t\t|" + Subject.Text + "|";
+            string RTBtext = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
             string UserInformation = FirstName.Text + " " + LastName.Text + "\n" +
                                      Phone.Text + "\n" +
                                      School.Text + "\n" +
                                      City.Text;
-            string RTBtext = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
             string CodeVoidCopyRight = "CopyRight© CodeVoid";
             string message = @"" + subject + "\n" +
                              RTBtext + "\n" +

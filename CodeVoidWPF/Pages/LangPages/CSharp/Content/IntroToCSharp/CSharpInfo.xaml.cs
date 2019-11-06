@@ -28,7 +28,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         //Default Pages
         private void Variables_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Variables.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Variables.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void Operators_Click(object sender, RoutedEventArgs e)
@@ -73,7 +73,8 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         //Bonus Pages
         private void NumSystems_Click(object sender, RoutedEventArgs e)
         {
-            
+            string message = "First you need to buy the following module from the shop!";
+            MessageBox.Show(message, "Invalid Page");
         }
     }
 }
