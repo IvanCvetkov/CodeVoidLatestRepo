@@ -83,7 +83,7 @@
         <TextBlock FontSize="23" TextWrapping="WrapWithOverflow" Width="220" Margin="696,224,-109,74" Grid.Row="2" Text="Write Console.WriteLine(&quot;Hello World!&quot;); followed by Console.ReadKey(); in the curly brackets under Main and see what happens." Grid.ColumnSpan="5"/>
 
         <Button x:Name="CSharpInfo" Width="94" Height="52" Click="CSharpInfo_Click" Margin="0,34,-62,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1">
-            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.RenderTransform>
                 <TranslateTransform x:Name="Forward" X="0" Y="0"/>
             </Button.RenderTransform>

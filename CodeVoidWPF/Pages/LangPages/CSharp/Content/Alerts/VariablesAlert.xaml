@@ -1,0 +1,49 @@
+﻿<Window x:Class="CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts.VariablesAlert"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="Alert" Height="200" Width="400" Loaded="Window_Loaded">
+    <Border x:Name="AlertBorder" CornerRadius="35" BorderThickness="20">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Green" Offset="0.0"></GradientStop>
+                <GradientStop Color="DarkOliveGreen" Offset="0.5"></GradientStop>
+                <GradientStop Color="DarkGreen" Offset="1.0"></GradientStop>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid x:Name="AlertGrid" HorizontalAlignment="Left">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Green" Offset="0.0"></GradientStop>
+                    <GradientStop Color="DarkOliveGreen" Offset="0.5"></GradientStop>
+                    <GradientStop Color="DarkGreen" Offset="1.0"></GradientStop>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image Source="pack://application:,,,/Images/tick.png" x:Name="Tick" Margin="0,10,227,0">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Image.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="Tick"
+                                Storyboard.TargetProperty="Opacity"
+                                From="1.0" To="0.6" Duration="0:0:0.5"
+                                AutoReverse="True" RepeatBehavior="2x"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <TextBlock x:Name="AlertText" TextWrapping="NoWrap" FontSize="16" Text="You have earned 20 points!" Margin="171,10,-8,10">
+            </TextBlock>
+            <Button Content="OK" FontSize="20" Margin="130,120,0,0" Width="100" Click="Button_Click" Background="#FF03B60B">
+            </Button>
+        </Grid>
+    </Border>
+</Window>

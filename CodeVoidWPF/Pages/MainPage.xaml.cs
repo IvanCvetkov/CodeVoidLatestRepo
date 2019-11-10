@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System;
 using System.Windows.Media.Animation;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace CodeVoidWPF.Pages
 {
@@ -17,16 +18,15 @@ namespace CodeVoidWPF.Pages
             InitializeComponent();
         }
 
+        //Buttons
         private void About_Click(object sender, RoutedEventArgs e)
         {
             AboutPage();
         }
-
         private void News_Click(object sender, RoutedEventArgs e)
         {
             NewsPage();
         }
-
         private void Location_Click(object sender, RoutedEventArgs e)
         {
             ContactPage();
@@ -42,34 +42,40 @@ namespace CodeVoidWPF.Pages
         //Animation Methods
         public void BlueGridMethod()
         {
-            DoubleAnimation db = new DoubleAnimation();
-            db.From = 0;
-            db.To = 1196;
-            db.Duration = TimeSpan.FromSeconds(1);
+            DoubleAnimation db = new DoubleAnimation
+            {
+                From = 0,
+                To = 1196,
+                Duration = TimeSpan.FromSeconds(1),
 
-            db.EasingFunction = new QuinticEase();
+                EasingFunction = new QuinticEase()
+            };
 
             BlueGrid.BeginAnimation(WidthProperty, db);
         }
         public void RectangleMethod()
         {
-            DoubleAnimation db = new DoubleAnimation();
-            db.From = 0;
-            db.To = 1196;
-            db.Duration = TimeSpan.FromSeconds(1);
+            DoubleAnimation db = new DoubleAnimation
+            {
+                From = 0,
+                To = 1196,
+                Duration = TimeSpan.FromSeconds(1),
 
-            db.EasingFunction = new QuinticEase();
+                EasingFunction = new QuinticEase()
+            };
 
             Rec.BeginAnimation(WidthProperty, db);
         }
         public void PurpleGridMethod()
         {
-            DoubleAnimation db = new DoubleAnimation();
-            db.From = 0;
-            db.To = 1196;
-            db.Duration = TimeSpan.FromSeconds(1);
+            DoubleAnimation db = new DoubleAnimation
+            {
+                From = 0,
+                To = 1196,
+                Duration = TimeSpan.FromSeconds(1),
 
-            db.EasingFunction = new QuinticEase();
+                EasingFunction = new QuinticEase()
+            };
 
             PurpleGrid.BeginAnimation(WidthProperty, db);
         }

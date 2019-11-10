@@ -96,6 +96,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\LangPages\CSharp\Content\Alerts\Alert.xaml.cs">
+      <DependentUpon>Alert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Alerts\VariablesAlert.xaml.cs">
+      <DependentUpon>VariablesAlert.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Loops\DoWhile.xaml.cs">
       <DependentUpon>DoWhile.xaml</DependentUpon>
     </Compile>
@@ -233,6 +239,14 @@
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Scripts\SettingsSaver.cs" />
+    <Page Include="Pages\LangPages\CSharp\Content\Alerts\Alert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Alerts\VariablesAlert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LangPages\CSharp\Content\Loops\DoWhile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -480,6 +494,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\LangPages\CSharp\Content\NumberSyS\" />
+    <Folder Include="Points\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\loop_architecture.png" />
@@ -508,6 +523,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MethodsDesc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tick.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

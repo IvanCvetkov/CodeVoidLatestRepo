@@ -4,11 +4,15 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Diagnostics;
 using Microsoft.CSharp;
 using System.CodeDom.Compiler;
+using System.Text;
+using System.Threading.Tasks;
+using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp
 {
@@ -22,31 +26,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
             InitializeComponent();
         }
 
-        private void BtnCompile_Click(object sender, RoutedEventArgs e)
-        {
-            string Framework = 'v' + Environment.Version.ToString();
-            string OutputConsoleApp = "Output.exe";
-            string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
-
-            txtStatus.Clear();
-            CSharpCodeProvider csc = new CSharpCodeProvider();
-            CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
-            parameters.GenerateExecutable = true;
-            CompilerResults results = csc.CompileAssemblyFromSource(parameters, new TextRange
-                (txtSource.Document.ContentStart, txtSource.Document.ContentEnd).Text);
-            if (results.Errors.HasErrors)
-                results.Errors.Cast<CompilerError>().ToList().ForEach(error => txtStatus.Text += error.ErrorText + "\r\n");
-            else
-            {
-                txtStatus.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
-                Process.Start(StartupPath);
-            }
-        }
-
-        private void CSharpInfo_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
-        }
 
         static List<string> blueTags = new List<string>();
         static List<char> blueSpecials = new List<char>();
@@ -347,6 +326,62 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
             }
         }
 
+        private void BtnCompile_Click(object sender, RoutedEventArgs e)
+        {
+            string Framework = 'v' + Environment.Version.ToString();
+            string OutputConsoleApp = "Output.exe";
+            string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
+
+            txtStatus.Clear();
+            CSharpCodeProvider csc = new CSharpCodeProvider();
+            CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
+            parameters.GenerateExecutable = true;
+            CompilerResults results = csc.CompileAssemblyFromSource(parameters, new TextRange
+                (txtSource.Document.ContentStart, txtSource.Document.ContentEnd).Text);
+            if (results.Errors.HasErrors)
+                results.Errors.Cast<CompilerError>().ToList().ForEach(error => txtStatus.Text += error.ErrorText + "\r\n");
+            else
+            {
+                txtStatus.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
+                Process.Start(StartupPath);
+            }
+        }
+
+        private void CSharpInfo_Click(object sender, RoutedEventArgs e)
+        {
+            string[] points = { "15" };
+
+            string docPath =
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string path = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/Introduction.txt";
+            string finalPath = Path.Combine(docPath, path);
+            try
+            {
+                if (!File.Exists(finalPath))
+                {
+                    using (var stream = File.Create(finalPath)) { }
+                }
+                else
+                {
+                    if (!File.ReadAllText(finalPath).Contains(points[0]))
+                    {
+                        using (StreamWriter writer = new StreamWriter(finalPath))
+                        {
+                            writer.WriteLine(points[0]);
+                        }
+                        Alert alert = new Alert();
+                        alert.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can't write to file" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+            //Navigation service
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+        }
     }
 }
 

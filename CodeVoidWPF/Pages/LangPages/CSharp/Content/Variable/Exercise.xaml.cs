@@ -9,6 +9,9 @@ using System.Reflection;
 using System.Diagnostics;
 using Microsoft.CSharp;
 using System.CodeDom.Compiler;
+using System.IO;
+using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
+
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 {
     /// <summary>
@@ -347,6 +350,37 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 
         private void Exercise_Click(object sender, RoutedEventArgs e)
         {
+            string[] points = { "20" };
+
+            string docPath =
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string path = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/Variables.txt";
+            string finalPath = Path.Combine(docPath, path);
+            try
+            {
+                if (!File.Exists(finalPath))
+                {
+                    using (var stream = File.Create(finalPath)) { }
+                }
+                else
+                {
+                    if (!File.ReadAllText(finalPath).Contains(points[0]))
+                    {
+                        using (StreamWriter writer = new StreamWriter(finalPath))
+                        {
+                                writer.WriteLine(points[0]);
+                        }
+                        VariablesAlert alert = new VariablesAlert();
+                        alert.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can't write to file" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+            //Navigation service
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
         }
     }
