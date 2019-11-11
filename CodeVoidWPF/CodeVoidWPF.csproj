@@ -198,11 +198,14 @@
     <Compile Include="Pages\MainPages\About\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MainPages\Location\Alert.xaml.cs">
-      <DependentUpon>Alert.xaml</DependentUpon>
+    <Compile Include="Pages\MainPages\Location\FailAlert.xaml.cs">
+      <DependentUpon>FailAlert.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPages\Location\Location.xaml.cs">
       <DependentUpon>Location.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPages\Location\MailAlert.xaml.cs">
+      <DependentUpon>MailAlert.xaml</DependentUpon>
     </Compile>
     <Compile Include="Scripts\Layout.cs" />
     <Compile Include="Pages\Achievements.xaml.cs">
@@ -415,11 +418,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\MainPages\Location\Alert.xaml">
+    <Page Include="Pages\MainPages\Location\FailAlert.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPages\Location\Location.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPages\Location\MailAlert.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -526,6 +533,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tickmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\failed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\failed1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

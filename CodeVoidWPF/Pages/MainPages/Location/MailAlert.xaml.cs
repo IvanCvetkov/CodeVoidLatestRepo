@@ -12,15 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CodeVoidWPF.Pages.MainPages.Location;
 
-namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts
+namespace CodeVoidWPF.Pages.MainPages.Location
 {
     /// <summary>
-    /// Interaction logic for VariablesAlert.xaml
+    /// Interaction logic for MailAlert.xaml
     /// </summary>
-    public partial class VariablesAlert : Window
+    public partial class MailAlert : Window
     {
-        public VariablesAlert()
+        public MailAlert()
         {
             InitializeComponent();
         }
@@ -33,14 +34,13 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts
         private void OK_Click(object sender, RoutedEventArgs e)
         {
             AlertGridClose();
-            //Application.Current.Dispatcher.BeginInvoke(new Action(Close));
         }
 
         //Animation Methods
         public void AlertGridOpen()
         {
             //Grid
-            DoubleAnimation alertAnim = new DoubleAnimation
+            DoubleAnimation alertGridAnim = new DoubleAnimation()
             {
                 From = MinWidth,
                 To = 400,
@@ -49,11 +49,10 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts
                 EasingFunction = new QuinticEase()
             };
 
-            AlertGrid.BeginAnimation(WidthProperty, alertAnim);
-
+            AlertGrid.BeginAnimation(WidthProperty, alertGridAnim);
 
             //Border
-            DoubleAnimation border = new DoubleAnimation
+            DoubleAnimation border = new DoubleAnimation()
             {
                 From = MinWidth,
                 To = 400,
@@ -67,7 +66,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts
         public async void AlertGridClose()
         {
             //Grid
-            DoubleAnimation alert = new DoubleAnimation
+            DoubleAnimation alertGridAnim = new DoubleAnimation()
             {
                 From = 400,
                 To = MinWidth,
@@ -76,10 +75,10 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts
                 EasingFunction = new QuinticEase()
             };
 
-            AlertGrid.BeginAnimation(WidthProperty, alert);
+            AlertGrid.BeginAnimation(WidthProperty, alertGridAnim);
 
             //Border
-            DoubleAnimation border = new DoubleAnimation
+            DoubleAnimation border = new DoubleAnimation()
             {
                 From = 400,
                 To = MinWidth,
@@ -89,7 +88,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts
             };
 
             AlertBorder.BeginAnimation(WidthProperty, border);
-
 
             await Task.Delay(1000);
 

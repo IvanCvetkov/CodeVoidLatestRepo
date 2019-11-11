@@ -62,6 +62,5 @@ namespace CodeVoidWPF.Pages
 
             ShopBalance.Text += Shop_Points;
         }
-
     }
 }
