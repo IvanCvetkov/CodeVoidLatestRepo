@@ -81,11 +81,17 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         }
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
+            string RTBtext = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
+
             //Email sent successfully alert
             if (FirstName.Text != "*First Name"
                 && LastName.Text != "*Last Name"
                 && Subject.Text != "*Subject"
-                && MessageRTB != null)
+                && MessageRTB != null
+                && FirstName.Text != ""
+                && LastName.Text != ""
+                && Subject.Text != ""
+                && RTBtext.Length >= 50)
             {
                 Email_send();
                 MailAlert mailAlert = new MailAlert();
@@ -97,7 +103,11 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (FirstName.Text == "*First Name"
                 || LastName.Text == "*Last Name"
                 || Subject.Text == "*Subject"
-                || MessageRTB == null)
+                || MessageRTB == null
+                || FirstName.Text == ""
+                || LastName.Text == ""
+                || Subject.Text == ""
+                || RTBtext.Length < 50)
             {
                 FailAlert failAlert = new FailAlert();
                 failAlert.ShowDialog();
