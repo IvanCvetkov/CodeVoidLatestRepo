@@ -81,14 +81,13 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         }
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            Email_send();
-
             //Email sent successfully alert
             if (FirstName.Text != "*First Name"
                 && LastName.Text != "*Last Name"
                 && Subject.Text != "*Subject"
                 && MessageRTB != null)
             {
+                Email_send();
                 MailAlert mailAlert = new MailAlert();
                 mailAlert.ShowDialog();
             }
