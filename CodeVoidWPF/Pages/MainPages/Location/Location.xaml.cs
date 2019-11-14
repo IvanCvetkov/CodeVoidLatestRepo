@@ -174,18 +174,6 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         //Information Boxes CleanUp
         private void Message_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            string Message = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
-            if (Message == "*Your Message")
-            {
-                //# FFE4E4E4
-                string ColorCode = "#FFE4E4E4";
-                var brushConverter = new BrushConverter();
-                MessageRTB.Background = (Brush)brushConverter.ConvertFrom(ColorCode);
-            }
-            else
-            {
-                MessageRTB.Background = Brushes.Beige;
-            }
         }
         private void FirstName_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -210,33 +198,23 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         }
         private void Phone_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (Phone.Text == "*Phone")
+            if (Phone.Text == "Phone")
             {
                 Phone.Clear();
             }
         }
         private void School_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (School.Text == "*School")
+            if (School.Text == "School")
             {
                 School.Clear();
             }
         }
         private void City_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (City.Text == "*City")
+            if (City.Text == "City")
             {
                 City.Clear();
-            }
-        }
-
-
-        //Information Boxes Redefinition
-        private void FirstName_PreviewMouseUp(object sender, MouseButtonEventArgs e)
-        {
-            if (FirstName.Text == null)
-            {
-                FirstName.Text = "*First Name";
             }
         }
 

@@ -34,9 +34,15 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid x:Name="BlueGrid" HorizontalAlignment="Left" Margin="10,9,0,1" 
-              Grid.Row="4" Width="1196" Background="#FFB4CFFF">
-            <TextBlock FontSize="28" TextWrapping="NoWrap"
-                       Margin="114,181,661,396" Text="We Teach, We Code, We Develop"/>
+              Grid.Row="4" Background="#FFB4CFFF" Width="1196">
+
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius = "10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+            </Grid.Effect>
+            <TextBlock 
+                
+                FontSize="28" TextWrapping="NoWrap"
+                       Margin="114,181,661,396" Text="We Teach, We Code, We Develop" FontFamily="Dosis"/>
             <Image  x:Name="MainPagePic" Source="pack://application:,,,/Images/DesktopTwo.png"
                     Margin="570,10,66,330">
                 <Image.Triggers>
@@ -68,6 +74,10 @@
         </Grid>
         <Grid x:Name="PurpleGrid" HorizontalAlignment="Left" Height="401" Margin="10,325,0,-403"
               Grid.Row="4" VerticalAlignment="Top" Width="1196">
+
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius = "10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+            </Grid.Effect>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="348*"/>
                 <ColumnDefinition Width="451*"/>
@@ -84,6 +94,9 @@
                        Margin="0,0,0,397" Grid.ColumnSpan="4"></Rectangle>
             <Grid HorizontalAlignment="Left" Height="308" Margin="85,47,0,0"
                   VerticalAlignment="Top" Width="248" Background="#FFBA92FF">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                </Grid.Effect>
                 <Button x:Name="About" Width="126" Height="49" Click="About_Click" 
                         Margin="62,249,0,0" HorizontalAlignment="Left"
                         VerticalAlignment="Top" Background="#FF7C56BD">
@@ -122,11 +135,15 @@
             </Grid>
             <Grid HorizontalAlignment="Left" Height="308" Margin="55,47,0,0"
                   VerticalAlignment="Top" Width="248" Background="#FFBA92FF" Grid.Column="2">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius = "10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                </Grid.Effect>
                 <Button x:Name="Location" Width="126" Height="49" Click="Location_Click"
                         Margin="62,249,0,0" HorizontalAlignment="Left"
                         VerticalAlignment="Top" Background="#FF7C56BD">
                     <materialDesign:PackIcon Kind="FormatLineWeight"
                                              Height="39" Width="55"/>
+                    
                 </Button>
                 <TextBlock FontStyle="Italic" FontWeight="SemiBold" 
                            FontSize="32" TextWrapping="WrapWithOverflow"
@@ -158,11 +175,15 @@
             </Grid>
             <Grid HorizontalAlignment="Left" Height="308" Margin="119.833,47,0,0"
                   VerticalAlignment="Top" Width="248" Background="#FFBA92FF" Grid.Column="1">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius = "10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                </Grid.Effect>
                 <Button x:Name="News" Width="126" Height="49" Click="News_Click"
                         Margin="62,249,0,0" HorizontalAlignment="Left"
                         VerticalAlignment="Top" Background="#FF7C56BD">
                     <materialDesign:PackIcon Kind="FormatLineWeight" Height="39" Width="55"/>
                 </Button>
+                
                 <TextBlock FontStyle="Italic" FontWeight="SemiBold" FontSize="32"
                            TextWrapping="WrapWithOverflow" Margin="80,192,42,59" Text=" News"/>
                 <Button x:Name="NewsIcon" Width="162" Height="142" Margin="44,41,0,0"

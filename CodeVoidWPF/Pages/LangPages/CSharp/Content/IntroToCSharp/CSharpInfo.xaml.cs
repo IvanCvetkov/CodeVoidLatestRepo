@@ -28,7 +28,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         //Default Pages
         private void Variables_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Variables.xaml", UriKind.RelativeOrAbsolute));
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Variables.xaml", UriKind.Relative));
         }
 
         private void Operators_Click(object sender, RoutedEventArgs e)

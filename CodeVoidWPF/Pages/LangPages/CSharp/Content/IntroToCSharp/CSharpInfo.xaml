@@ -13,260 +13,134 @@
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d"
-     Title="CSharpInfo" Height="3000" Width="3000">
-
+     Title="CSharpInfo" Height="1200" Width="3000">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Padding="30" FontSize="30" Grid.Row="0" Text="Let's get started with programming in C#!" Margin="1,0,-151,106"/>
-        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Grid.Column="3" Height="4" Margin="10,84,-104,114" Grid.ColumnSpan="2"/>
-        <Button x:Name="Introduction" Width="154" Height="63" Click="Introduction_Click" Margin="156,125,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF7806B9">
-            <materialDesign:PackIcon Kind="Dangerous" Height="53" Width="124"/>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="IntroductionAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="0" To="10" Duration="00:00:00:01"
+
+        <Grid Background="#FFCFCFCF" Grid.ColumnSpan="2" Margin="0,0,0,10" Grid.RowSpan="2" HorizontalAlignment="Left">
+            <ScrollViewer HorizontalAlignment="Left" HorizontalScrollBarVisibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Rectangle Height="120" Margin="20" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Button x:Name="Introduction" Style="{DynamicResource CircleButton}" Margin="750,10,41,10" Background="#FF68BD22" Width="150" Click="Introduction_Click" BorderBrush="#FF8522BD">
+                            <Grid Width="150">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <materialDesign:PackIcon Kind="InteractionTap" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                                <TextBlock HorizontalAlignment="Center" Text="INTRODUCTION" FontSize="17" FontFamily="Bernard MT Condensed" Margin="32,0,24,-27" Width="94" Grid.ColumnSpan="2"/>
+                            </Grid>
+                            <Button.RenderTransform>
+                                <TranslateTransform x:Name="IntroductionAnim" X="0" Y="0"/>
+                            </Button.RenderTransform>
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Window.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation From="5" To="0" Duration="00:00:01"
                                 Storyboard.TargetName="IntroductionAnim"
                                 Storyboard.TargetProperty="Y"
                                 AutoReverse="True" RepeatBehavior="Forever">
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Button x:Name="Variables" Style="{DynamicResource CircleButton}" Width="155" Height="63" Click="Variables_Click" Margin="45,21,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Background="#FF7806B9">
-            <materialDesign:PackIcon Kind="Variable" Height="63" Width="126"></materialDesign:PackIcon>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="VariablesAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <TextBlock FontSize="25" Text="Get started with C#" FontFamily="Champagne &amp; Limousines" Margin="84,10,560,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                        <TextBlock FontSize="21" Text="- Here we will introduce you to C# as a programming language" FontFamily="Champagne &amp; Limousines" Margin="94,48,223,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                        <Grid Width="35" Height="50" Background="#FF41A43C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <materialDesign:PackIcon Kind="TableOfContents" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Rectangle Height="120" Margin="-970,187,1010,-107" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Button x:Name="Variables" Click="Variables_Click" Style="{DynamicResource CircleButton}" Margin="-239,156,1030,-136" Background="#FFFFAF24" Width="150" BorderBrush="#FF8522BD">
+                            <Grid Width="150">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="79*"/>
+                                    <ColumnDefinition Width="71*"/>
+                                </Grid.ColumnDefinitions>
+                                <materialDesign:PackIcon Kind="LabelOffOutline" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                                <TextBlock HorizontalAlignment="Center" Text="VARIABLES" FontSize="17" FontFamily="Bernard MT Condensed" Margin="40,0,16,-27" Width="94" Grid.ColumnSpan="2"/>
+                            </Grid>
+                            <Button.RenderTransform>
+                                <TranslateTransform x:Name="VariablesAnim" X="0" Y="0"/>
+                            </Button.RenderTransform>
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Window.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
                                 Storyboard.TargetName="VariablesAnim"
                                 Storyboard.TargetProperty="Y"
                                 AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BounceEase Bounces="1" EasingMode="EaseOut"
                                             Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <TextBlock FontSize="26" Text="Variables" Margin="45,203,484,1160" Grid.RowSpan="2"/>
-        <Button x:Name="Arrays" Width="155" Style="{DynamicResource CircleButton}" Height="63" Click="Arrays_Click" Margin="293,21,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
-            <materialDesign:PackIcon Kind="CodeBrackets" Height="56" Width="126"></materialDesign:PackIcon>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="ArraysAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="5" To="0" Duration="00:00:01"
-                                Storyboard.TargetName="ArraysAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Button x:Name="Operators" Style="{DynamicResource CircleButton}" Width="155" Height="Auto" Click="Operators_Click" Margin="45,130,0,1000" HorizontalAlignment="Left" Grid.Row="1" Background="#FF7806B9">
-            <materialDesign:PackIcon Kind="Number0BoxMultipleOutline" Height="52" Width="126"></materialDesign:PackIcon>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="OperatorsAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
-                                Storyboard.TargetName="OperatorsAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <TextBlock FontSize="26" Text="Arrays" Margin="293,198,236,1165" Grid.RowSpan="2"/>
-        <Button x:Name="NumSystems" Width="197" Height="Auto" Click="NumSystems_Click" Margin="871,150,0,0" HorizontalAlignment="Left" Grid.Row="0" BorderBrush="Black" Foreground="#DD7CFF10" Background="Black">
-            <materialDesign:PackIcon Kind="Matrix" Height="52" Width="126"></materialDesign:PackIcon>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="NumberSystemsAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
-                                Storyboard.TargetName="NumberSystemsAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Button x:Name="Loops" Style="{DynamicResource CircleButton}" Width="155" Height="Auto" Click="Loops_Click" Margin="45,236,0,894" HorizontalAlignment="Left" Grid.Row="1" Background="#FF7806B9">
-            <materialDesign:PackIcon Kind="Loop" Height="52" Width="126"></materialDesign:PackIcon>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="LoopsAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
-                                Storyboard.TargetName="LoopsAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Button x:Name="Methods" Style="{DynamicResource CircleButton}" Width="155" Height="63" Click="Methods_Click" Margin="45,357,0,772" HorizontalAlignment="Left" Grid.Row="1" Background="#FF7806B9">
-            <materialDesign:PackIcon Kind="Mastodon" Height="52" Width="126"></materialDesign:PackIcon>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="MethodsAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
-                                Storyboard.TargetName="MethodsAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Button x:Name="Classes" Style="{DynamicResource CircleButton}" Width="155" Height="57" Click="Classes_Click" Margin="293,236,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
-            <materialDesign:PackIcon Kind="DesktopMac" Height="52" Width="126"/>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="ClassesAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="5" To="0" Duration="00:00:01"
-                                Storyboard.TargetName="ClassesAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Button x:Name="ExceptionHandling" Style="{DynamicResource CircleButton}" Width="155" Height="57" Click="ExceptionHandling_Click" Margin="293,130,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
-            <materialDesign:PackIcon  Kind="Error" Height="52" Width="126"/>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="ExceptionHandlingAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="5" To="0" Duration="00:00:01"
-                                Storyboard.TargetName="ExceptionHandlingAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        <Button x:Name="TextFiles" Style="{DynamicResource CircleButton}" Width="155" Height="64" Click="TextFiles_Click" Margin="293,354,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
-            <materialDesign:PackIcon Kind="TooltipTextOutline" Height="52" Width="126"/>
-            <Button.RenderTransform>
-                <TranslateTransform x:Name="TextFilesAnim" X="0" Y="0"/>
-            </Button.RenderTransform>
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation From="5" To="0" Duration="00:00:01"
-                                Storyboard.TargetName="TextFilesAnim"
-                                Storyboard.TargetProperty="Y"
-                                AutoReverse="True" RepeatBehavior="Forever">
-                                <DoubleAnimation.EasingFunction>
-                                    <BounceEase Bounces="1" EasingMode="EaseOut"
-                                            Bounciness="7" />
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
-        
-        <TextBlock FontSize="26" Text="Operators" Margin="45,101,484,1060" Grid.Row="1"/>
-        <TextBlock FontSize="26" Text="Loops" Margin="45,209,484,937" Grid.Row="1"/>
-        <TextBlock FontSize="26" Text="Methods" Margin="45,323,484,817" Grid.Row="1"/>
-        <TextBlock FontSize="26" Margin="293,203,236,937" Grid.Row="1"><Run Text="Classes"/></TextBlock>
-        <TextBlock FontSize="26" Text="Number Systems" Margin="871,113,-342,57"/>
-        <TextBlock FontSize="26" Text="Exceptions" Margin="293,101,236,1039" Grid.Row="1"/>
-        <TextBlock FontSize="26" Text="Text Files" Margin="293,323,236,817" Grid.Row="1"/>
-        <TextBlock FontSize="26" Text="Introduction" Margin="160,92,374,77"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <TextBlock FontSize="25" Text="Variables - C#" FontFamily="Champagne &amp; Limousines" Margin="-902,156,1546,-76" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                        <TextBlock FontSize="21" Text="Here we will introduce you to the variables - C#" FontFamily="Champagne &amp; Limousines" Margin="-902,196,1317,-116" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                        <Grid Width="35" Height="50" Background="#FFFFAF24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-972,147,0,-77">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <materialDesign:PackIcon Kind="TableOfContents" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                </Grid>
+            </Grid></ScrollViewer>
+        </Grid>
 
-        <!--BUTTONS SCALABILITY RESOURCE-->
+
+        <!--BUTTONS SCALABILITY AND ANIMATION ON CLICK RESOURCE-->
     </Grid>
     <Page.Resources>
         <Style x:Key="MyFocusVisual">

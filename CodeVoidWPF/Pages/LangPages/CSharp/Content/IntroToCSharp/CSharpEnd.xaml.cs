@@ -349,6 +349,8 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
 
         private void CSharpInfo_Click(object sender, RoutedEventArgs e)
         {
+
+            //Points to add
             string[] points = { "15" };
 
             string docPath =
@@ -382,6 +384,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
             //Navigation service
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
         }
+        
     }
 }
 
