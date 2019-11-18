@@ -9,7 +9,7 @@ using System.Windows;
 // associated with an assembly.
 [assembly: AssemblyTitle("CodeVoidWPF")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyConfiguration("1")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("CodeVoidWPF")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]

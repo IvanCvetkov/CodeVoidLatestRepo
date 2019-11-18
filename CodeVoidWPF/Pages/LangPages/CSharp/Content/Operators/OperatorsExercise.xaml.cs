@@ -354,7 +354,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
 
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\Operators\\Operators.sln");
+            //Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\Operators\\Operators.sln");
         }
 
         

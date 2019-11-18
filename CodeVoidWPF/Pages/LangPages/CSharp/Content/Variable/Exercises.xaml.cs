@@ -358,7 +358,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
             //********VISUAL STUDIO VARIABLES PAGE CODE********\\
-            
+
             string strMachineName = Environment.MachineName.ToString();
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string Startup_Path = strMachineName + System.IO.Path.Combine

@@ -139,6 +139,5 @@ namespace CodeVoidWPF.Pages
             MainWindow.win.NavigateLast();
         }
 
-
     }
 }

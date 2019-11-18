@@ -35,7 +35,7 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="BlueGrid" HorizontalAlignment="Left" Margin="10,9,0,1" 
               Grid.Row="4" Background="#FFB4CFFF" Width="1196">
-
+            
             <Grid.Effect>
                 <DropShadowEffect BlurRadius = "10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
             </Grid.Effect>

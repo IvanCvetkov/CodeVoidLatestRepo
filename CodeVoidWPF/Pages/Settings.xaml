@@ -31,23 +31,28 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="BlueGrid"  Background="#FFB4CFFF" Grid.ColumnSpan="5" Margin="80,10,-76,-6" Grid.RowSpan="5">
-            <Border 
-            BorderBrush="Black"
-            BorderThickness="1"
-            CornerRadius="10">
-                <Border.Effect>
-                    <DropShadowEffect />
-                </Border.Effect>
-            </Border>
-            <TextBlock Padding="30" FontSize="46" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="178,10,384,625"><Run Text="Settings"/></TextBlock>
-        <ToggleButton x:Name="DarkModeTgl" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="False" Click="DarkModeTgl_Click" Height="Auto" Width="Auto" Margin="270,159,479,601" Checked="DarkModeTgl_Checked"/>
-        <Label Content="Dark Mode" Margin="197,159,522,592"/>
-        </Grid>
-        <Button x:Name="BtnBackSettings"
+        <Grid Grid.Column="1">
+            <Rectangle Margin="25,10,-231,153" Fill="#FFC1C1C1" RadiusY="10" RadiusX="10" >
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Grid Margin="25" Height="800">
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Padding="30" FontSize="46" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="270,0,292,635" FontFamily="Bernard MT Condensed"><Run Text="Settings"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Button x:Name="BtnBackSettings"
                 IsEnabled="True" Click="BtnBackSettings_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
-        </Button>
-    </Grid>
+                    <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+                </Button>
 
+                <ToggleButton x:Name="DarkModeTgl" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="False" Click="DarkModeTgl_Click" Height="Auto" Width="Auto" Margin="276,151,473,609" Checked="DarkModeTgl_Checked"/>
+                <Label x:Name="DarkMode" Content="Dark Mode" Margin="197,159,522,592"/>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
 </Page>

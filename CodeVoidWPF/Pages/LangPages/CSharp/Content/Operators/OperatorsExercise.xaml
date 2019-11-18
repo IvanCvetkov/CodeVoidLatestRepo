@@ -33,8 +33,8 @@
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
         <!--<Button x:Name="BtnCompile" FontSize="28" Height="Auto" Content="Compile" Click="BtnCompile_Click"  Margin="371,568,2340,134" Grid.Column="0" Background="Red"/>-->
-        <Button x:Name="vs" Content="Open in Visual Studio" Width="289" FontSize="26" Height="52" Click="Vs_Click" Margin="173,621,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button x:Name="BtnCompile" Content="Compile" Width="289" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="173,564,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red"/>
+        <Button x:Name="vs" Content="Open in Visual Studio" Width="289" FontSize="26" Height="52" Click="Vs_Click" Margin="173,564,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="BtnCompile" Content="Compile" Width="289" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="173,621,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Red"/>
         <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="685,621,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,70,-20,683"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="The IF statement is used to check IF something is right or wrong" Margin="52,102,16,597"/>
