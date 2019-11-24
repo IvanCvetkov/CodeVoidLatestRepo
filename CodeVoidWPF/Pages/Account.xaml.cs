@@ -21,8 +21,18 @@ namespace CodeVoidWPF.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
             Login l = new Login();
             l.ShowDialog();
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            Register r = new Register();
+            r.ShowDialog();
         }
     }
 }

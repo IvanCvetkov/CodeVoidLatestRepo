@@ -44,7 +44,7 @@
         HorizontalAlignment="Center"
         VerticalAlignment="Center">
                         <TextBlock>
-        James Willock
+        
                         </TextBlock>
                         <Button
           Style="{StaticResource MaterialDesignFlatButton}"
@@ -144,7 +144,10 @@
                 IsEnabled="True" Click="BtnBackAccount_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
         </Button>
-        <Grid HorizontalAlignment="Stretch" Margin="258,330,-171,-282" VerticalAlignment="Stretch"/>
+        <Grid HorizontalAlignment="Stretch" Margin="258,330,-171,-282" VerticalAlignment="Stretch">
+            <Button x:Name="login" Content="login" HorizontalAlignment="Left" Margin="254,10,0,0" VerticalAlignment="Top" Click="Login_Click" Width="76"/>
+            <Button x:Name="register" Content="register" HorizontalAlignment="Left" Margin="380,10,0,0" VerticalAlignment="Top" Click="Register_Click" Width="82"/>
+        </Grid>
 
     </Grid>
 </Page>

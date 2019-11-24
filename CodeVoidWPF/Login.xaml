@@ -6,19 +6,16 @@
         xmlns:local="clr-namespace:CodeVoidWPF"
         mc:Ignorable="d"
          WindowStyle="None"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"   
         Background="Transparent"
         Title="Login" Height="450" Width="800">
     <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="AlertGrid">
 
 
-            <Border CornerRadius="20" Grid.RowSpan="2" Margin="0,0,240,0">
+            <Border x:Name="AlertBorder" CornerRadius="20" Margin="0,0,417,218">
                 <Border.Background>
                     <LinearGradientBrush>
                         <GradientStop Color="#7be9f6" Offset="0.0"/>
@@ -26,22 +23,9 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
-
-
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock Text=""
-                          FontWeight="Light"
-                          FontFamily="helvetica"
-                          FontSize="22"
-                          Foreground="White"
-                          HorizontalAlignment="Center"/>
-            </StackPanel>
-
-
-
             <StackPanel Grid.Row="1" >
                 <StackPanel Orientation="Horizontal">
-                    <TextBox  x:Name="username"
+                    <TextBox  x:Name="username" PreviewMouseLeftButtonDown="Username_PreviewMouseLeftButtonDown"
                             FontWeight="Light"
                             Text="Username"
                             FontSize="20"
@@ -52,20 +36,28 @@
                             Width="235"
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
-                            Height="25"
+                            Height="41"
                             Margin="63,0,0,0"/>
+                    <Button BorderThickness="30" Height="33" Margin="0,0,0,10" Width="80" Click="Button_Click" BorderBrush="#FFC9ABFF">
+                        <Button.Background>
+                            <ImageBrush/>
+                        </Button.Background>
+                        <materialDesign:PackIcon Kind="Close" VerticalAlignment="Center" Width="52" Height="46"/>
+                    </Button>
                 </StackPanel>
                 <Border Width="250"
                        Height="2"
                        Background="White"
+                        Margin="0,0,420,0"
                        Opacity="0.5"/>
 
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <TextBox x:Name="mail" Text="ivan-dd@mail.bg" Height="48"></TextBox>
-                    <TextBox x:Name="password" FontFamily="Helvetica"
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox  x:Name="pass" PreviewMouseLeftButtonDown="Pass_PreviewMouseLeftButtonDown"
                             FontWeight="Light"
+                            Text="Password"
                             FontSize="20"
                             HorizontalAlignment="Center"
                             Foreground="White"
@@ -74,18 +66,17 @@
                             Width="235"
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
-                            Height="25"
+                            Height="41"
                             Margin="63,0,0,0"/>
+                    </StackPanel>
                 </StackPanel>
                 <Border Width="250"
-                       Height="2"
+                       Margin="0,0,420,0"
+                        Height="2"
                        Background="White"
                        Opacity="0.5"/>
-
-
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button x:Name="LoginBtn" Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0" Click="Login_Click"/>
-                    <Button x:Name="RegisterBtn" Height="40" Content="REGISTER" Click="Register_Click"/>
+                    <Button x:Name="LoginBtn" Width="258" Height="40" FontSize="20" Content="LOGIN" Margin="60,0,60,0" Click="Login_Click"/>
                 </StackPanel>
 
             </StackPanel>
