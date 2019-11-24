@@ -34,14 +34,54 @@
 
         <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="OperatorsBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="OperatorsBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,67,-20,680" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Logical Operators are used to perform the logical" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="operation between two operands like AND, OR and NOT." Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="The Logical Operators always work with Boolean" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="expressions - true or false" Grid.ColumnSpan="2"/>
-        <Button x:Name="Exercisez" Width="94" Height="52" Click="Operators_Click" Margin="799,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
+        <Button x:Name="Next" Width="94" Height="52" Click="Operators_Click" Margin="799,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="Front" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="Front"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
             <Image Width = "658" Source = "pack://application:,,,/Images/logical.png"

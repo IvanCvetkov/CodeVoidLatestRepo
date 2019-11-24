@@ -26,8 +26,21 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
+        <TextBlock x:Name="Variable" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
              <Run Foreground="CornflowerBlue">Variables</Run>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                                            Storyboard.TargetName="Variable" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="2" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="0,69,-4,711" Height="4"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,104,2322,485" Text="A variable is a name given to a storage area that our programs can manipulate. Each variable in C# has a type of her own, which determines the layout and the size of the variable's memory and the set of operations that can be applied to the variable." RenderTransformOrigin="0.5,0.5"/>
@@ -42,9 +55,49 @@
 
         <Button x:Name="Nextvar" Width="94" Height="52" Click="Nextvar_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="VariablesNext" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="VariablesNext"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <Button x:Name="BackToInfo" Width="94" Height="52" Click="BackToInfo_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="VariablesBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="VariablesBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
 
         <RichTextBox FontSize="16" IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="580" Margin="683,84,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged">

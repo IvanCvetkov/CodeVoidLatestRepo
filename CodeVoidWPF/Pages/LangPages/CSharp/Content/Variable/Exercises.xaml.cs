@@ -6,11 +6,11 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Reflection;
-using System.CodeDom;
 using Microsoft.CSharp;
 using System.CodeDom.Compiler;
 using System.Linq;
-using System.IO.Packaging;
+using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
+using System.IO;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 {
@@ -22,10 +22,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
         public Exercises()
         {
             InitializeComponent();
-        }
-        private void Exercise_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Exercise.xaml", UriKind.Relative));
         }
 
         private void BackToVariables_Click(object sender, RoutedEventArgs e)
@@ -358,13 +354,33 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
             //********VISUAL STUDIO VARIABLES PAGE CODE********\\
+            string desktop_Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string sln_Path = "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\VariableMultiplication\\VariableMultiplication.sln";
+            string full_Path = desktop_Path + sln_Path;
 
-            string strMachineName = Environment.MachineName.ToString();
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string Startup_Path = strMachineName + System.IO.Path.Combine
-                (path, "CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\VariableMultiplication\\VariableMultiplication.sln");
-            Process.Start(Startup_Path);
+            if (File.Exists(full_Path))
+            {
+
+                //Start the .sln file
+                ProcessStartInfo variables = new ProcessStartInfo()
+                {
+                    FileName = full_Path
+                };
+                Process.Start(variables);
+            }
+            else
+            {
+
+                //The file doesn't exist 
+                Failure failure = new Failure();
+                failure.ShowDialog();
+            }
             //********VISUAL STUDIO VARIABLES PAGE CODE********\\
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Exercise.xaml", UriKind.Relative));
         }
     }
 }

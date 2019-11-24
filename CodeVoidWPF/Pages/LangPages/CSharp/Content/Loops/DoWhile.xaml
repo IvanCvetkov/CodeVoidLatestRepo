@@ -33,9 +33,42 @@
 
         <Button x:Name="Back" Width="94" Height="52" Click="Back_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="LoopsBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
-        <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
+        <TextBlock x:Name="do" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
              <Run Foreground="CornflowerBlue">Do While Loop</Run>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                                            Storyboard.TargetName="do" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="2" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="The do statement executes a statement or a block of statements " Margin="12,252,56,88" Grid.ColumnSpan="2"/>
@@ -45,6 +78,26 @@
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="16,346,36,380" Text="The following diagram shows you how it actually works." Grid.ColumnSpan="2"/>
         <Button x:Name="DoWhileTwo" Width="94" Height="52" Click="DoWhileTwo_Click" Margin="796,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="LoopsFront" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsFront"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
             <Image Width = "417" Source = "pack://application:,,,/Images/DoWhile.png"

@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
 {
@@ -29,11 +30,33 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
         }
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/LoopsTwo.xaml", UriKind.Relative));
         }
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-           Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\ForLoop\\ForLoop.sln");
+            //********VISUAL STUDIO FOR LOOP PAGE CODE********\\
+            string desktop_Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string sln_Path = "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\ForLoop\\ForLoop.sln";
+            string full_Path = desktop_Path + sln_Path;
+
+            if (File.Exists(full_Path))
+            {
+
+                //Start the .sln file
+                ProcessStartInfo variables = new ProcessStartInfo()
+                {
+                    FileName = full_Path
+                };
+                Process.Start(variables);
+            }
+            else
+            {
+
+                //The file doesn't exist 
+                Failure failure = new Failure();
+                failure.ShowDialog();
+            }
+            //********VISUAL STUDIO FOR LOOP PAGE CODE********\\
         }
 
         static List<string> blueTags = new List<string>();

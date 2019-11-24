@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
+using CodeVoidWPF.Pages.LangPages.CSharp.Content.IntroToCSharp;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp
 {
@@ -48,7 +51,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         //Second page navigation
         private void SecondPageContent_Click(object sender, RoutedEventArgs e)
         {
-            WaitUnload();
+            AllRectanglesUnloaded();
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfoTwo.xaml", UriKind.Relative));
         }
 
@@ -67,7 +70,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         }
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
-            AllRectanglesUnloaded();
+            
         }
         //public void AllGrids()
         //{
@@ -188,11 +191,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
             VariablesRec.BeginAnimation(WidthProperty, variablesRectangle);
             OperatorsRec.BeginAnimation(WidthProperty, operatorsRectangle);
             LoopsRec.BeginAnimation(WidthProperty, loopsRectangle);
-        }
-
-       public async void WaitUnload()
-        {
-            await Task.Delay(2000);
         }
     }
 }

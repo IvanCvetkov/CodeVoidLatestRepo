@@ -19,7 +19,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
         }
         private void Nextvarpage_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Exercises.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Exercises.xaml", UriKind.RelativeOrAbsolute));
         }
         private void BackToVariables_Click(object sender, RoutedEventArgs e)
         {

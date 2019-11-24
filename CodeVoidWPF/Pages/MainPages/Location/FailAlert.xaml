@@ -42,7 +42,7 @@
                 <materialDesign:PackIcon Kind="SmsFailedOutline" Height="Auto" Width="Auto"></materialDesign:PackIcon>
             
             </Button>
-            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16" Text="the E-Mail failed to send!" FontStyle="Italic" Margin="200,32,73,10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16" Text="The E-Mail failed to send!" FontStyle="Italic" Margin="200,32,73,10" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

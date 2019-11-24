@@ -1,8 +1,10 @@
-﻿using Microsoft.CSharp;
+﻿using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
+using Microsoft.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -344,12 +346,34 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/LoopsTwo.xaml", UriKind.Relative));
         }
 
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\DoWhileLoop\\DoWhileLoop.sln");
+            //********VISUAL STUDIO DOWHILE LOOP PAGE CODE********\\
+            string desktop_Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string sln_Path = "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\DoWhileLoop\\DoWhileLoop.sln";
+            string full_Path = desktop_Path + sln_Path;
+
+            if (File.Exists(full_Path))
+            {
+
+                //Start the .sln file
+                ProcessStartInfo variables = new ProcessStartInfo()
+                {
+                    FileName = full_Path
+                };
+                Process.Start(variables);
+            }
+            else
+            {
+
+                //The file doesn't exist 
+                Failure failure = new Failure();
+                failure.ShowDialog();
+            }
+            //********VISUAL STUDIO FOR LOOP PAGE CODE********\\
         }
 
         private void BackDoWhile_Click(object sender, RoutedEventArgs e)

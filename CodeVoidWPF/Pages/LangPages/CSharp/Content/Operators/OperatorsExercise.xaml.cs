@@ -9,6 +9,8 @@ using System.CodeDom.Compiler;
 using System.Linq;
 using System.Windows.Documents;
 using System.Windows.Media;
+using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
+using System.IO;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
 {
@@ -354,9 +356,30 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Operators
 
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            //Process.Start("C:\\Users\\ivan-\\Desktop\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\Operators\\Operators.sln");
-        }
 
-        
+            //********VISUAL STUDIO OPERATORS PAGE CODE********\\
+            string desktop_Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string sln_Path = "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\Operators\\Operators.sln";
+            string full_Path = desktop_Path + sln_Path;
+
+            if (File.Exists(full_Path))
+            {
+
+                //Start the .sln file
+                ProcessStartInfo variables = new ProcessStartInfo()
+                {
+                    FileName = full_Path
+                };
+                Process.Start(variables);
+            }
+            else
+            {
+
+                //The file doesn't exist 
+                Failure failure = new Failure();
+                failure.ShowDialog();
+            }
+            //********VISUAL STUDIO OPERATORS PAGE CODE********\\
+        }
     }
 }

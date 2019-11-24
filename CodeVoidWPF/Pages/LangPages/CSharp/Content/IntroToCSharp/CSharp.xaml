@@ -13,8 +13,7 @@
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
-      d:DesignHeight="3000" d:DesignWidth="3000"
-      Title="CSharp">
+      d:DesignHeight="3000" d:DesignWidth="3000" Loaded="Page_Loaded" Title="CSharp">
 
     <Grid>
 
@@ -26,13 +25,53 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <Label Content="What is C#?" FontSize="48" Padding="50"></Label>
-        <TextBlock Margin="15,155,15,60" FontSize="22" TextWrapping="Wrap" xml:space="preserve">
-         C# is an elegant and type-safe object-oriented language that enables developers to build a variety of secure and robust applications that run on the .NET Framework. You can use C# to create Windows client applications, XML Web services, distributed components, client-server applications, database applications, and much, much more. Visual C# provides an advanced code editor, convenient user interface designers, integrated debugger, and many other tools to make it easier to develop applications based on the C# language and the .NET Framework.
+
+        <Label Content="What is C#?" FontSize="48" Padding="50">
+            <Label.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                                            Storyboard.TargetName="Text" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="2" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Label.Triggers>
+        </Label>
+        <TextBlock Text="C# is an elegant and type-safe object-oriented language that enables developers to build a variety of secure and robust applications that run on the .NET Framework. You can use C# to create Windows client applications, XML Web services, distributed components, client-server applications, database applications, and much, much more. Visual C# provides an advanced code editor, convenient user interface designers, integrated debugger, and many other tools to make it easier to develop applications based on the C# language and the .NET Framework." x:Name="Text" Margin="15,155,15,60" FontSize="22" TextWrapping="Wrap" xml:space="preserve">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                                            Storyboard.TargetName="Text" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="2" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
         </TextBlock>
-        <TextBlock Margin="15,410,15,40" FontSize="22" TextWrapping="Wrap">
+        
+        <TextBlock x:Name="Text2" Margin="15,410,15,40" FontSize="22" TextWrapping="Wrap">
             C# syntax is highly expressive, yet it is also simple and easy to learn. The curly-brace syntax of C# will be instantly recognizable to anyone familiar with C, C++ or Java. Developers who know any of these languages are typically able to begin to work productively in C# within a very short time. C# syntax simplifies many of the complexities of C++ and provides powerful features such as nullable value types, enumerations, delegates, lambda expressions and direct memory access, which are not found in Java. C# supports generic methods and types, which provide increased type safety and performance, and iterators, which enable implementers of collection classes to define custom iteration behaviors that are simple to use by client code. Language-Integrated Query (LINQ) expressions make the strongly-typed query a first-class language construct.
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                                            Storyboard.TargetName="Text2" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="2" Duration="0:0:2.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:1.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
         </TextBlock>
         <Button x:Name="BtnNext" IsEnabled="True" Click="BtnNext_Click" Width="94" Height="52" Margin="1044,50,-338,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>

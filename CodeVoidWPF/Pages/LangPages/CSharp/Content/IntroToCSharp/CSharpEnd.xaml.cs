@@ -9,6 +9,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Diagnostics;
 using Microsoft.CSharp;
+using Microsoft.VisualBasic;
 using System.CodeDom.Compiler;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,15 +26,13 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         {
             InitializeComponent();
         }
-
-
         static List<string> blueTags = new List<string>();
         static List<char> blueSpecials = new List<char>();
         static string text;
         static List<string> grTags = new List<string>();
         static List<char> grspecials = new List<char>();
         static string grtext;
-        static List<string> yellowTags = new List<string>();
+        static readonly List<string> yellowTags = new List<string>();
         static List<char> yellowSpecials = new List<char>();
         static string yellowtext;
 
@@ -328,10 +327,13 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
 
         private void BtnCompile_Click(object sender, RoutedEventArgs e)
         {
+
+
+            //CSharpCompiler//
+
             string Framework = 'v' + Environment.Version.ToString();
             string OutputConsoleApp = "Output.exe";
             string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
-
             txtStatus.Clear();
             CSharpCodeProvider csc = new CSharpCodeProvider();
             CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
@@ -345,6 +347,44 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
                 txtStatus.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
                 Process.Start(StartupPath);
             }
+
+
+            //VisualBasic Compiler
+
+            //VBCodeProvider vbcsc = new VBCodeProvider();
+            //CompilerParameters vbparameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
+            //vbparameters.GenerateExecutable = true;
+            //CompilerResults vbresults = vbcsc.CompileAssemblyFromSource(vbparameters, new TextRange
+            //    (txtSource.Document.ContentStart, txtSource.Document.ContentEnd).Text);
+            //if (vbresults.Errors.HasErrors)
+            //    vbresults.Errors.Cast<CompilerError>().ToList().ForEach(error => txtStatus.Text += error.ErrorText + "\r\n");
+            //else
+            //{
+            //    txtStatus.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
+            //    Process.Start(StartupPath);
+            //}
+
+
+
+            //C++ Compiler
+            //var provider = CodeDomProvider.CreateProvider("cpp");
+            //CompilerParameters parameters = new CompilerParameters();
+            //parameters.ReferencedAssemblies.Add("System.dll");
+            //parameters.GenerateExecutable = true;
+            //parameters.OutputAssembly = OutputConsoleApp;
+            //CompilerResults cppresults = provider.CompileAssemblyFromSource(parameters, new TextRange
+            //    (txtSource.Document.ContentStart, txtSource.Document.ContentEnd).Text);
+
+            //CompilerResults result = provider.CompileAssemblyFromFile(parameters, new TextRange
+            //        (txtSource.Document.ContentStart, txtSource.Document.ContentEnd).Text);
+            //if (cppresults.Errors.HasErrors)
+            //    cppresults.Errors.Cast<CompilerError>().ToList().ForEach(error => txtStatus.Text += error.ErrorText + "\r\n");
+            //else
+            //{
+            //    txtStatus.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
+            //    Process.Start(StartupPath);
+            //}
+
         }
 
         private void CSharpInfo_Click(object sender, RoutedEventArgs e)
@@ -357,6 +397,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
                 Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string path = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/Introduction.txt";
             string finalPath = Path.Combine(docPath, path);
+
             try
             {
                 if (!File.Exists(finalPath))
@@ -376,6 +417,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
                     }
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Can't write to file" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -383,8 +425,9 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
 
             //Navigation service
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+
+
         }
-        
     }
 }
 

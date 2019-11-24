@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System;
 
 namespace CodeVoidWPF.Pages
 {
@@ -16,6 +17,12 @@ namespace CodeVoidWPF.Pages
         private void BtnBackAccount_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.win.NavigateLast();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Login l = new Login();
+            l.ShowDialog();
         }
     }
 }

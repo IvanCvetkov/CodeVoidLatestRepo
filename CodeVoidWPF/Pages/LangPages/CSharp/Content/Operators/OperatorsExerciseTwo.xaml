@@ -26,11 +26,51 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Button x:Name="Exercisez" Width="94" Height="52" Click="Operators_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Button x:Name="Home" Width="94" Height="52" Click="Operators_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="OperatorsHome" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="OperatorsHome"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="OperatorsBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="OperatorsBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,67,-20,680" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="24" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="In the first WriteLine method we output true or false " Margin="42,128,26,572"/>
@@ -83,6 +123,15 @@
                     <Run Text="            Console.WriteLine(a != b);   "/>
                 </Paragraph>
                 <Paragraph>
+                    <Run Text="             "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="             "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="            Console.ReadKey();   "/>
+                </Paragraph>
+                <Paragraph>
                     <Run Text="       }"/>
                 </Paragraph>
                 <Paragraph>
@@ -96,8 +145,8 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="BtnCompile" Content="Compile" Width="289" FontSize="26" Height="Auto" Click="BtnCompile_Click" Margin="184,543,0,163" HorizontalAlignment="Left" Background="Red"/>
-        <Button x:Name="vs" Content="Open in Visual Studio" Width="288" FontSize="26" Height="52" Click="Vs_Click" Margin="184,600,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="BtnCompile" Content="Compile" Width="289" FontSize="26" Height="Auto" Click="BtnCompile_Click" Margin="184,600,0,107" HorizontalAlignment="Left" Background="Red"/>
+        <Button x:Name="vs" Content="Open in Visual Studio" Width="288" FontSize="26" Height="52" Click="Vs_Click" Margin="184,543,0,163" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="685,596,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
     </Grid>
 </Page>

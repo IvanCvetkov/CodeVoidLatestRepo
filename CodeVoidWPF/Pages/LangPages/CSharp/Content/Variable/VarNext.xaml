@@ -29,6 +29,26 @@
 
         <Button x:Name="BackToVariables" Width="94" Height="52" Click="BackToVariables_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="VariablesBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="VariablesBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="0,69,-4,155" Height="4"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="As a software developer, practicing is an important activity to learn " Margin="42,162,26,474" Grid.RowSpan="2"/>
@@ -48,6 +68,26 @@
         <TextBlock FontSize="20" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="42,286,10,149" Text="keywords like int, string etc."/>
         <Button x:Name="NextVarPage" Width="94" Height="52" Click="Nextvarpage_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="VariablesNextPage" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="VariablesNextPage"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <RichTextBox FontSize="16" IsReadOnly="True" x:Name="txtStatus" HorizontalAlignment="Left" Height="580" Margin="683,87,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged" Grid.RowSpan="2">
             <FlowDocument>

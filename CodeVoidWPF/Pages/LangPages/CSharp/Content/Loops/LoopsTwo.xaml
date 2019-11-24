@@ -31,30 +31,67 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
-             <Run Foreground="CornflowerBlue">Loops</Run>
-        </TextBlock>
         <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="LoopsBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="The following image will give you the general idea of" Margin="16,186,673,579" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,206,203,482" Text="how all types of loops work." Grid.ColumnSpan="2"/>
         <Button x:Name="LoopsThree" Width="94" Height="52" Click="LoopsThree_Click" Margin="908,10,-57,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="Home" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="Home"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
 
         <StackPanel Orientation = "Horizontal" Margin="16,-155,-16,155" Grid.ColumnSpan="2">
-            <Image Width = "700" Source = "pack://application:,,,/Images/LoopsDescription.png"
+            <Image Width = "622" Source = "pack://application:,,,/Images/LoopsDescription.png"
             VerticalAlignment = "Top" Margin = "515,286,0,0" Height="305" RenderTransformOrigin="0.5,0.593"/>
         </StackPanel>
-        <Button Content="While" x:Name="While" FontSize="19" Width="94" Height="52" Click="While_Click" Margin="16,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black">
+        <Button Content="While" x:Name="While" FontSize="19" Width="94" Height="52" Click="While_Click" Margin="73,334,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black">
         </Button>
-        <Button FontSize="19" Content="For" x:Name="For" Width="94" Height="52" Click="For_Click" Margin="143,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.ColumnSpan="2">
+        <Button FontSize="19" Content="For" x:Name="For" Width="94" Height="52" Click="For_Click" Margin="167,334,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.ColumnSpan="2">
         </Button>
-        <Button FontSize="16" Content="DoWhile" x:Name="DoWhile" Width="94" Height="52" Click="DoWhile_Click" Margin="58,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+        <Button FontSize="16" Content="DoWhile" x:Name="DoWhile" Width="94" Height="52" Click="DoWhile_Click" Margin="71,334,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.Column="1">
         </Button>
-        <Button FontSize="19" Content="Nested" x:Name="Nested" Width="94" Height="52" Click="Nested_Click" Margin="192,365,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.Column="1">
+        <Button FontSize="19" Content="Nested" x:Name="Nested" Width="94" Height="52" Click="Nested_Click" Margin="165,334,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Grid.Column="1">
         </Button>
     </Grid>
 </Page>

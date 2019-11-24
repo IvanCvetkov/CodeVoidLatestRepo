@@ -34,9 +34,42 @@
 
         <Button x:Name="Back" Width="94" Height="52" Click="Back_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="WhileBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="WhileBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
-        <TextBlock Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
+        <TextBlock x:Name="WhileLoop" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
              <Run Foreground="CornflowerBlue">While Loop</Run>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                                            Storyboard.TargetName="WhileLoop" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="2" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="20,68,2,973" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"           Text="The while loop is used to execute code repeatedly." Margin="16,187,52,153" Grid.ColumnSpan="2"/>
@@ -48,22 +81,33 @@
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,322,32,402" Text="and the increment or decrement steps should be inside the loop." Grid.ColumnSpan="2"/>
         <Button x:Name="Whilebtn" Width="94" Height="52" Click="While_Click" Margin="1100,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="WhileFront" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="WhileFront"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
 
         <StackPanel Orientation = "Horizontal" Margin="0,140,-10,154" Grid.ColumnSpan="2">
             <Image Width = "626" Source="pack://application:,,,/Images/WhileDescCode.png"
             VerticalAlignment = "Top" Margin = "5,238,0,0" Height="487"/>
             <Image Source="pack://application:,,,/Images/While.png"
-                VerticalAlignment = "Top" Height="406" RenderTransformOrigin="0.5,0.5" Width="469" Margin="0,33,0,0">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
+                VerticalAlignment = "Top" Height="406" RenderTransformOrigin="0.509,0.436" Width="509" Margin="0,33,0,0"/>
         </StackPanel>
 
     </Grid>

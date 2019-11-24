@@ -18,7 +18,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
@@ -31,20 +31,59 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
+        <Button x:Name="Next" Width="94" Height="52" Click="Operators_Click" Margin="946,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="Front" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="Front"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
         <Button x:Name="BackToExercises" Width="94" Height="52" Click="BackToExercises_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="OperatorsBack" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="OperatorsBack"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,68,-216,681" Height="4" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="With the relational operators you can check if" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="something is true or false like A > B or A equals B" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="Let's Assume that we have two variables A and B" Grid.ColumnSpan="2"/>
         <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="A is 2 and B is 5 then - " Grid.ColumnSpan="2"/>
-        <Button x:Name="Exercisez" Width="94" Height="52" Click="Operators_Click" Margin="896,10,-135,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
-            <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
-        </Button>
         <StackPanel Orientation = "Horizontal" Margin="10,-154,-10,154" Grid.ColumnSpan="2">
-            <Image Width = "474" Source = "pack://application:,,,/Images/relational.png"
+            <Image Width = "623" Source = "pack://application:,,,/Images/relational.png"
             VerticalAlignment = "Top" Margin = "515,260,0,0" Height="400"/>
         </StackPanel>
 

@@ -10,8 +10,7 @@ using System.IO;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
-using System.Windows.Shapes;
-using Path = System.IO.Path;
+using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
 {
@@ -34,11 +33,29 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
         }
         private void Vs_Click(object sender, RoutedEventArgs e)
         {
-            string ComputerName = Environment.MachineName.ToString();
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory);
-            string Startup_Path = ComputerName + Path.Combine
-                (path, "CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\NestedLoopsWhile\\NestedLoopsWhile.sln");
-            Process.Start(Startup_Path);
+            //********VISUAL STUDIO NESTED WHILE LOOP PAGE CODE********\\
+            string desktop_Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string sln_Path = "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\NestedLoopsFor\\NestedLoopsFor.sln";
+            string full_Path = desktop_Path + sln_Path;
+
+            if (File.Exists(full_Path))
+            {
+
+                //Start the .sln file
+                ProcessStartInfo variables = new ProcessStartInfo()
+                {
+                    FileName = full_Path
+                };
+                Process.Start(variables);
+            }
+            else
+            {
+
+                //The file doesn't exist 
+                Failure failure = new Failure();
+                failure.ShowDialog();
+            }
+            //********VISUAL STUDIO NESTED WHILE LOOP PAGE CODE********\\
         }
 
         static List<string> blueTags = new List<string>();
