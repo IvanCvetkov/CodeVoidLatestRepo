@@ -13,9 +13,9 @@
       TextOptions.TextRenderingMode="Auto"
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d"
-      Title="Variables" Height="3000" Width="3000">
+      Title="Variables" Height="3000" Width="3000" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid x:Name="gr">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

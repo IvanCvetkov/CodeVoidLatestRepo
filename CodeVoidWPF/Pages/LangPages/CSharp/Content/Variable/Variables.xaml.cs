@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp.Content
 {
@@ -16,19 +18,49 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content
         {
             InitializeComponent();
         }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Grid
+            DoubleAnimation alertGridAnim = new DoubleAnimation()
+            {
+                From = MinWidth,
+                To = 3000,
+                Duration = TimeSpan.FromSeconds(2),
 
-        
+                EasingFunction = new QuinticEase()
+            };
 
+            gr.BeginAnimation(WidthProperty, alertGridAnim);
+
+        }
+        private async void HomeMethod()
+        { 
+            await Task.Delay(700);
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+        }
+           
         private void BackToInfo_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+            //Grid
+            DoubleAnimation alertGridAnim = new DoubleAnimation()
+            {
+                From = 3000,
+                To = 0,
+                Duration = TimeSpan.FromSeconds(2),
+
+                EasingFunction = new QuinticEase()
+            };
+
+            gr.BeginAnimation(WidthProperty, alertGridAnim);
+
+            HomeMethod();
         }
 
         private void Nextvar_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/VarNext.xaml", UriKind.Relative));
-
         }
+
 
         static List<string> tags = new List<string>();
         static List<char> specials = new List<char>();

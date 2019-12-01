@@ -17,10 +17,13 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
         {
             InitializeComponent();
         }
+
+            
         private void Nextvarpage_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Exercises.xaml", UriKind.RelativeOrAbsolute));
         }
+        
         private void BackToVariables_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Variables.xaml", UriKind.Relative));
@@ -324,6 +327,11 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
                 yellowt.yellowWord = yellowlastWord;
                 yellow_Tags.Add(yellowt);
             }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

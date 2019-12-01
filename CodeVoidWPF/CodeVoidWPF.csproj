@@ -119,18 +119,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="EmailAlert.xaml.cs">
-      <DependentUpon>EmailAlert.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginAlert.xaml.cs">
-      <DependentUpon>LoginAlert.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginSuccess.xaml.cs">
-      <DependentUpon>LoginSuccess.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Alerts\Alert.xaml.cs">
       <DependentUpon>Alert.xaml</DependentUpon>
     </Compile>
@@ -251,18 +239,6 @@
     <Compile Include="Pages\MainPages\Location\MailAlert.xaml.cs">
       <DependentUpon>MailAlert.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Register.xaml.cs">
-      <DependentUpon>Register.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RegisterAlert.xaml.cs">
-      <DependentUpon>RegisterAlert.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RegisterFieldsAlert.xaml.cs">
-      <DependentUpon>RegisterFieldsAlert.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RegisterSuccess.xaml.cs">
-      <DependentUpon>RegisterSuccess.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Scripts\Layout.cs" />
     <Compile Include="Pages\Achievements.xaml.cs">
       <DependentUpon>Achievements.xaml</DependentUpon>
@@ -298,22 +274,30 @@
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Scripts\SettingsSaver.cs" />
-    <Page Include="EmailAlert.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LoginAlert.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LoginSuccess.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="UserDB\EmailAlert.xaml.cs">
+      <DependentUpon>EmailAlert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB\LoginAlert.xaml.cs">
+      <DependentUpon>LoginAlert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB\LoginSuccess.xaml.cs">
+      <DependentUpon>LoginSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB\RegisterAlert.xaml.cs">
+      <DependentUpon>RegisterAlert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB\RegisterFieldsAlert.xaml.cs">
+      <DependentUpon>RegisterFieldsAlert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDB\RegisterSuccess.xaml.cs">
+      <DependentUpon>RegisterSuccess.xaml</DependentUpon>
+    </Compile>
     <Page Include="Pages\LangPages\CSharp\Content\Alerts\Alert.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -530,21 +514,37 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Register.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UserDB\EmailAlert.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="RegisterAlert.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UserDB\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="RegisterFieldsAlert.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UserDB\LoginAlert.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="RegisterSuccess.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UserDB\LoginSuccess.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserDB\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserDB\RegisterAlert.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserDB\RegisterFieldsAlert.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserDB\RegisterSuccess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -645,6 +645,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\failed1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\desk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Arrays.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

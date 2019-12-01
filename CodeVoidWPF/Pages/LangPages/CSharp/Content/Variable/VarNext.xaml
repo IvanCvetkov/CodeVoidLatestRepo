@@ -13,10 +13,10 @@
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d"
-      d:DesignHeight="3000" d:DesignWidth="3000"
+      d:DesignHeight="3000" d:DesignWidth="3000" Loaded="Page_Loaded"
       Title="VarNext">
 
-    <Grid>
+    <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="228"/>
             <RowDefinition Height="556"/>

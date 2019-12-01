@@ -13,9 +13,9 @@
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
-      d:DesignHeight="3000" d:DesignWidth="3000" Loaded="Page_Loaded" Title="CSharp">
+      d:DesignHeight="3000" d:DesignWidth="3000" Loaded="Page_Loaded" Unloaded="Page_Unloaded" Title="CSharp">
 
-    <Grid>
+    <Grid x:Name="gr">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
