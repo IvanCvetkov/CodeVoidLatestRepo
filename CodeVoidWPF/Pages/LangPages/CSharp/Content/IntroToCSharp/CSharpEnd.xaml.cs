@@ -9,10 +9,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Diagnostics;
 using Microsoft.CSharp;
-using Microsoft.VisualBasic;
 using System.CodeDom.Compiler;
-using System.Text;
-using System.Threading.Tasks;
 using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp
@@ -134,6 +131,22 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
 
         private void txtSource_TextChanged(object sender, TextChangedEventArgs e)
         {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string settingsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkModeFix.txt";
+            using (StreamReader sr = new StreamReader(settingsPath))
+            {
+                string line;
+                line = sr.ReadLine();
+                if (line.Contains("DarkMode:True"))
+                {
+                    txtSource.Background = Brushes.DarkGray;
+                }
+                else
+                {
+                    //do something..
+                }
+            }
+
             if (txtSource.Document == null)
                 return;
             txtSource.TextChanged -= txtSource_TextChanged;

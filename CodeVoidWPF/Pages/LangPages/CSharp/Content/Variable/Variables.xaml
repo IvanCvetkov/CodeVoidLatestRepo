@@ -43,7 +43,10 @@
             </TextBlock.Triggers>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="0,69,-4,711" Height="4"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,104,2322,485" Text="A variable is a name given to a storage area that our programs can manipulate. Each variable in C# has a type of her own, which determines the layout and the size of the variable's memory and the set of operations that can be applied to the variable." RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="42,115,1782,474" Text="A variable is a name given to a storage area that our programs can"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="47,140,1817,439" Text="manipulate. Each variable in C# has a type of her own, which"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="47,163,1782,392" Text="determines the layout and the size of the variable's memory and the set" />
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="47,187,1867,392" Text="of operations that can be applied to the variable." />
         <TextBlock Text="The value types in C# are categorized as - " Margin="42,220,868,484" FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"></TextBlock>
         <TextBlock Text="Integral Types - sbyte, byte, short, ushort, int, uint, long, ulong and char" Margin="42,260,242,484" FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"></TextBlock>
         <TextBlock Text="Floating point types - float and double" Margin="42,310,242,332" FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"></TextBlock>

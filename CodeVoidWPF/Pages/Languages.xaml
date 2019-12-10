@@ -13,7 +13,7 @@
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d" 
-      d:DesignHeight="3000" d:DesignWidth="3000"
+      d:DesignHeight="3000" d:DesignWidth="3000" Loaded="Page_Loaded"
       Title="Languages">
 
     <Grid>
@@ -34,6 +34,9 @@
         </materialDesign:Card>
         <Grid x:Name="LangGrid" HorizontalAlignment="Left" Height="Auto" Margin="318,25,0,0" Grid.Row="1" VerticalAlignment="Top" Width="Auto" Background="#FF383838">
             <Button x:Name="BtnCSharp" Width="Auto" Height="Auto" Content="C#" Click="BtnCSharp_Click" Margin="48,10,45,186" FontSize="25"/>
+            <Button x:Name="BtnPython" Width="Auto" Height="Auto" Content="Python" Click="BtnPython_Click" Margin="48,53,45,143" FontSize="25"/>
+            <Button x:Name="BtnJava" Width="Auto" Height="Auto" Content="Java" Click="BtnJava_Click" Margin="48,96,45,100" FontSize="25"/>
+            <Button x:Name="BtnJavascript" Width="Auto" Height="Auto" Content="JavaScript" Click="BtnJavascript_Click" Margin="48,139,45,57" FontSize="25"/>
         </Grid>
     </Grid>
 </Page>

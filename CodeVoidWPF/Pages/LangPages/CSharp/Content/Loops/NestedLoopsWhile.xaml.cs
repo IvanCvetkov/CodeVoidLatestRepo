@@ -166,6 +166,23 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Loops
 
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string settingsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkModeFix.txt";
+            using (StreamReader sr = new StreamReader(settingsPath))
+            {
+                string line;
+                line = sr.ReadLine();
+                if (line.Contains("DarkMode:True"))
+                {
+                    txtStatus.Background = Brushes.DarkGray;
+                }
+                else
+                {
+                    //do something..
+                }
+            }
+
             if (txtStatus.Document == null)
                 return;
             txtStatus.TextChanged -= txtStatus_TextChanged;

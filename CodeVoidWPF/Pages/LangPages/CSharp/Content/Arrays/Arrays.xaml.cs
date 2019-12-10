@@ -28,14 +28,15 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Arrays
 
             gr.BeginAnimation(WidthProperty, alertGridAnim);
         }
-        private void BackToExercises_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfoTwo.xaml", UriKind.Relative));
+        }
 
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Arrays/ArraysTwo.xaml", UriKind.Relative));
         }
     }
 }

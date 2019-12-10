@@ -1,28 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
-using System.Reflection;
-using System.Diagnostics;
-using Microsoft.CSharp;
-using System.CodeDom.Compiler;
 using System.IO;
-using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
 
-namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
+namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Arrays
 {
     /// <summary>
-    /// Interaction logic for Exercise.xaml
+    /// Interaction logic for ArraysThree.xaml
     /// </summary>
-    public partial class Exercise : Page
+    public partial class ArraysThree : Page
     {
-        public Exercise()
+        public ArraysThree()
         {
             InitializeComponent();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Arrays/ArraysTwo.xaml", UriKind.Relative));
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         static List<string> blueTags = new List<string>();
         static List<char> blueSpecials = new List<char>();
         static string text;
@@ -35,11 +41,12 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 
 
         #region ctor
-        static Exercise()
+        static ArraysThree()
         {
-            string[] blueWords = { "string", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
+            
+            string[] blueWords = { "string", "char", "for", "while", "do", "null", "namespace", "class", "using", "public", "static", "void", "int" };
             string[] greenWords = { "Console" };
-            string[] yellowWords = { "ReadKey", "WriteLine", "Write" };
+            string[] yellowWords = { "ReadKey", "ReadLine", "WriteLine", "Write" };
             blueTags = new List<string>(blueWords);
             grTags = new List<string>(greenWords);
             yellowTags = new List<string>(yellowWords);
@@ -127,7 +134,28 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
             public TextPointer yellowEndPosition;
             public string yellowWord;
         }
-
+        public static IEnumerable<TextRange> GetAllWordRanges(FlowDocument document)
+        {
+            string pattern = @"[^\W\d](\w|[-']{1,2}(?=\w))*";
+            TextPointer pointer = document.ContentStart;
+            while (pointer != null)
+            {
+                if (pointer.GetPointerContext(LogicalDirection.Forward) == TextPointerContext.Text)
+                {
+                    string textRun = pointer.GetTextInRun(LogicalDirection.Forward);
+                    MatchCollection matches = Regex.Matches(textRun, pattern);
+                    foreach (Match match in matches)
+                    {
+                        int startIndex = match.Index;
+                        int length = match.Length;
+                        TextPointer start = pointer.GetPositionAtOffset(startIndex);
+                        TextPointer end = start.GetPositionAtOffset(length);
+                        yield return new TextRange(start, end);
+                    }
+                }
+                pointer = pointer.GetNextContextPosition(LogicalDirection.Forward);
+            }
+        }
 
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -147,14 +175,14 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
                 }
             }
 
-            if (txtStatus.Document == null)
+                if (txtStatus.Document == null)
                 return;
             txtStatus.TextChanged -= txtStatus_TextChanged;
 
             m_blueTags.Clear();
             gr_Tags.Clear();
             yellow_Tags.Clear();
-
+            GetAllWordRanges(txtStatus.Document);
             Console.WriteLine();
             TextPointer navigator = txtStatus.Document.ContentStart;
             TextPointer grnavigator = txtStatus.Document.ContentStart;
@@ -336,68 +364,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
                 yellowt.yellowWord = yellowlastWord;
                 yellow_Tags.Add(yellowt);
             }
-        }
-
-            private void BtnCompile_Click(object sender, RoutedEventArgs e)
-            {
-                string Framework = 'v' + Environment.Version.ToString();
-                string OutputConsoleApp = "Output.exe";
-                string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
-
-                txtSource.Clear();
-                CSharpCodeProvider csc = new CSharpCodeProvider();
-                CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
-                parameters.GenerateExecutable = true;
-                CompilerResults results = csc.CompileAssemblyFromSource(parameters, new TextRange
-                    (txtStatus.Document.ContentStart, txtStatus.Document.ContentEnd).Text);
-                if (results.Errors.HasErrors)
-                    results.Errors.Cast<CompilerError>().ToList().ForEach(error => txtSource.Text += error.ErrorText + "\r\n");
-                else
-                {
-                    txtSource.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
-                    Process.Start(StartupPath);
-                }
-            }
-
-        private void BackToExercises_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Exercises.xaml", UriKind.Relative));
-        }
-
-        private void Exercise_Click(object sender, RoutedEventArgs e)
-        {
-            string[] points = { "20" };
-
-            string docPath =
-                Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string path = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/Variables.txt";
-            string finalPath = Path.Combine(docPath, path);
-            try
-            {
-                if (!File.Exists(finalPath))
-                {
-                    using (var stream = File.Create(finalPath)) { }
-                }
-                else
-                {
-                    if (!File.ReadAllText(finalPath).Contains(points[0]))
-                    {
-                        using (StreamWriter writer = new StreamWriter(finalPath))
-                        {
-                                writer.WriteLine(points[0]);
-                        }
-                        VariablesAlert alert = new VariablesAlert();
-                        alert.ShowDialog();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Can't write to file" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-
-            //Navigation service
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
         }
     }
 }

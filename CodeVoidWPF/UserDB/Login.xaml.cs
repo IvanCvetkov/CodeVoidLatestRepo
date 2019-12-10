@@ -76,17 +76,16 @@ namespace CodeVoidWPF
         }
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-
-
             bool passw = false;
             string strUsername = username.Text;
             string strPass = pass.Text;
             string ConString = " datasource = localhost; port = 3306; username = root; password =";
 
-            string sql = "SELECT COUNT(*) FROM codevoidlogin.test WHERE username = @userlog";
-            string sql2 = "SELECT COUNT(*) FROM codevoidlogin.test WHERE password = @password";
+            string sql = "SELECT COUNT(*) FROM codevoidlogin.actualdatabase WHERE username = @userlog";
+            string sql2 = "SELECT COUNT(*) FROM codevoidlogin.actualdatabase WHERE password = @password";
             using (MySqlConnection cnPass = new MySqlConnection(ConString))
             {
+
                 cnPass.Open();
                 using (MySqlCommand cmd = new MySqlCommand(sql2, cnPass))
                 {

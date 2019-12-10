@@ -1,28 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
+using Microsoft.CSharp;
+using System.CodeDom.Compiler;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Media;
-using System.Reflection;
-using System.Diagnostics;
-using Microsoft.CSharp;
-using System.CodeDom.Compiler;
-using System.IO;
 using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
+using System.Collections.Generic;
+using System.Windows.Media;
 
-namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
+namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Arrays
 {
     /// <summary>
-    /// Interaction logic for Exercise.xaml
+    /// Interaction logic for ArraysTwo.xaml
     /// </summary>
-    public partial class Exercise : Page
+    public partial class ArraysTwo : Page
     {
-        public Exercise()
+        public ArraysTwo()
         {
             InitializeComponent();
         }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Arrays/Arrays.xaml", UriKind.Relative));
+        }
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Arrays/ArraysThree.xaml", UriKind.Relative));
+        }
+
         static List<string> blueTags = new List<string>();
         static List<char> blueSpecials = new List<char>();
         static string text;
@@ -35,11 +44,11 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
 
 
         #region ctor
-        static Exercise()
+        static ArraysTwo()
         {
-            string[] blueWords = { "string", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
+            string[] blueWords = { "string", "for", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
             string[] greenWords = { "Console" };
-            string[] yellowWords = { "ReadKey", "WriteLine", "Write" };
+            string[] yellowWords = { "ReadKey", "ReadLine", "WriteLine", "Write" };
             blueTags = new List<string>(blueWords);
             grTags = new List<string>(greenWords);
             yellowTags = new List<string>(yellowWords);
@@ -132,7 +141,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string settingsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkModeFix.txt";
+            string settingsPath = desktopPath+"\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkModeFix.txt";
             using (StreamReader sr = new StreamReader(settingsPath))
             {
                 string line;
@@ -147,8 +156,8 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
                 }
             }
 
-            if (txtStatus.Document == null)
-                return;
+                if (txtStatus.Document == null)
+                    return;
             txtStatus.TextChanged -= txtStatus_TextChanged;
 
             m_blueTags.Clear();
@@ -338,8 +347,36 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
             }
         }
 
-            private void BtnCompile_Click(object sender, RoutedEventArgs e)
+
+        private void Vs_Click(object sender, RoutedEventArgs e)
+        {
+            //********VISUAL STUDIO ARRAYS PAGE CODE********\\
+            string desktop_Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string sln_Path = "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\ExecutablePrograms\\Arrays\\Arrays.sln";
+            string full_Path = desktop_Path + sln_Path;
+
+            if (File.Exists(full_Path))
             {
+
+                //Start the .sln file
+                ProcessStartInfo variables = new ProcessStartInfo()
+                {
+                    FileName = full_Path
+                };
+                Process.Start(variables);
+            }
+            else
+            {
+
+                //The file doesn't exist 
+                Failure failure = new Failure();
+                failure.ShowDialog();
+            }
+            //********VISUAL STUDIO ARRAYS PAGE CODE********\\
+        }
+
+        private void BtnCompile_Click(object sender, RoutedEventArgs e)
+        {
                 string Framework = 'v' + Environment.Version.ToString();
                 string OutputConsoleApp = "Output.exe";
                 string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
@@ -357,47 +394,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Variable
                     txtSource.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
                     Process.Start(StartupPath);
                 }
-            }
-
-        private void BackToExercises_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Exercises.xaml", UriKind.Relative));
-        }
-
-        private void Exercise_Click(object sender, RoutedEventArgs e)
-        {
-            string[] points = { "20" };
-
-            string docPath =
-                Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string path = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/Variables.txt";
-            string finalPath = Path.Combine(docPath, path);
-            try
-            {
-                if (!File.Exists(finalPath))
-                {
-                    using (var stream = File.Create(finalPath)) { }
-                }
-                else
-                {
-                    if (!File.ReadAllText(finalPath).Contains(points[0]))
-                    {
-                        using (StreamWriter writer = new StreamWriter(finalPath))
-                        {
-                                writer.WriteLine(points[0]);
-                        }
-                        VariablesAlert alert = new VariablesAlert();
-                        alert.ShowDialog();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Can't write to file" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-
-            //Navigation service
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
         }
     }
 }

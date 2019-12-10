@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 
 namespace CodeVoidWPF
 {
+    using UserDB.Encryption;
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
@@ -18,12 +19,12 @@ namespace CodeVoidWPF
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-
-
-
             string strUser = username.Text;
-            string strPass = pass.Text;
-            string strMail = mail.Text;
+            string strPassPlain = pass.Text;
+            string strMail= mail.Text;
+
+            PasswordEncryptor keys = new PasswordEncryptor();
+            string strPass = keys.EncryptString(strPassPlain);
 
 
             bool passw = false;
@@ -112,9 +113,9 @@ namespace CodeVoidWPF
                             MySqlCommand command = new MySqlCommand(insertQuery, connection);
                             command.Parameters.AddWithValue("@firstname", firstName.Text);
                             command.Parameters.AddWithValue("@lastname", lastName.Text);
-                            command.Parameters.AddWithValue("@username", username.Text);
-                            command.Parameters.AddWithValue("@mail", mail.Text);
-                            command.Parameters.AddWithValue("@password", pass.Text);
+                            command.Parameters.AddWithValue("@username", strUser);
+                            command.Parameters.AddWithValue("@mail", strMail);
+                            command.Parameters.AddWithValue("@password", strPass);
                             try
                             {
                                 if (command.ExecuteNonQuery() == 1)
@@ -160,19 +161,19 @@ namespace CodeVoidWPF
             }
         }
 
-                                                //*****//
-                                                //MODEL//
-                                                //*****//
-                                    /*if (string.IsNullOrEmpty(pass.Text))
-                                        pass.Text = "Password";
-                                    if (string.IsNullOrEmpty(username.Text))
-                                        username.Text = "Username";
-                                    if (string.IsNullOrEmpty(firstName.Text))
-                                        firstName.Text = "First name";
-                                    if (string.IsNullOrEmpty(firstName.Text))
-                                        firstName.Text = "Last name";
-                                    if (string.IsNullOrEmpty(mail.Text))
-                                        mail.Text = "E-Mail";*/
+        //*****//
+        //MODEL//
+        //*****//
+        /*if (string.IsNullOrEmpty(pass.Text))
+            pass.Text = "Password";
+        if (string.IsNullOrEmpty(username.Text))
+            username.Text = "Username";
+        if (string.IsNullOrEmpty(firstName.Text))
+            firstName.Text = "First name";
+        if (string.IsNullOrEmpty(firstName.Text))
+            firstName.Text = "Last name";
+        if (string.IsNullOrEmpty(mail.Text))
+            mail.Text = "E-Mail";*/
 
         private void Pass_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -250,8 +251,6 @@ namespace CodeVoidWPF
             if (string.IsNullOrEmpty(mail.Text))
                 mail.Text = "E-Mail";
         }
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

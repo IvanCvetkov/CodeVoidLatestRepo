@@ -128,6 +128,12 @@
     <Compile Include="Pages\LangPages\CSharp\Content\Alerts\VariablesAlert.xaml.cs">
       <DependentUpon>VariablesAlert.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Arrays\ArraysThree.xaml.cs">
+      <DependentUpon>ArraysThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Arrays\ArraysTwo.xaml.cs">
+      <DependentUpon>ArraysTwo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\IntroToCSharp\CSharpInfoFor.xaml.cs">
       <DependentUpon>CSharpInfoFor.xaml</DependentUpon>
     </Compile>
@@ -277,6 +283,7 @@
     <Compile Include="UserDB\EmailAlert.xaml.cs">
       <DependentUpon>EmailAlert.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserDB\Encryption\PasswordEncryptor.cs" />
     <Compile Include="UserDB\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -307,6 +314,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\LangPages\CSharp\Content\Alerts\VariablesAlert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Arrays\ArraysThree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Arrays\ArraysTwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -601,6 +616,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\LangPages\CSharp\Content\NumberSyS\" />
+    <Folder Include="Pages\LangPages\JavaScript\Content\Introduction\" />
+    <Folder Include="Pages\LangPages\Java\Content\Introduction\" />
+    <Folder Include="Pages\LangPages\Python\Content\Introduction\" />
     <Folder Include="Points\" />
   </ItemGroup>
   <ItemGroup>

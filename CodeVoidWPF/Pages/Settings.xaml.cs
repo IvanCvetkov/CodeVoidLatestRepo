@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CodeVoidWPF.Pages
@@ -40,6 +42,34 @@ namespace CodeVoidWPF.Pages
             settingsSaver.AddValue(SettingsEnum.DarkMode, DarkModeTgl.IsChecked.Value.ToString());
             settingsSaver.SetDarkMode();
             settingsSaver.SaveSettings();
+
+            //RTB functionality
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string settingsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkModeFix.txt";
+            if (DarkModeTgl.IsChecked == true)
+                using (StreamWriter sr = new StreamWriter(settingsPath))
+                {
+                    if (!File.Exists(settingsPath))
+                        File.Create(settingsPath);
+
+                    if (File.Exists(settingsPath))
+                    {
+                        string line = "DarkMode:True";
+                        sr.WriteLine(line);
+                    }
+                }
+            if (DarkModeTgl.IsChecked == false)
+                using (StreamWriter sr = new StreamWriter(settingsPath))
+                {
+                    if (!File.Exists(settingsPath))
+                        File.Create(settingsPath);
+
+                    if (File.Exists(settingsPath))
+                    {
+                        string line = "DarkMode:False";
+                        sr.WriteLine(line);
+                    }
+                }
         }
         /// <summary>
         /// 'Go Back' Button
