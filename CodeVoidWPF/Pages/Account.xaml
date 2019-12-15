@@ -46,12 +46,6 @@
                         <TextBlock>
         
                         </TextBlock>
-                        <Button
-          Style="{StaticResource MaterialDesignFlatButton}"
-          Command="{x:Static materialDesign:Flipper.FlipCommand}"
-          Margin="0 4 0 0">
-                            EDIT
-                        </Button>
                     </StackPanel>
                 </Grid>
             </materialDesign:Flipper.FrontContent>

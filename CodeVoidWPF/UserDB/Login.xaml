@@ -38,7 +38,7 @@
                             Opacity="0.5"
                             Height="41"
                             Margin="63,0,0,0"/>
-                    <Button BorderThickness="30" Height="33" Margin="0,0,0,10" Width="80" Click="Button_Click" BorderBrush="#FFC9ABFF">
+                    <Button BorderThickness="0" Height="33" Margin="0,0,0,10" Width="92" Click="Button_Click" BorderBrush="#FFC9ABFF">
                         <Button.Background>
                             <ImageBrush/>
                         </Button.Background>

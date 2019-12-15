@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace CodeVoidWPF.Pages
 {
@@ -24,10 +15,23 @@ namespace CodeVoidWPF.Pages
         {
             InitializeComponent();
         }
-
         private void BtnBackProgress_Click(object sender, RoutedEventArgs e)
         {
+            LayoutRoot.Visibility = Visibility.Visible;
+            Await();
+        }
+        private async void Await()
+        {
+            await Task.Delay(700);
             MainWindow.win.NavigateLast();
+        }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            LayoutRoot.Visibility = Visibility.Hidden;
+        }
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -13,7 +13,7 @@
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d"
-     Title="CSharpInfo" Height="1200" Width="3000" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+     Title="CSharpInfo" Height="1200" Width="3000" Loaded="Page_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -66,7 +66,7 @@
                                             </BeginStoryboard>
                                         </EventTrigger>
                                     </Grid.Triggers>
-                                    
+
                                 </Grid>
                                 <Button.RenderTransform>
                                     <TranslateTransform x:Name="IntroductionAnim" X="0" Y="0"/>
@@ -90,19 +90,19 @@
                                 </Button.Triggers>
                             </Button>
                             <TextBlock FontSize="25" x:Name="Intro" Text="Get started with C#" FontFamily="Champagne &amp; Limousines" Margin="84,10,560,0" VerticalAlignment="Top" Foreground="Gray" Height="40">
-                                    <TextBlock.Triggers>
-                                        <EventTrigger RoutedEvent="TextBlock.Loaded">
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <DoubleAnimation
+                                <TextBlock.Triggers>
+                                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation
                                                             Storyboard.TargetName="Intro" 
                                                             Storyboard.TargetProperty="(TextBlock.Opacity)"
                                                             From="0" To="2" Duration="0:0:1.5" 
                                                             AutoReverse="True" RepeatBehavior="0:0:0.75" />
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </EventTrigger>
-                                    </TextBlock.Triggers>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </TextBlock.Triggers>
                             </TextBlock>
                             <TextBlock FontSize="21" x:Name="textIntro" Text="  - Introduction to C#" FontFamily="Champagne &amp; Limousines" Margin="94,48,223,0" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
@@ -143,7 +143,7 @@
                                     </Grid.ColumnDefinitions>
                                     <materialDesign:PackIcon Kind="Variable" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
                                     <TextBlock HorizontalAlignment="Center" Text="VARIABLES" FontSize="17" FontFamily="Bernard MT Condensed" Margin="40,0,16,-27" Width="94" Grid.ColumnSpan="2"/>
-                                    
+
                                     <Grid.Triggers>
                                         <EventTrigger RoutedEvent="TextBlock.Loaded">
                                             <BeginStoryboard>
@@ -180,20 +180,20 @@
                                 </Button.Triggers>
                             </Button>
                             <TextBlock FontSize="25" x:Name="Var" Text="Variables - C#" FontFamily="Champagne &amp; Limousines" Margin="-902,156,1546,-76" VerticalAlignment="Top" Foreground="Gray" Height="40">
-                                    <TextBlock.Triggers>
+                                <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
-                                                <Storyboard>
+                                            <Storyboard>
                                                 <DoubleAnimation
                                                             Storyboard.TargetName="Var" 
                                                             Storyboard.TargetProperty="(TextBlock.Opacity)"
                                                             From="0" To="2" Duration="0:0:1.5" 
-                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />       
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
                                             </Storyboard>
-                                            </BeginStoryboard>
-                                        </EventTrigger>
-                                    </TextBlock.Triggers>
-                        </TextBlock>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </TextBlock.Triggers>
+                            </TextBlock>
                             <TextBlock FontSize="21" x:Name="textVar" Text="    - Introduction to variables" FontFamily="Champagne &amp; Limousines" Margin="-902,198,1317,-118" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
@@ -367,7 +367,7 @@
                                     </Grid.ColumnDefinitions>
                                     <materialDesign:PackIcon Kind="Loop" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
                                     <TextBlock HorizontalAlignment="Center" Text="LOOPS" FontSize="17" FontFamily="Bernard MT Condensed" Margin="56,2,14,-29" Width="80" Grid.ColumnSpan="2"/>
-                                 <Grid.Triggers>
+                                    <Grid.Triggers>
                                         <EventTrigger RoutedEvent="TextBlock.Loaded">
                                             <BeginStoryboard>
                                                 <Storyboard>
@@ -445,8 +445,88 @@
                 </Grid>
             </ScrollViewer>
         </Grid>
+        <Grid x:Name="LayoutRoot" Background="Transparent"
+             HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-142,10,1822,751" Width="1320" Grid.Row="2" Grid.ColumnSpan="2" Height="334">
 
+            <Grid.RenderTransform>
 
+                <ScaleTransform x:Name="SpinnerScale"
+                             ScaleX="1.0" ScaleY="1.0" />
+
+            </Grid.RenderTransform>
+
+            <Canvas RenderTransformOrigin="0.5,0.5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                  Width="120" Height="120" >
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="20.1696"
+                       Canvas.Top="9.76358"
+                      Stretch="Fill" Fill="Orange"
+                       Opacity="1.0"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="2.86816"
+                       Canvas.Top="29.9581" Stretch="Fill"
+                     Fill="Black" Opacity="0.9"/>
+                <Ellipse Width="21.835" Height="21.862"
+                       Canvas.Left="5.03758e-006"
+                       Canvas.Top="57.9341" Stretch="Fill"
+                    Fill="Black" Opacity="0.8"/>
+                <Ellipse Width="21.835" Height="21.862"
+                     Canvas.Left="12.1203"
+                     Canvas.Top="83.3163" Stretch="Fill"
+                       Fill="Black" Opacity="0.7"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="36.5459"
+                       Canvas.Top="98.138" Stretch="Fill"
+                      Fill="Black" Opacity="0.6"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="64.6723"
+                     Canvas.Top="96.8411" Stretch="Fill"
+                     Fill="Black" Opacity="0.5"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="87.6176"
+                       Canvas.Top="81.2783" Stretch="Fill"
+                      Fill="Black" Opacity="0.4"/>
+                <Ellipse Width="21.835" Height="21.862"
+                       Canvas.Left="98.165"
+                      Canvas.Top="54.414" Stretch="Fill"
+                   Fill="Black" Opacity="0.3"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="92.9838"
+                     Canvas.Top="26.9938" Stretch="Fill"
+                     Fill="Black" Opacity="0.2"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="47.2783"
+                      Canvas.Top="0.5" Stretch="Fill"
+                    Fill="Black" Opacity="0.1"/>
+                <Canvas.RenderTransform>
+
+                    <RotateTransform x:Name="SpinnerRotate"
+                                 Angle="0" />
+                </Canvas.RenderTransform>
+                <Canvas.Triggers>
+                    <EventTrigger RoutedEvent="ContentPresenter.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                 Storyboard.TargetName
+                                 ="SpinnerRotate"
+                                 Storyboard.TargetProperty
+                                 ="(RotateTransform.Angle)"
+                                 From="0" To="360"
+                                 Duration="0:0:01"
+                                 RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Canvas.Triggers>
+            </Canvas>
+        </Grid>
+        
+        
+        
+        
         <!--BUTTONS SCALABILITY AND ANIMATION ON CLICK RESOURCE-->
     </Grid>
     <Page.Resources>

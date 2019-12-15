@@ -23,7 +23,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         //Animations control method
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
+            LayoutRoot.Visibility = Visibility.Hidden;
         }
         private void txtStatus_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -65,6 +65,8 @@ namespace CodeVoidWPF.Pages.MainPages.Location
         {
             CheckMethod();
             HomeMethod();
+
+            LayoutRoot.Visibility = Visibility.Visible;
         }
         private void Submit_Click(object sender, RoutedEventArgs e)
         {

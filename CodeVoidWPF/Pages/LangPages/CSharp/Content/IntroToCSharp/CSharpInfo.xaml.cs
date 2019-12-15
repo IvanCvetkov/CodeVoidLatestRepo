@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Threading;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
-using CodeVoidWPF.Pages.LangPages.CSharp.Content.IntroToCSharp;
 
 namespace CodeVoidWPF.Pages.LangPages.CSharp
 {
@@ -18,60 +17,123 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         {
             InitializeComponent();
         }
+        //Await Methods
+        /*Coded in this way with the await methods bcs
+         * there's no other way of doing it and being 
+         * able to trigger the loading/unloading 
+         * animation from the LayoutRoot Grid*/
 
+        //********************//
+        //LayoutRoot Grid cast//
+        //********************//
+        private async void IntroductionAwait()
+        {
+            await Task.Delay(700);
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharp.xaml", UriKind.Relative));
+        }
+        private async void VariablesAwait()
+        {
+            await Task.Delay(700);
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Variables.xaml", UriKind.Relative));
+        }
+        private async void OperatorsAwait()
+        {
+            await Task.Delay(700);
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Operators/Operators.xaml", UriKind.Relative));
+        }
+        private async void LoopsAwait()
+        {
+            await Task.Delay(700);
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/Loops.xaml", UriKind.Relative));
+        }
+        private async void SecondPIAwait()
+        {
+            await Task.Delay(700);
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfoTwo.xaml", UriKind.Relative));
+        }
+        private async void LanguagesAwait()
+        {
+            await Task.Delay(700);
+            this.NavigationService.Navigate(new Pages.Languages());
+        }
         //Default Pages
         private void Introduction_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharp.xaml", UriKind.Relative));
+            IntroductionAwait();
+            LayoutRoot.Visibility = Visibility.Visible;
+            AllRectanglesUnloaded();
         }
 
         private void Variables_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Variable/Variables.xaml", UriKind.Relative));
+            VariablesAwait();
+            LayoutRoot.Visibility = Visibility.Visible;
+            AllRectanglesUnloaded();
         }
 
         private void Operators_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Operators/Operators.xaml", UriKind.Relative));
+            OperatorsAwait();
+            LayoutRoot.Visibility = Visibility.Visible;
+            AllRectanglesUnloaded();
         }
 
         private void Loops_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/Loops/Loops.xaml", UriKind.Relative));
+            LoopsAwait();
+            LayoutRoot.Visibility = Visibility.Visible;
+            AllRectanglesUnloaded();
         }
 
-
-        //Bonus Pages
-        private void NumSystems_Click(object sender, RoutedEventArgs e)
-        {
-            string message = "First you need to buy the following module from the shop!";
-            MessageBox.Show(message, "Invalid Page");
-        }
 
         //Second page navigation
         private void SecondPageContent_Click(object sender, RoutedEventArgs e)
         {
+            SecondPIAwait();
+            LayoutRoot.Visibility = Visibility.Visible;
             AllRectanglesUnloaded();
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfoTwo.xaml", UriKind.Relative));
         }
 
         //Go back
         private void LanguagesPage_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pages.Languages());
+            LanguagesAwait();
+            LayoutRoot.Visibility = Visibility.Visible;
+            AllRectanglesUnloaded();
         }
 
 
-        //Animations
+
+        
+        
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            LayoutRoot.Visibility = Visibility.Hidden;
             AllRectanglesLoaded();
-            //AllGrids();
+
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string settingsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkModeFix.txt";
+
+            using (StreamReader sw = new StreamReader(settingsPath))
+            {
+                if (!File.Exists(settingsPath))
+                    File.Create(settingsPath);
+
+                if (File.Exists(settingsPath))
+                {
+                    string line;
+                    line = sw.ReadLine();
+                    if (line.Contains("DarkMode:True"))
+                    {
+                        IntroductionRec.Fill = new SolidColorBrush(Colors.DarkGray);
+                        VariablesRec.Fill = new SolidColorBrush(Colors.DarkGray);
+                        OperatorsRec.Fill = new SolidColorBrush(Colors.DarkGray);
+                        LoopsRec.Fill = new SolidColorBrush(Colors.DarkGray);
+                    }
+                }
+            }
         }
-        private void Page_Unloaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+       //Animations
         //public void AllGrids()
         //{
         //    DoubleAnimation introductionGrid = new DoubleAnimation()

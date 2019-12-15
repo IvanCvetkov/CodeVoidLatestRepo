@@ -69,6 +69,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -113,6 +116,9 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -142,6 +148,9 @@
     </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\IntroToCSharp\CSharpInfoTwo.xaml.cs">
       <DependentUpon>CSharpInfoTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\LambdaExpressions\LambdaExpressionsStart.xaml.cs">
+      <DependentUpon>LambdaExpressionsStart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Loops\DoWhile.xaml.cs">
       <DependentUpon>DoWhile.xaml</DependentUpon>
@@ -191,6 +200,9 @@
     <Compile Include="Pages\LangPages\CSharp\Content\Methods\Methods.xaml.cs">
       <DependentUpon>Methods.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\NumberSyS\NumberSysStart.xaml.cs">
+      <DependentUpon>NumberSysStart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Operators\LogicalOperators.xaml.cs">
       <DependentUpon>LogicalOperators.xaml</DependentUpon>
     </Compile>
@@ -206,8 +218,17 @@
     <Compile Include="Pages\LangPages\CSharp\Content\Operators\opr.xaml.cs">
       <DependentUpon>opr.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Properties\PropertiesStart.xaml.cs">
+      <DependentUpon>PropertiesStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Structs\StructsStart.xaml.cs">
+      <DependentUpon>StructsStart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\TextFiles\TextFiles.xaml.cs">
       <DependentUpon>TextFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LangPages\CSharp\Content\Tuples\TuplesStart.xaml.cs">
+      <DependentUpon>TuplesStart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LangPages\CSharp\Content\Variable\Exercise.xaml.cs">
       <DependentUpon>Exercise.xaml</DependentUpon>
@@ -337,6 +358,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\LambdaExpressions\LambdaExpressionsStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LangPages\CSharp\Content\Loops\DoWhile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -405,6 +430,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\NumberSyS\NumberSysStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LangPages\CSharp\Content\Operators\LogicalOperators.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -425,7 +454,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Properties\PropertiesStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Structs\StructsStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LangPages\CSharp\Content\TextFiles\TextFiles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LangPages\CSharp\Content\Tuples\TuplesStart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -615,7 +656,6 @@
     <Resource Include="Images\DoWhile.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\LangPages\CSharp\Content\NumberSyS\" />
     <Folder Include="Pages\LangPages\JavaScript\Content\Introduction\" />
     <Folder Include="Pages\LangPages\Java\Content\Introduction\" />
     <Folder Include="Pages\LangPages\Python\Content\Introduction\" />
