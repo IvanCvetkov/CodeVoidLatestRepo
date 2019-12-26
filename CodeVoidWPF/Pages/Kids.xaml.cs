@@ -29,5 +29,11 @@ namespace CodeVoidWPF.Pages
         {
             MainWindow.win.NavigateLast();
         }
+
+        private void WinTest3D_Click(object sender, RoutedEventArgs e)
+        {
+            Test3D test3D = new Test3D();
+            test3D.Show();
+        }
     }
 }

@@ -46,7 +46,9 @@ namespace CodeVoidWPF.Pages
             //RTB functionality
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string settingsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkModeFix.txt";
+            string achievementsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\Achievements.txt";
             if (DarkModeTgl.IsChecked == true)
+            {
                 using (StreamWriter sr = new StreamWriter(settingsPath))
                 {
                     if (!File.Exists(settingsPath))
@@ -58,6 +60,19 @@ namespace CodeVoidWPF.Pages
                         sr.WriteLine(line);
                     }
                 }
+
+                using (StreamWriter sr1 = new StreamWriter(achievementsPath))
+                {
+                    if (!File.Exists(achievementsPath))
+                        File.Create(achievementsPath);
+
+                    if (File.Exists(achievementsPath))
+                    {
+                        string line = "DarkMode:True";
+                        sr1.Write(line);
+                    }
+                }
+            }
             if (DarkModeTgl.IsChecked == false)
                 using (StreamWriter sr = new StreamWriter(settingsPath))
                 {

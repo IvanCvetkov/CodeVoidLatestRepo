@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:local="clr-namespace:CodeVoidWPF"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       TextElement.FontWeight="Regular"
@@ -12,14 +12,450 @@
       TextOptions.TextRenderingMode="Auto"
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
-      mc:Ignorable="d" 
-      d:DesignHeight="3000" d:DesignWidth="3000"
-      Title="Achievments">
+      mc:Ignorable="d"
+     Title="Achievements" Height="1200" Width="3000" Loaded="Page_Loaded">
+
 
     <Grid>
-        <Button x:Name="BtnBackAchievements"
-                IsEnabled="True" Click="BtnBackAchievements_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
-        </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FFCFCFCF" Grid.ColumnSpan="2" Margin="0,0,0,10" Grid.RowSpan="3" HorizontalAlignment="Left">
+            <ScrollViewer HorizontalAlignment="Left" HorizontalScrollBarVisibility="Visible" Margin="58,10,-58,-10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Rectangle Height="120" x:Name="FirstLoginRec" Margin="21,40,19,40" Fill="White" RadiusY="10" RadiusX="10" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Margin="25" Height="120" x:Name="FirstLoginGrid">
+                            <Button x:Name="FirstLogin" Style="{DynamicResource CircleButton}" Margin="752,10,39,10" Background="#FFFF1818" Click="FirstLogin_Click" Width="150" BorderBrush="#FF8522BD">
+                                <Grid Width="150">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="Login" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="First Login" FontSize="17" FontFamily="Bernard MT Condensed" Margin="41,0,19,-27" Width="90" Grid.ColumnSpan="2"/>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                            Storyboard.TargetName="FirstLoginGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:3" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:1.5" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+
+                                <Button.RenderTransform>
+                                    <TranslateTransform x:Name="MethodsAnim" X="0" Y="0"/>
+                                </Button.RenderTransform>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Window.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="5" To="0" Duration="00:00:01"
+                                Storyboard.TargetName="MethodsAnim"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                            <TextBlock FontSize="25" Text="Login in your account" FontFamily="Champagne &amp; Limousines" Margin="84,10,560,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text="- Only the first login is recorded" FontFamily="Champagne &amp; Limousines" Margin="94,48,223,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <Grid x:Name="log" Width="35" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                                <Grid.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
+                                </Grid.Effect>
+                                <materialDesign:PackIcon Kind="TableOfContents" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Rectangle Height="120" x:Name="FirstVSRec" Margin="-970,187,1010,-107" Fill="White" RadiusY="10" RadiusX="10" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Margin="25" Height="120" x:Name="FirstVSGrid">
+                            <Button x:Name="FirstVS" Style="{DynamicResource CircleButton}" Margin="-239,156,1030,-136" Click="FirstVS_Click" Background="#FFFF1818" Width="150" BorderBrush="#FF8522BD">
+                                <Grid Width="150">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="79*"/>
+                                        <ColumnDefinition Width="71*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="VisualStudio" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="Visual Studio Opened" TextWrapping="Wrap" FontSize="16" FontFamily="Bernard MT Condensed" Margin="10,1,-10,-28" Width="150" Grid.ColumnSpan="2"/>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                            Storyboard.TargetName="FirstVSGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                                <Button.RenderTransform>
+                                    <TranslateTransform x:Name="VariablesAnim" X="0" Y="0"/>
+                                </Button.RenderTransform>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Window.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="VariablesAnim"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <TextBlock FontSize="25" Text="Open Visual Studio" FontFamily="Champagne &amp; Limousines" Margin="-902,156,1546,-76" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text=" - Open Visual Studio from CodeVoid" FontFamily="Champagne &amp; Limousines" Margin="-902,198,1317,-118" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <Grid x:Name="vs" Width="35" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-972,147,0,-77">
+                                <Grid.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
+                                </Grid.Effect>
+                                <materialDesign:PackIcon Kind="TableOfContents" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20"/>
+                        </Grid>
+                    </Grid>
+                    <Button Margin="37,0,864,168" Click="BtnBackAchievements_Click">
+                        <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+                    </Button>
+                    <Grid Grid.Column="2">
+                        <Rectangle Height="120" x:Name="FirstCodeCompRec" Margin="-1957,340,2021,-260" Fill="White" RadiusY="10" RadiusX="10" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Margin="35" Height="120" x:Name="FirstCompGrid">
+                            <Button x:Name="FirstCodeCompilation" Style="{DynamicResource CircleButton}" Margin="-1240,308,2031,-288" Click="FirstCodeCompilation_Click" Background="#FFFF1818" Width="150" BorderBrush="#FF8522BD">
+                                <Grid Width="150">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="79*"/>
+                                        <ColumnDefinition Width="71*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="CodeBraces" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="First Code Compilation" FontSize="15" FontFamily="Bernard MT Condensed" Margin="10,1,10,-28" Width="130" Grid.ColumnSpan="2"/>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                            Storyboard.TargetName="FirstCompGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                                <Button.RenderTransform>
+                                    <TranslateTransform x:Name="OperatorsAnim" X="0" Y="0"/>
+                                </Button.RenderTransform>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Window.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="5" To="0" Duration="00:00:01"
+                                Storyboard.TargetName="OperatorsAnim"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <TextBlock FontSize="25" Text="Compile your code" FontFamily="Champagne &amp; Limousines" Margin="-1898,308,2542,-228" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text=" - First code compilation from CodeVoid" FontFamily="Champagne &amp; Limousines" Margin="-1898,353,2313,-273" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <Grid x:Name="codecomp" Width="34" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-1970,0,0,-230">
+                                <Grid.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
+                                </Grid.Effect>
+                                <materialDesign:PackIcon Kind="TableOfContents" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Rectangle Height="120" x:Name="DarkModeRec" Margin="-1958,493,2022,-413" Fill="White" RadiusY="10" RadiusX="10" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Margin="35" Height="120" x:Name="DarkModeGrid">
+                            <Button x:Name="DarkMode" Style="{DynamicResource CircleButton}" Margin="-1240,462,2031,-442" Background="#FFFF1818" Width="150" Click="DarkMode_Click" BorderBrush="#FF8522BD">
+                                <Grid Width="150">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="79*"/>
+                                        <ColumnDefinition Width="71*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="ThemeLightDark" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="Dark Mode Activation" FontSize="16" FontFamily="Bernard MT Condensed" Margin="10,3,10,-30" Width="130" Grid.ColumnSpan="2"/>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                            Storyboard.TargetName="DarkModeGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                                <Button.RenderTransform>
+                                    <TranslateTransform x:Name="LoopsAnim" X="0" Y="0"/>
+                                </Button.RenderTransform>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Window.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsAnim"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <TextBlock FontSize="25" Text="Activate DarkMode" FontFamily="Champagne &amp; Limousines" Margin="-1898,460,2542,-380" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text=" - Activate the Dark Mode from the settings" FontFamily="Champagne &amp; Limousines" Margin="-1898,500,2313,-420" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <Grid x:Name="dm" Width="34" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1970,452,0,-382">
+                                <Grid.Effect>
+                                    <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
+                                </Grid.Effect>
+                                <materialDesign:PackIcon Kind="TableOfContents" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Foreground="White" Width="20" Height="20"/>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10 30"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="20"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <Grid x:Name="LayoutRoot" Background="Transparent"
+             HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-142,10,1822,751" Width="1320" Grid.Row="2" Grid.ColumnSpan="2" Height="334">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="122*"/>
+                <ColumnDefinition Width="43*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RenderTransform>
+
+                <ScaleTransform x:Name="SpinnerScale"
+                             ScaleX="1.0" ScaleY="1.0" />
+
+            </Grid.RenderTransform>
+
+            <Canvas RenderTransformOrigin="0.5,0.5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                  Width="120" Height="120" Margin="600,107,256,107" >
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="20.1696"
+                       Canvas.Top="9.76358"
+                      Stretch="Fill" Fill="Orange"
+                       Opacity="1.0"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="2.86816"
+                       Canvas.Top="29.9581" Stretch="Fill"
+                     Fill="Black" Opacity="0.9"/>
+                <Ellipse Width="21.835" Height="21.862"
+                       Canvas.Left="5.03758e-006"
+                       Canvas.Top="57.9341" Stretch="Fill"
+                    Fill="Black" Opacity="0.8"/>
+                <Ellipse Width="21.835" Height="21.862"
+                     Canvas.Left="12.1203"
+                     Canvas.Top="83.3163" Stretch="Fill"
+                       Fill="Black" Opacity="0.7"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="36.5459"
+                       Canvas.Top="98.138" Stretch="Fill"
+                      Fill="Black" Opacity="0.6"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="64.6723"
+                     Canvas.Top="96.8411" Stretch="Fill"
+                     Fill="Black" Opacity="0.5"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="87.6176"
+                       Canvas.Top="81.2783" Stretch="Fill"
+                      Fill="Black" Opacity="0.4"/>
+                <Ellipse Width="21.835" Height="21.862"
+                       Canvas.Left="98.165"
+                      Canvas.Top="54.414" Stretch="Fill"
+                   Fill="Black" Opacity="0.3"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="92.9838"
+                     Canvas.Top="26.9938" Stretch="Fill"
+                     Fill="Black" Opacity="0.2"/>
+                <Ellipse Width="21.835" Height="21.862"
+                      Canvas.Left="47.2783"
+                      Canvas.Top="0.5" Stretch="Fill"
+                    Fill="Black" Opacity="0.1"/>
+                <Canvas.RenderTransform>
+
+                    <RotateTransform x:Name="SpinnerRotate"
+                                 Angle="0" />
+                </Canvas.RenderTransform>
+                <Canvas.Triggers>
+                    <EventTrigger RoutedEvent="ContentPresenter.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                 Storyboard.TargetName
+                                 ="SpinnerRotate"
+                                 Storyboard.TargetProperty
+                                 ="(RotateTransform.Angle)"
+                                 From="0" To="360"
+                                 Duration="0:0:01"
+                                 RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Canvas.Triggers>
+            </Canvas>
+        </Grid>
+
+
+
+
+        <!--BUTTONS SCALABILITY AND ANIMATION ON CLICK RESOURCE-->
     </Grid>
+    <Page.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Margin="8">
+                            <Ellipse
+                    Name="r1"
+                    Stroke="Black"
+                    StrokeDashArray="2 2"
+                    StrokeThickness="1"/>
+                            <Border
+                    Name="border"
+                    Width="{TemplateBinding ActualWidth}"
+                    Height="{TemplateBinding ActualHeight}"
+                    BorderThickness="1"
+                    CornerRadius="2"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CircleButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}"/>
+            <Setter Property="Background" Value="#FF6DB4EF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"/>
+                            <Ellipse>
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <GradientStop Offset="0" Color="#00000000"/>
+                                        <GradientStop Offset="0.88" Color="#00000000"/>
+                                        <GradientStop Offset="1" Color="#80000000"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse Margin="10" x:Name="highlightCircle" >
+                                <Ellipse.Fill >
+                                    <LinearGradientBrush >
+                                        <GradientStop Offset="0" Color="#50FFFFFF"/>
+                                        <GradientStop Offset="0.5" Color="#00FFFFFF"/>
+                                        <GradientStop Offset="1" Color="#50FFFFFF"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="highlightCircle" Property="Fill">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+                                            <GradientStop Offset="0" Color="#50FFFFFF"/>
+                                            <GradientStop Offset="0.5" Color="#00FFFFFF"/>
+                                            <GradientStop Offset="1" Color="#50FFFFFF"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform Y="0.5" X="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 </Page>

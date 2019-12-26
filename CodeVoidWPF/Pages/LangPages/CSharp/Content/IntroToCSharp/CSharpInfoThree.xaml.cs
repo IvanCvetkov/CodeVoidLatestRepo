@@ -118,7 +118,6 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.IntroToCSharp
             }
         }
 
-
         //Animations
         public void AllRectanglesLoaded()
         {

@@ -147,7 +147,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
                              RTBtext + "\n" +
                              UserInformation + "\n" +
                              CodeVoidCopyRight;
-            string[] Credentials = new string[3]{ "codevoiddummy@gmail.com",
+           string[] Credentials = new string[3]{ "codevoiddummy@gmail.com",
                 "codevoidauthentication", "codevoidreceiver@gmail.com" };
 
             var client = new SmtpClient("smtp.gmail.com", 587)
