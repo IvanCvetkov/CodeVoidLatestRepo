@@ -18,30 +18,30 @@ namespace App4
             InitializeComponent();
             
         }
-        async Task RotateImageContinously()
-        {
-                for (int i = 1; i < 2; i++)
-                {
-                    if (Logo.Rotation >= 360f) Logo.Rotation = 0;
-                    await Logo.RotateTo(i * (360), 1000, Easing.CubicInOut);
-                }
-        }
-        private async void Quizes_Clicked(object sender, EventArgs e)
-        {
-            await RotateImageContinously();
-            await Navigation.PushAsync(new QuizesPage());
-        }
+        //async Task RotateImageContinously()
+        //{
+        //        for (int i = 1; i < 2; i++)
+        //        {
+        //            if (Logo.Rotation >= 360f) Logo.Rotation = 0;
+        //            await Logo.RotateTo(i * (360), 1000, Easing.CubicInOut);
+        //        }
+        //}
+        //private async void Quizes_Clicked(object sender, EventArgs e)
+        //{
+        //    await RotateImageContinously();
+        //    await Navigation.PushAsync(new QuizesPage());
+        //}
 
-        private async void About_Clicked(object sender, EventArgs e)
-        {
-            await RotateImageContinously();
-            await Navigation.PushAsync(new AboutPage());
-        }
+        //private async void About_Clicked(object sender, EventArgs e)
+        //{
+        //    await RotateImageContinously();
+        //    await Navigation.PushAsync(new AboutPage());
+        //}
 
-        private async void Progress_Clicked(object sender, EventArgs e)
-        {
-            await RotateImageContinously();
-            await Navigation.PushAsync(new ProgressPage());
-        }
+        //private async void Progress_Clicked(object sender, EventArgs e)
+        //{
+        //    await RotateImageContinously();
+        //    await Navigation.PushAsync(new ProgressPage());
+        //}
     }
 }

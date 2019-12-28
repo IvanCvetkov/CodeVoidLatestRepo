@@ -340,11 +340,23 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
 
         private void BtnCompile_Click(object sender, RoutedEventArgs e)
         {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string achievementsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\FirstCodeCompilation.txt";
 
+            using (StreamWriter sw = new StreamWriter(achievementsPath))
+            {
+                if (!File.Exists(achievementsPath))
+                    File.Create(achievementsPath);
 
-            //CSharpCompiler//
+                if (File.Exists(achievementsPath))
+                {
+                    string line = "FirstCodeCompilation:True";
+                    sw.WriteLine(line);
+                }
+            }
 
-            string Framework = 'v' + Environment.Version.ToString();
+                //CSharpCompiler//
+                string Framework = 'v' + Environment.Version.ToString();
             string OutputConsoleApp = "Output.exe";
             string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
             txtStatus.Clear();

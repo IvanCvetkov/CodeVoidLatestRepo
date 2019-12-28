@@ -52,13 +52,6 @@
                     <Run Text="         int [] marks = new int[5]  { 99,  98, 92, 97, 95};"/>
                 </Paragraph>
                 <Paragraph>
-                    <Run Text="         int [] marks = new int[]  { 99,  98, 92, 97, 95};"/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="         int [] marks = new int[]  { 99,  98, 92, 97, 95};
-                                 "/>
-                </Paragraph>
-                <Paragraph>
                     <Run Text="         int[] score = marks;"/>
                 </Paragraph>
                 <Paragraph>

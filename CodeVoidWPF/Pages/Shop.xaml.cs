@@ -121,6 +121,38 @@ namespace CodeVoidWPF.Pages
                 boundPointsNumber += int.Parse(points[1]);
             }
 
+            string pathDarkMode = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/DarkMode.txt";
+            string dmPath = Path.Combine(desktop_Path, pathDarkMode);
+
+            if (File.ReadAllText(dmPath).Contains(points[1]))
+            {
+                boundPointsNumber += int.Parse(points[1]);
+            }
+
+            string pathCC = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/FirstCC.txt";
+            string ccPath = Path.Combine(desktop_Path, pathCC);
+
+            if (File.ReadAllText(ccPath).Contains(points[1]))
+            {
+                boundPointsNumber += int.Parse(points[1]);
+            }
+
+            string pathLogin = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/FirstLogin.txt";
+            string loginPath = Path.Combine(desktop_Path, pathLogin);
+
+            if (File.ReadAllText(loginPath).Contains(points[1]))
+            {
+                boundPointsNumber += int.Parse(points[1]);
+            }
+
+            string pathVS = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/FirstVS.txt";
+            string vsPath = Path.Combine(desktop_Path, pathVS);
+
+            if (File.ReadAllText(vsPath).Contains(points[1]))
+            {
+                boundPointsNumber += int.Parse(points[1]);
+            }
+
 
             //Money display logic
             string[] separators = { "/50", "/15" };

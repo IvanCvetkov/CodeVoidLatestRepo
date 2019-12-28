@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeVoidWPF.Pages.LangPages.CSharp.Content.Alerts;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,13 +25,15 @@ namespace CodeVoidWPF.Pages
     /// <summary>
     /// Interaction logic for Achievements.xaml
     /// </summary>
+   
     public partial class Achievements : Page
     {
         public Achievements()
         {
             InitializeComponent();
         }
-        
+
+        bool dmPrice=false, firstLoginPrice=false, firstVSPrice=false, firstCCPrice = false;
         private async void Await()
         {
             await Task.Delay(1000);
@@ -43,57 +46,108 @@ namespace CodeVoidWPF.Pages
             AllRectanglesUnloaded();
         }
 
-       
 
+        
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+
+
             LayoutRoot.Visibility = Visibility.Hidden;
             AllRectanglesLoaded();
-
+            
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string achievementsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\Achievements.txt";
-
-            using (StreamReader sw = new StreamReader(achievementsPath))
+            string firstLoginPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\FirstLogin.txt";
+            string firstVSPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\FirstVS.txt";
+            string firstCodeCompilationPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\FirstCodeCompilation.txt";
+            string DarkModePath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\DarkMode.txt";
+            
+            using (StreamReader sw = new StreamReader(firstLoginPath))
             {
-                var bc = new BrushConverter();
-                if (!File.Exists(achievementsPath))
-                    File.Create(achievementsPath);
 
-                if (File.Exists(achievementsPath))
+                if (!File.Exists(firstLoginPath))
+                    File.Create(firstLoginPath);
+
+                if (File.Exists(firstLoginPath))
                 {
                     string line;
                     line = sw.ReadLine();
+                    var bc = new BrushConverter();
                     if (line.Contains("FirstLogin:True"))
                     {
                         FirstLogin.Background = (Brush)bc.ConvertFrom("#FF68BD22");
                         log.Background = (Brush)bc.ConvertFrom("#FF68BD22");
+                        firstLoginPrice = true;
                     }
                     else
                         FirstLogin.IsEnabled = false;
+                }
+            }
+            using (StreamReader sw = new StreamReader(firstVSPath))
+            {
+
+                if (!File.Exists(firstVSPath))
+                    File.Create(firstVSPath);
+
+                if (File.Exists(firstVSPath))
+                {
+                    string line;
+                    line = sw.ReadLine();
+                    var bc = new BrushConverter();
                     if (line.Contains("FirstVS:True"))
                     {
                         FirstVS.Background = (Brush)bc.ConvertFrom("#FF68BD22");
                         vs.Background = (Brush)bc.ConvertFrom("#FF68BD22");
+                        firstVSPrice = true;
                     }
                     else
                         FirstVS.IsEnabled = false;
+                }
+            }
+            using (StreamReader sw = new StreamReader(firstCodeCompilationPath))
+            {
+
+                if (!File.Exists(firstCodeCompilationPath))
+                    File.Create(firstCodeCompilationPath);
+
+                if (File.Exists(firstCodeCompilationPath))
+                {
+                    string line;
+                    line = sw.ReadLine();
+                    var bc = new BrushConverter();
                     if (line.Contains("FirstCodeCompilation:True"))
                     {
                         FirstCodeCompilation.Background = (Brush)bc.ConvertFrom("#FF68BD22");
                         codecomp.Background = (Brush)bc.ConvertFrom("#FF68BD22");
+                        firstCCPrice = true;
                     }
                     else
                         FirstCodeCompilation.IsEnabled = false;
+                }
+            }
+            using (StreamReader sw = new StreamReader(DarkModePath))
+            {
+
+                if (!File.Exists(DarkModePath))
+                    File.Create(DarkModePath);
+
+                if (File.Exists(DarkModePath))
+                {
+                    string line;
+                    line = sw.ReadLine();
+                    var bc = new BrushConverter();
                     if (line.Contains("DarkMode:True"))
                     {
                         DarkMode.Background = (Brush)bc.ConvertFrom("#FF68BD22");
                         dm.Background = (Brush)bc.ConvertFrom("#FF68BD22");
+                        dmPrice = true;
                     }
                     else
                         DarkMode.IsEnabled = false;
                 }
             }
         }
+
+
         //Animations
         public void AllRectanglesLoaded()
         {
@@ -181,21 +235,59 @@ namespace CodeVoidWPF.Pages
             FirstCodeCompRec.BeginAnimation(WidthProperty, firstCodeCompRectangle);
             DarkModeRec.BeginAnimation(WidthProperty, darkModeRectangle);
         }
+
+
+        string desktop_Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         private void FirstLogin_Click(object sender, RoutedEventArgs e)
         {
+             if (firstLoginPrice)
+            {
+                string pathFirstLogin = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/FirstLogin.txt";
+                string loginPath = System.IO.Path.Combine(desktop_Path, pathFirstLogin);
+                using (StreamWriter sw = new StreamWriter(loginPath))
+                {
+                    sw.WriteLine("20");
+                }
+            }
+
             
         }
         private void FirstVS_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (firstVSPrice)
+            {
+                string pathFirstVS = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/FirstVS.txt";
+                string vsPath = System.IO.Path.Combine(desktop_Path, pathFirstVS);
+                using (StreamWriter sw = new StreamWriter(vsPath))
+                {
+                    sw.WriteLine("20");
+                }
+            }
         }
         private void FirstCodeCompilation_Click(object sender, RoutedEventArgs e)
         {
-           
+           if (firstCCPrice)
+            {
+                string pathFirstCC = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/FirstCC.txt";
+                string firstCCpath = System.IO.Path.Combine(desktop_Path, pathFirstCC);
+                using (StreamWriter sw = new StreamWriter(firstCCpath))
+                {
+                    sw.WriteLine("20");
+                }
+            }
         }
         private void DarkMode_Click(object sender, RoutedEventArgs e)
         {
-            
+             if (dmPrice)
+            {
+                string pathDarkMode = "CodeVoidProject/CodeVoid/CodeVoidWPF/Points/DarkMode.txt";
+                string dmPath = System.IO.Path.Combine(desktop_Path, pathDarkMode);
+                using (StreamWriter sw = new StreamWriter(dmPath))
+                {
+                    sw.WriteLine("20");
+                }
+            }
+
         }
     }
 }
