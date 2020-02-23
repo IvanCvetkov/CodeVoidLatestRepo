@@ -14,7 +14,7 @@
       FontFamily="{DynamicResource MaterialDesignFont}"
       mc:Ignorable="d"  
       d:DesignHeight="3000" d:DesignWidth="3000"
-      Title="CSharpEnd">
+      Title="CSharpEnd" Loaded="Page_Loaded">
 
     <Grid>
 
@@ -36,7 +36,7 @@
         </Grid.ColumnDefinitions>
 
         <WrapPanel x:Name="wp" Grid.Row="1" HorizontalAlignment="Stretch" Orientation="Horizontal" Grid.ColumnSpan="5" Margin="184,-18,-180,18"/>
-        <Button x:Name="BtnCompile"  Width="450" FontSize="28" Height="40" Content="Compile" Click="BtnCompile_Click"  Margin="37,447,336,43" Grid.Row="2" Grid.Column="0" Background="Red"></Button>
+        <Button x:Name="BtnCompile"  Width="450" FontSize="28" Height="40" Content="Компилирай" Click="BtnCompile_Click"  Margin="37,447,336,43" Grid.Row="2" Grid.Column="0" Background="Red"></Button>
         <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="56" Margin="39,386,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
         <RichTextBox FontSize="15.3"  x:Name="txtSource" HorizontalAlignment="Left" Height="440" Margin="39,34,0,0" VerticalAlignment="Top" Width="448" Grid.RowSpan="3" TextChanged="txtSource_TextChanged">
             <FlowDocument>
@@ -78,9 +78,9 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <TextBlock FontSize="23" TextWrapping="WrapWithOverflow" Width="220" Margin="718,41,-88,329" Grid.Row="2" Text="The second box is the error list." Grid.ColumnSpan="5"/>
-        <TextBlock FontSize="23" TextWrapping="WrapWithOverflow" Width="220" Margin="706,105,-99,193" Grid.Row="2" Text="The button compiles the code and shows you the result on the console." Grid.ColumnSpan="5"/>
-        <TextBlock FontSize="23" TextWrapping="WrapWithOverflow" Width="220" Margin="696,224,-109,74" Grid.Row="2" Text="Write Console.WriteLine(&quot;Hello World!&quot;); followed by Console.ReadKey(); in the curly brackets under Main and see what happens." Grid.ColumnSpan="5"/>
+        <TextBlock FontSize="23" TextWrapping="WrapWithOverflow" Width="220" Margin="730,10,-77,360" Grid.Row="2" Text="Във втората текстова кутия се изписват грешките." Grid.ColumnSpan="5"/>
+        <TextBlock FontSize="23" TextWrapping="WrapWithOverflow" Width="220" Margin="727,96,-79,202" Grid.Row="2" Text="Червеният бутон &quot;Компилирай&quot; компилира кода и ви показва резултата на конзолата." Grid.ColumnSpan="5"/>
+        <TextBlock FontSize="23" TextWrapping="WrapWithOverflow" Width="220" Margin="732,260,-74,37" Grid.Row="2" Text="Напишете Console.WriteLine(&quot;Hello World!&quot;); следвано от Console.ReadKey(); в къдравите скоби под Main" Grid.ColumnSpan="5"/>
 
         <Button x:Name="CSharpInfo" Width="94" Height="52" Click="CSharpInfo_Click" Margin="0,34,-62,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1">
             <materialDesign:PackIcon Kind="Home" Height="52" Width="54"></materialDesign:PackIcon>

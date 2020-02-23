@@ -27,15 +27,263 @@
                 IsEnabled="True" Click="BtnBackLanguages_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
         </Button>
-        
+
         <materialDesign:Card Padding="8" Margin="318,10,319,0">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text=" Languages"/>
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Text=" Езици за програмиране"/>
         </materialDesign:Card>
         <Grid x:Name="LangGrid" HorizontalAlignment="Left" Height="Auto" Margin="318,25,0,0" Grid.Row="1" VerticalAlignment="Top" Width="Auto" Background="#FF383838">
-            <Button x:Name="BtnCSharp" Width="Auto" Height="Auto" Content="C#" Click="BtnCSharp_Click" Margin="48,10,45,186" FontSize="25"/>
-            <Button x:Name="BtnPython" Width="Auto" Height="Auto" Content="Python" Click="BtnPython_Click" Margin="48,53,45,143" FontSize="25"/>
-            <Button x:Name="BtnJava" Width="Auto" Height="Auto" Content="Java" Click="BtnJava_Click" Margin="48,96,45,100" FontSize="25"/>
-            <Button x:Name="BtnJavascript" Width="Auto" Height="Auto" Content="JavaScript" Click="BtnJavascript_Click" Margin="48,139,45,57" FontSize="25"/>
+            <Button x:Name="CSharp" HorizontalAlignment="Left" Margin="43,-95,-52,0" VerticalAlignment="Top" Click="BtnCSharp_Click" Width="94" Style="{DynamicResource CircleButton}" Background="Firebrick" BorderBrush="#FF8522BD" Height="70">
+                <Grid Width="150" x:Name="CSharpGrid" Height="30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="66*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="54*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="C#" FontSize="25" FontFamily="Bernard MT Condensed" Margin="23,0,-18,-20" Width="132" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                                            Storyboard.TargetName="CSharpGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+                </Grid>
+                <Button.RenderTransform>
+                    <TranslateTransform x:Name="LoopsAnim1" X="0" Y="0"/>
+                </Button.RenderTransform>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsAnim1"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="BtnPython" HorizontalAlignment="Left" Margin="142,-96,-151,0" VerticalAlignment="Top" Click="BtnPython_Click" Width="94" Style="{DynamicResource CircleButton}" Background="Firebrick" BorderBrush="#FF8522BD" Height="71">
+                <Grid Width="150" x:Name="PythonGrid" Height="30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="66*"/>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="54*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Text="Python" FontSize="25" FontFamily="Bernard MT Condensed" Margin="0,0,-18,-20" Width="155" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                                            Storyboard.TargetName="PythonGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="3" To="0" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+                </Grid>
+                <Button.RenderTransform>
+                    <TranslateTransform x:Name="LoopsAnim2" X="0" Y="0"/>
+                </Button.RenderTransform>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsAnim2"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
         </Grid>
+        <Button x:Name="BtnJava" HorizontalAlignment="Left" Margin="681,77,0,0" VerticalAlignment="Top" Click="BtnJava_Click" Width="94" Style="{DynamicResource CircleButton}" Background="Firebrick" BorderBrush="#FF8522BD" Height="71">
+            <Grid Width="150" x:Name="JavaGrid" Height="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="66*"/>
+                    <ColumnDefinition Width="17*"/>
+                    <ColumnDefinition Width="54*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" Text="Java" FontSize="25" FontFamily="Bernard MT Condensed" Margin="15,0,-28,-20" Width="150" Grid.ColumnSpan="3" Grid.Column="1"/>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                                            Storyboard.TargetName="JavaGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="3" To="0" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="LoopsAnim4" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsAnim4"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button x:Name="BtnJavascript" HorizontalAlignment="Left" Margin="559,77,0,0" VerticalAlignment="Top" Click="BtnJavascript_Click" Width="117" Style="{DynamicResource CircleButton}" Background="Firebrick" BorderBrush="#FF8522BD" Height="72">
+            <Grid Width="150" x:Name="JSGrid" Height="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="66*"/>
+                    <ColumnDefinition Width="17*"/>
+                    <ColumnDefinition Width="54*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" Text="Javascript" FontSize="25" FontFamily="Bernard MT Condensed" Margin="0,0,-18,-20" Width="155" Grid.ColumnSpan="3" Grid.Column="1"/>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                                            Storyboard.TargetName="JSGrid" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="LoopsAnim3" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsAnim3"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
     </Grid>
+
+    <Page.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Margin="8">
+                            <Ellipse
+                    Name="r1"
+                    Stroke="Black"
+                    StrokeDashArray="2 2"
+                    StrokeThickness="1"/>
+                            <Border
+                    Name="border"
+                    Width="{TemplateBinding ActualWidth}"
+                    Height="{TemplateBinding ActualHeight}"
+                    BorderThickness="1"
+                    CornerRadius="2"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CircleButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}"/>
+            <Setter Property="Background" Value="#FF6DB4EF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"/>
+                            <Ellipse>
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <GradientStop Offset="0" Color="#00000000"/>
+                                        <GradientStop Offset="0.88" Color="#00000000"/>
+                                        <GradientStop Offset="1" Color="#80000000"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse Margin="10" x:Name="highlightCircle" >
+                                <Ellipse.Fill >
+                                    <LinearGradientBrush >
+                                        <GradientStop Offset="0" Color="#50FFFFFF"/>
+                                        <GradientStop Offset="0.5" Color="#00FFFFFF"/>
+                                        <GradientStop Offset="1" Color="#50FFFFFF"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="highlightCircle" Property="Fill">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+                                            <GradientStop Offset="0" Color="#50FFFFFF"/>
+                                            <GradientStop Offset="0.5" Color="#00FFFFFF"/>
+                                            <GradientStop Offset="1" Color="#50FFFFFF"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform Y="0.5" X="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 </Page>

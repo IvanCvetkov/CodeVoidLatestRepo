@@ -23,8 +23,8 @@ namespace CodeVoidWPF
             string strPassPlain = pass.Text;
             string strMail= mail.Text;
 
-            PasswordEncryptor keys = new PasswordEncryptor();
-            string strPass = keys.EncryptString(strPassPlain);
+            //PasswordEncryptor keys = new PasswordEncryptor();
+            //string strPass = keys.EncryptString(strPassPlain);
 
 
             bool passw = false;
@@ -40,7 +40,7 @@ namespace CodeVoidWPF
                 cnPass.Open();
                 using (MySqlCommand cmd = new MySqlCommand(sql2, cnPass))
                 {
-                    cmd.Parameters.AddWithValue("@password", strPass);
+                    cmd.Parameters.AddWithValue("@password", /*strPass*/strPassPlain);
 
                     var result = Convert.ToInt32(cmd.ExecuteScalar());
                     if (result > 0)
@@ -101,7 +101,7 @@ namespace CodeVoidWPF
             {
                 if (mailb == true)
                 {
-                    if (strUser.Length >= 6 && strPass.Length >= 6)
+                    if (strUser.Length >= 6 && /*strPass*/strPassPlain.Length >= 6)
                     {
                         MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
                         string insertQuery = "INSERT INTO codevoidlogin.actualdatabase(username,password,mail,firstname,lastname)" +
@@ -115,12 +115,11 @@ namespace CodeVoidWPF
                             command.Parameters.AddWithValue("@lastname", lastName.Text);
                             command.Parameters.AddWithValue("@username", strUser);
                             command.Parameters.AddWithValue("@mail", strMail);
-                            command.Parameters.AddWithValue("@password", strPass);
+                            command.Parameters.AddWithValue("@password", /*strPass*/strPassPlain);
                             try
                             {
                                 if (command.ExecuteNonQuery() == 1)
                                 {
-
                                     // MessageBox.Show("You have registered successfully!");
                                     RegisterSuccess registerSuccess = new RegisterSuccess();
                                     registerSuccess.ShowDialog();

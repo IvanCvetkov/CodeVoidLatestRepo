@@ -35,14 +35,14 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="BlueGrid" HorizontalAlignment="Left" Margin="10,9,0,1" 
               Grid.Row="4" Background="#FFB4CFFF" Width="1196">
-            
+
             <Grid.Effect>
                 <DropShadowEffect BlurRadius = "10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
             </Grid.Effect>
             <TextBlock 
                 FontSize="28" TextWrapping="NoWrap"
-                       Margin="114,181,661,396" Text="We Teach, We Code, We Develop" FontFamily="Dosis"/>
-            
+                       Margin="114,181,661,396" Text="Заедно напред!" FontFamily="Dosis"/>
+
             <Image  x:Name="MainPagePic" Source="pack://application:,,,/Images/DesktopTwo.png"
                     Margin="570,10,66,330">
                 <Image.Triggers>
@@ -105,7 +105,7 @@
                 </Button>
                 <TextBlock FontStyle="Italic" FontWeight="SemiBold"
                            FontSize="32" TextWrapping="WrapWithOverflow"
-                           Margin="10,188,10,59"><Run Text="         About"/></TextBlock>
+                           Margin="24,188,-14,59"><Run Text="      ЗА НАС"/></TextBlock>
                 <Button x:Name="AboutIcon" Width="162" Height="142"
                         Margin="44,41,0,0" HorizontalAlignment="Left"
                         VerticalAlignment="Top" Background="#FFBA92FF">
@@ -143,11 +143,11 @@
                         VerticalAlignment="Top" Background="#FF7C56BD">
                     <materialDesign:PackIcon Kind="FormatLineWeight"
                                              Height="39" Width="55"/>
-                    
+
                 </Button>
                 <TextBlock FontStyle="Italic" FontWeight="SemiBold" 
                            FontSize="32" TextWrapping="WrapWithOverflow"
-                           Margin="62,188,42,42" Text=" Contact"/>
+                           Margin="32,190,-22,33" Text=" КОНТАКТИ"/>
                 <Button x:Name="LocationIcon" Width="162" Height="142" Margin="44,41,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFBA92FF">
                     <materialDesign:PackIcon Kind="Location" Height="142" Width="116"></materialDesign:PackIcon>
@@ -183,9 +183,6 @@
                         VerticalAlignment="Top" Background="#FF7C56BD">
                     <materialDesign:PackIcon Kind="FormatLineWeight" Height="39" Width="55"/>
                 </Button>
-                
-                <TextBlock FontStyle="Italic" FontWeight="SemiBold" FontSize="32"
-                           TextWrapping="WrapWithOverflow" Margin="80,192,42,59" Text=" News"/>
                 <Button x:Name="NewsIcon" Width="162" Height="142" Margin="44,41,0,0"
                         HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFBA92FF">
                     <materialDesign:PackIcon Kind="Newspaper" Height="142" Width="116"></materialDesign:PackIcon>
@@ -210,6 +207,9 @@
                         </EventTrigger>
                     </Button.Triggers>
                 </Button>
+                <TextBlock FontStyle="Italic" FontWeight="SemiBold"
+                    FontSize="32" TextWrapping="WrapWithOverflow"
+                    Margin="10,188,10,59"><Run Text="      НОВИНИ"/></TextBlock>
             </Grid>
         </Grid>
     </Grid>

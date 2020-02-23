@@ -20,38 +20,38 @@
             <Button Margin="10" Click="BtnHome_Click" x:Name="BtnHome" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-9,0,83,1"/>
-                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="HOME" FontFamily="Champagne &amp; Limousines" Margin="30,1,22,-1" Width="38"/>
+                    <TextBlock FontSize="12" HorizontalAlignment="Center" Text="НАЧАЛО" FontFamily="Champagne &amp; Limousines" Margin="30,1,10,-1" Width="50"/>
                 </Grid>
             </Button>
             <!--<Button x:Name="BtnCources" Style="{StaticResource MaterialDesignRaisedButton}" Click="BtnCources_Click" Margin="10" Content="Courses"/>-->
             <Button  x:Name= "BtnAchievements" Click ="BtnAchievements_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="Achievement" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnAchievementsText" HorizontalAlignment="Center" Text="ACHIEVEMENTS" FontFamily="Champagne &amp; Limousines" Margin="10,0,-9,-1"/>
+                    <TextBlock FontSize="12" x:Name="BtnAchievementsText" HorizontalAlignment="Center" Text="ПОСТИЖЕНИЯ" FontFamily="Champagne &amp; Limousines" Margin="10,0,-9,-1"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnLB" Click ="BtnLB_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="LeadPencil" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="LeaderboardsText" HorizontalAlignment="Center" Text="LEADERBOARDS" FontFamily="Champagne &amp; Limousines" Margin="9,0,-12,-1" Width="93"/>
+                    <TextBlock FontSize="12" x:Name="LeaderboardsText" HorizontalAlignment="Center" Text="   КЛАСАЦИИ" FontFamily="Champagne &amp; Limousines" Margin="9,0,-12,-1" Width="93"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnAccount" Click ="BtnAccount_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="AccountBox" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnAccountText" HorizontalAlignment="Center" Text="ACCOUNT" FontFamily="Champagne &amp; Limousines" Margin="20,0,9,-1" Width="61"/>
+                    <TextBlock FontSize="12" x:Name="BtnAccountText" HorizontalAlignment="Center" Text="   АКАУНТ" FontFamily="Champagne &amp; Limousines" Margin="19,0,10,-1" Width="61"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnShop" Click ="BtnShop_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="Shop" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnShopText" HorizontalAlignment="Center" Text="SHOP" FontFamily="Champagne &amp; Limousines" Margin="32,0,27,-1"/>
+                    <TextBlock FontSize="12" x:Name="BtnShopText" HorizontalAlignment="Center" Text="    МАГАЗИН" FontFamily="Champagne &amp; Limousines" Margin="11,0,4,-1" Width="75"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnNews" Click ="BtnNews_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="Newspaper" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnNewsText" HorizontalAlignment="Center" Text="NEWS" FontFamily="Champagne &amp; Limousines" Margin="30,0,26,-1"/>
+                    <TextBlock FontSize="12" x:Name="BtnNewsText" HorizontalAlignment="Center" Text="   НОВИНИ" FontFamily="Champagne &amp; Limousines" Margin="17,0,5,-1" Width="68"/>
                 </Grid>
             </Button>
             <!--<Menu Height="32" Width="194">
@@ -64,31 +64,31 @@
             <Button  x:Name= "BtnLanguages" Click ="BtnLanguages_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="LanguageJava" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnLanguagesText" HorizontalAlignment="Center" Text="LANGUAGES" FontFamily="Champagne &amp; Limousines" Margin="16,0,-24,-1" Width="98"/>
+                    <TextBlock FontSize="12" x:Name="BtnLanguagesText" HorizontalAlignment="Center" Text="     ЕЗИЦИ" FontFamily="Champagne &amp; Limousines" Margin="16,0,-24,-1" Width="98"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnProgress" Click ="BtnProgress_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="ProgressClock" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnProgressText" HorizontalAlignment="Center" Text="PROGRESS" FontFamily="Champagne &amp; Limousines" Margin="20,0,-28,-1" Width="98"/>
+                    <TextBlock FontSize="12" x:Name="BtnProgressText" HorizontalAlignment="Center" Text="  ПРОГРЕС" FontFamily="Champagne &amp; Limousines" Margin="20,0,-28,-1" Width="98"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnDonate" Click ="BtnDonate_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="Donate" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnDonateText" HorizontalAlignment="Center" Text="DONATE" FontFamily="Champagne &amp; Limousines" Margin="25,0,-33,-1" Width="98"/>
+                    <TextBlock FontSize="12" x:Name="BtnDonateText" HorizontalAlignment="Center" Text="ДАРЕНИЯ" FontFamily="Champagne &amp; Limousines" Margin="25,0,-33,-1" Width="98"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnWebsite" Click ="BtnWebsite_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="Web" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="12" x:Name="BtnWebsiteText" HorizontalAlignment="Center" Text="WEBSITE" FontFamily="Champagne &amp; Limousines" Margin="26,0,-34,-1" Width="98"/>
+                    <TextBlock FontSize="12" x:Name="BtnWebsiteText" HorizontalAlignment="Center" Text="УЕБСАЙТ" FontFamily="Champagne &amp; Limousines" Margin="26,0,-34,-1" Width="98"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnKids" Click ="BtnKids_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <materialDesign:PackIcon Kind="HumanChild" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock FontSize="11" x:Name="BtnKidsText" HorizontalAlignment="Center" Text="CODING FOR KIDS" FontFamily="Champagne &amp; Limousines" Margin="8,2,-16,-9" Width="98"/>
+                    <TextBlock TextWrapping="WrapWithOverflow" FontSize="11" x:Name="BtnKidsText" HorizontalAlignment="Center" Text="ПРОГРАМИРАНЕ ЗА ДЕЦА" FontFamily="Champagne &amp; Limousines" Margin="18,0,-16,-7" Width="88"/>
                 </Grid>
             </Button>
             <Button  x:Name= "BtnSett" Click ="BtnSett_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
@@ -98,7 +98,7 @@
                         <RowDefinition Height="9*"/>
                     </Grid.RowDefinitions>
                     <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" Margin="-10,0,0,0" Grid.RowSpan="2" Width="21"/>
-                    <TextBlock FontSize="11" x:Name="BtnSettingsText" HorizontalAlignment="Center" Text="SETTINGS" FontFamily="Champagne &amp; Limousines" Margin="26,2,-34,-9" Width="98" Grid.RowSpan="2"/>
+                    <TextBlock FontSize="11" x:Name="BtnSettingsText" HorizontalAlignment="Center" Text="НАСТРОЙКИ" FontFamily="Champagne &amp; Limousines" Margin="26,2,-34,-9" Width="98" Grid.RowSpan="2"/>
                 </Grid>
             </Button>
         </StackPanel>

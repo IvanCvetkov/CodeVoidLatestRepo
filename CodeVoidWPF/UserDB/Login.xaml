@@ -27,7 +27,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBox  x:Name="username" PreviewMouseLeftButtonDown="Username_PreviewMouseLeftButtonDown"
                             FontWeight="Light"
-                            Text="Username"
+                            Text="Потребителско име"
                             FontSize="20"
                             HorizontalAlignment="Center"
                             Foreground="White"
@@ -57,7 +57,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBox  x:Name="pass" PreviewMouseLeftButtonDown="Pass_PreviewMouseLeftButtonDown"
                             FontWeight="Light"
-                            Text="Password"
+                            Text="Парола"
                             FontSize="20"
                             HorizontalAlignment="Center"
                             Foreground="White"
@@ -76,7 +76,7 @@
                        Background="White"
                        Opacity="0.5"/>
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button x:Name="LoginBtn" Width="258" Height="40" FontSize="20" Content="LOGIN" Margin="60,0,60,0" Click="Login_Click"/>
+                    <Button x:Name="LoginBtn" Width="258" Height="40" FontSize="20" Content="ВЛЕЗ" Margin="60,0,60,0" Click="Login_Click"/>
                 </StackPanel>
 
             </StackPanel>

@@ -23,7 +23,8 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="657"/>
+            <RowDefinition Height="126"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -69,7 +70,7 @@
                         <Run Text=", j, n[j]);"/>
                     </Span>
                 </Paragraph>
-                
+
                 <Paragraph>
                     <Run Text="         }"/>
                 </Paragraph>
@@ -111,8 +112,8 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <TextBlock x:Name="a" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
-             <Run Foreground="CornflowerBlue">Arrays</Run>
+        <TextBlock x:Name="a" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-132,562" Grid.ColumnSpan="2">
+             <Run Foreground="CornflowerBlue">Масиви</Run>
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
                     <BeginStoryboard>
@@ -128,16 +129,16 @@
             </TextBlock.Triggers>
         </TextBlock>
         <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="685,621,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
-        <Button x:Name="BtnCompile" Content="Compile" Width="290" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="181,625,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red" Grid.RowSpan="2"/>
-        <Button x:Name="vs" Content="Open in Visual Studio" Width="290" FontSize="26" Height="52" Click="Vs_Click" Margin="181,568,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="BtnCompile" Content="Компилирай" Width="290" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="181,625,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red" Grid.RowSpan="2"/>
+        <Button x:Name="vs" Content="Отвори във VS" Width="290" FontSize="26" Height="52" Click="Vs_Click" Margin="181,568,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,0,698" Height="4" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Text="In the following example we declare an array of 10" Margin="16,186,51,274"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,541,493" Text="elements. With the first for loop we go through"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,228,32,274" Text="each and every element of the array and increment"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,251,32,274" Text="it's value on the given index by 100."/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,271,32,274" Text="Then we output the 10 elements on the console"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,294,32,274" Text="with a second for loop by using the WriteLine command."/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,0,573" Height="4" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Text="В следващия пример декларираме масив от 10" Margin="16,186,51,148"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,541,367" Text="елемента. Чрез първия for цикъл обхождаме всеки"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,228,32,148" Text="един елемент по отделно и увеличаваме стойността"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,251,32,148" Text="му на съответстващият му индекс със 100."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,271,32,148" Text="След това изкарваме всички елементи на екрана чрез"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,294,32,148" Text="втори for цикъл и командата Console.WriteLine()."/>
         <Button x:Name="Next" Width="94" Height="52" Click="Next_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.RenderTransform>
@@ -161,6 +162,6 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <StackPanel Orientation = "Horizontal" Margin="563,87,500,93" Grid.ColumnSpan="2"/>
+        <StackPanel Orientation = "Horizontal" Margin="563,87,499,93" Grid.RowSpan="2"/>
     </Grid>
 </Page>

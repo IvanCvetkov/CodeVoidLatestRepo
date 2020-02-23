@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System.IO;
+using CodeVoidWPF.Extensions;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Diagnostics;
@@ -342,21 +343,41 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
         {
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string achievementsPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\FirstCodeCompilation.txt";
+            string nextPagePath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\NextPageLocker.txt";
+            string[] lines = { "FirstCodeCompilation:True", "NextPage:True" };
 
+            //Next Page txt file check
+            using (StreamReader nextPage = new StreamReader(nextPagePath))
+            {
+                string line = String.Empty;
+
+                while ((line = nextPage.ReadLine()) != null)
+                    if (line == "NextPage:True")
+                        CSharpInfo.IsEnabled = true;
+            }
+
+            //Achievements
             using (StreamWriter sw = new StreamWriter(achievementsPath))
             {
                 if (!File.Exists(achievementsPath))
                     File.Create(achievementsPath);
-
-                if (File.Exists(achievementsPath))
-                {
-                    string line = "FirstCodeCompilation:True";
-                    sw.WriteLine(line);
-                }
+                else
+                    sw.WriteLine(lines[0]);
             }
 
-                //CSharpCompiler//
-                string Framework = 'v' + Environment.Version.ToString();
+            //Next Page Button
+            if (txtSource.Text().Contains("Console.ReadKey();"))
+                using (StreamWriter nextPage = new StreamWriter(nextPagePath))
+                {
+                    if (!File.Exists(nextPagePath))
+                        File.Create(nextPagePath);
+                    else
+                        nextPage.WriteLine(lines[1]);
+                }
+
+
+            //***CSharpCompiler***//
+            string Framework = 'v' + Environment.Version.ToString();
             string OutputConsoleApp = "Output.exe";
             string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
             txtStatus.Clear();
@@ -451,7 +472,21 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp
             //Navigation service
             this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
 
+        }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            CSharpInfo.IsEnabled = false;
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string nextPagePath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\Data\\NextPageLocker.txt";
+            using (StreamReader nextPage = new StreamReader(nextPagePath))
+            {
+                string line = String.Empty;
+
+                while ((line = nextPage.ReadLine()) != null)
+                    if (line == "NextPage:True")
+                        CSharpInfo.IsEnabled = true;
+            }
         }
     }
 }

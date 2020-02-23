@@ -12,136 +12,188 @@
       TextOptions.TextRenderingMode="Auto"
       Background="{DynamicResource MaterialDesignPaper}"
       FontFamily="{DynamicResource MaterialDesignFont}"
-      mc:Ignorable="d" 
-      d:DesignHeight="3000" d:DesignWidth="3000" Loaded="Page_Loaded"
-      Title="Account">
+      mc:Ignorable="d" Loaded="Page_Loaded"
+      Title="Account" Height="816" Width="1332">
 
-    <Grid>
-        <materialDesign:Flipper
-            Margin="514,69,0,0">
-            <materialDesign:Flipper.FrontContent>
-                <Grid
-      Height="256"
-      Width="200">
-                    <Grid.RowDefinitions>
-                        <RowDefinition
-          Height="160" />
-                        <RowDefinition
-          Height="*" />
-                    </Grid.RowDefinitions>
-                    <materialDesign:ColorZone
-        Mode="PrimaryLight"
-        VerticalAlignment="Stretch">
-                        <materialDesign:PackIcon
-          Kind="AccountCircle"
-          Height="128"
-          Width="128"
-          VerticalAlignment="Center"
-          HorizontalAlignment="Center" />
-                    </materialDesign:ColorZone>
-                    <StackPanel
-        Grid.Row="1"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center">
-                        <TextBlock>
-        
-                        </TextBlock>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:Flipper.FrontContent>
-            <materialDesign:Flipper.BackContent>
-                <Grid
-      Height="256"
-      Width="200">
-                    <Grid.RowDefinitions>
-                        <RowDefinition
-          Height="Auto" />
-                        <RowDefinition
-          Height="*" />
-                    </Grid.RowDefinitions>
-                    <materialDesign:ColorZone
-        Mode="Accent"
-        Padding="6">
-                        <StackPanel
-          Orientation="Horizontal">
-                            <Button
-            Style="{StaticResource MaterialDesignToolForegroundButton}"
-            Command="{x:Static materialDesign:Flipper.FlipCommand}"
-            HorizontalAlignment="Left">
-                                <materialDesign:PackIcon
-              Kind="ArrowLeft"
-              HorizontalAlignment="Right" />
-                            </Button>
-                            <TextBlock
-            Margin="8 0 0 0"
-            VerticalAlignment="Center">
-          EDIT USER
-                            </TextBlock>
-                        </StackPanel>
-                    </materialDesign:ColorZone>
-                    <Grid
-        Grid.Row="1"
-        Margin="0 6 0 0"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Top"
-        Width="172">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <TextBox
-          materialDesign:HintAssist.Hint="First name"
-          materialDesign:HintAssist.IsFloating="True"
-          Margin="0 12 0 0">
-                            James
-                        </TextBox>
-                        <TextBox
-          Grid.Row="1"
-          materialDesign:HintAssist.Hint="Last name"
-          materialDesign:HintAssist.IsFloating="True"
-          Margin="0 12 0 0">
-                            Willock
-                        </TextBox>
-                        <StackPanel
-          Grid.Row="2"
-          Orientation="Horizontal"
-          Margin="0 12 0 0"
-          HorizontalAlignment="Right">
-                            <TextBlock
-            VerticalAlignment="Center">
-          Email Contact
-                            </TextBlock>
-                            <ToggleButton
-            Margin="8 0 0 0"></ToggleButton>
-                        </StackPanel>
-                        <StackPanel
-          Grid.Row="3"
-          Orientation="Horizontal"
-          Margin="0 12 0 0"
-          HorizontalAlignment="Right">
-                            <TextBlock
-            VerticalAlignment="Center">
-          Telephone Contact
-                            </TextBlock>
-                            <ToggleButton
-            Margin="8 0 0 0"></ToggleButton>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
-            </materialDesign:Flipper.BackContent>
-        </materialDesign:Flipper>
-
+    <Grid Margin="0,0,0,10">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="pack://application:,,,/Images\background.jpg"
+                AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
+        <Grid Background="Transparent" Width="200" Height="200" Margin="90,117,1042,489">
+            <materialDesign:PackIcon Kind="AccountCircle" Height="190" Width="190" Background="Transparent" Margin="10,0,0,0"/>
+        </Grid>
         <!--BACK BUTTON-->
         <Button x:Name="BtnBackAccount"
                 IsEnabled="True" Click="BtnBackAccount_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
         </Button>
-        <Grid HorizontalAlignment="Stretch" Margin="258,330,-171,-282" VerticalAlignment="Stretch">
-            <Button x:Name="login" Content="login" HorizontalAlignment="Left" Margin="254,10,0,0" VerticalAlignment="Top" Click="Login_Click" Width="76"/>
-            <Button x:Name="register" Content="register" HorizontalAlignment="Left" Margin="380,10,0,0" VerticalAlignment="Top" Click="Register_Click" Width="82"/>
+        <Grid HorizontalAlignment="Stretch" Margin="-156,426,414,-96" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="353*"/>
+                <ColumnDefinition Width="721*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="register" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource CircleButton}" Margin="351,-91,0,0" Background="Firebrick" Width="97" Click="Register_Click" BorderBrush="#FF8522BD" Height="61" Grid.ColumnSpan="2">
+                <Grid Width="150" x:Name="Register">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="79*"/>
+                        <ColumnDefinition Width="71*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="ThemeLightDark" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Регистрация" FontSize="13" FontFamily="Bernard MT Condensed" Margin="10,0,-8,-25" Width="148" Grid.ColumnSpan="2"/>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                                            Storyboard.TargetName="Register" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+                </Grid>
+                <Button.RenderTransform>
+                    <TranslateTransform x:Name="LoopsAnim" X="0" Y="0"/>
+                </Button.RenderTransform>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsAnim"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button x:Name="login" HorizontalAlignment="Left" Margin="248,-91,0,0" VerticalAlignment="Top" Click="Login_Click" Width="98" Style="{DynamicResource CircleButton}" Background="Firebrick" BorderBrush="#FF8522BD" Height="61">
+                <Grid Width="150" x:Name="Login">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="79*"/>
+                        <ColumnDefinition Width="71*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="ThemeLightDark" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Влез" FontSize="14" FontFamily="Bernard MT Condensed" Margin="32,0,-14,-20" Width="132" Grid.ColumnSpan="2"/>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                                            Storyboard.TargetName="Login" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="3" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+                </Grid>
+                <Button.RenderTransform>
+                    <TranslateTransform x:Name="LoopsAnim1" X="0" Y="0"/>
+                </Button.RenderTransform>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Window.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsAnim1"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
         </Grid>
-
     </Grid>
+    <Page.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Margin="8">
+                            <Ellipse
+                    Name="r1"
+                    Stroke="Black"
+                    StrokeDashArray="2 2"
+                    StrokeThickness="1"/>
+                            <Border
+                    Name="border"
+                    Width="{TemplateBinding ActualWidth}"
+                    Height="{TemplateBinding ActualHeight}"
+                    BorderThickness="1"
+                    CornerRadius="2"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CircleButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}"/>
+            <Setter Property="Background" Value="#FF6DB4EF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"/>
+                            <Ellipse>
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <GradientStop Offset="0" Color="#00000000"/>
+                                        <GradientStop Offset="0.88" Color="#00000000"/>
+                                        <GradientStop Offset="1" Color="#80000000"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse Margin="10" x:Name="highlightCircle" >
+                                <Ellipse.Fill >
+                                    <LinearGradientBrush >
+                                        <GradientStop Offset="0" Color="#50FFFFFF"/>
+                                        <GradientStop Offset="0.5" Color="#00FFFFFF"/>
+                                        <GradientStop Offset="1" Color="#50FFFFFF"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="highlightCircle" Property="Fill">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+                                            <GradientStop Offset="0" Color="#50FFFFFF"/>
+                                            <GradientStop Offset="0.5" Color="#00FFFFFF"/>
+                                            <GradientStop Offset="1" Color="#50FFFFFF"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform Y="0.5" X="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 </Page>

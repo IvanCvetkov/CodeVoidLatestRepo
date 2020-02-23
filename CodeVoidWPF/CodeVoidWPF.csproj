@@ -149,6 +149,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Pages\LangPages\CSharp\Content\Alerts\Alert.xaml.cs">
       <DependentUpon>Alert.xaml</DependentUpon>
     </Compile>
@@ -740,6 +741,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Arrays.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\New-to-programming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OOPBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

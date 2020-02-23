@@ -37,7 +37,7 @@
             <FlowDocument>
                 <Paragraph>
                     <Span Foreground="Black">
-                        <Run Text="*Your Message should consist of atleast 50 characters."/>
+                        <Run Text="*Вашето съобщение трябва да съдържа поне 50 символа."/>
                     </Span>
                 </Paragraph>
             </FlowDocument>
@@ -80,7 +80,7 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button x:Name="Submit" Content="Submit" FontSize="43" FontStretch="ExtraCondensed" FontWeight="SemiBold" Width="206" Height="78" Click="Submit_Click" Margin="899,475,-1061,-515" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF1EB20F" BorderBrush="Black" Grid.Column="4" Grid.Row="4">
+        <Button x:Name="Submit" Content="Изпрати" FontSize="43" FontStretch="ExtraCondensed" FontWeight="SemiBold" Width="206" Height="78" Click="Submit_Click" Margin="899,475,-1061,-515" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF1EB20F" BorderBrush="Black" Grid.Column="4" Grid.Row="4">
             <Button.RenderTransform>
                 <TranslateTransform x:Name="transTransform" X="0" Y="0"/>
             </Button.RenderTransform>
@@ -117,23 +117,23 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <TextBlock FontStyle="Italic" TextWrapping="WrapWithOverflow" Width="450" x:Name="alert" FontSize="30" Text="Fill in the short form and click on the submit button to send it to us." Grid.Column="4" Margin="656,295,-1062,-373" Grid.Row="4"></TextBlock>
-        <TextBox PreviewMouseLeftButtonDown="FirstName_PreviewMouseLeftButtonDown" Text="*First Name" x:Name="FirstName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,408,-295,-407" Grid.Row="4" TextWrapping="Wrap"
+        <TextBlock FontStyle="Italic" TextWrapping="WrapWithOverflow" Width="450" x:Name="alert" FontSize="30" Text="Попълнете кратката форма и натиснете бутона за да ни я изпратите!" Grid.Column="4" Margin="656,295,-1062,-373" Grid.Row="4"></TextBlock>
+        <TextBox PreviewMouseLeftButtonDown="FirstName_PreviewMouseLeftButtonDown" Text="*Име" x:Name="FirstName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,408,-295,-407" Grid.Row="4" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="FirstName_TextChanged">
         </TextBox>
-        <TextBox PreviewMouseLeftButtonDown="LastName_PreviewMouseLeftButtonDown" Text="*Last Name"  x:Name="LastName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,408,-516,-407" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="LastName_PreviewMouseLeftButtonDown" Text="*Фамилия"  x:Name="LastName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,408,-516,-407" Grid.Row="4" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="LastName_TextChanged">
         </TextBox>
-        <TextBox PreviewMouseLeftButtonDown="School_PreviewMouseLeftButtonDown" Text="School"  x:Name="School" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,508,-276,-470" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="School_PreviewMouseLeftButtonDown" Text="*Училище"  x:Name="School" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,508,-276,-470" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="School_TextChanged"/>
-        <TextBox PreviewMouseLeftButtonDown="City_PreviewMouseLeftButtonDown" Text="City"  x:Name="City" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,508,-494,-467" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="City_PreviewMouseLeftButtonDown" Text="*Град"  x:Name="City" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,508,-494,-467" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="City_TextChanged"/>
-        <TextBox PreviewMouseLeftButtonDown="Subject_PreviewMouseLeftButtonDown" Text="*Subject"  x:Name="Subject" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,458,-277,-421" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="Subject_PreviewMouseLeftButtonDown" Text="*Тема"  x:Name="Subject" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,458,-277,-421" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF"/>
-        <TextBox PreviewMouseLeftButtonDown="Phone_PreviewMouseLeftButtonDown" Text="Phone" x:Name="Phone" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,458,-495,-418" Grid.Row="4" TextWrapping="Wrap"
+        <TextBox PreviewMouseLeftButtonDown="Phone_PreviewMouseLeftButtonDown" Text="*Телефонен номер" x:Name="Phone" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,458,-495,-418" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Phone_TextChanged"/>
         <Rectangle  Grid.Column="4" Fill="#FF008AA0" HorizontalAlignment="Left" Height="100" Margin="133,55,-520,-113" Grid.Row="4" Stroke="Black" VerticalAlignment="Top" Width="435"/>
-        <TextBlock FontStyle="Italic" FontWeight="DemiBold" Text="Contact Form" TextWrapping="WrapWithOverflow" Width="450" x:Name="Contact" FontSize="50" Grid.Column="4" Margin="198,62,-581,-140" Grid.Row="4"></TextBlock>
+        <TextBlock FontStyle="Italic" FontWeight="DemiBold" Text="Форма за контакти" TextWrapping="WrapWithOverflow" Width="450" x:Name="Contact" FontSize="42" Grid.Column="4" Margin="134,89,-463,-125" Grid.Row="4"></TextBlock>
         <Grid x:Name="LayoutRoot" Background="Transparent"
              HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,228,-1165,-260" Width="1320" Grid.Row="4" Grid.Column="2">
 

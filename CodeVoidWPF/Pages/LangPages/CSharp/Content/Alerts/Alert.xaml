@@ -40,8 +40,8 @@
                     </EventTrigger>
                 </Image.Triggers>
             </Image>
-            <TextBlock x:Name="AlertText" TextWrapping="NoWrap" FontSize="16" Text="You have earned 15 points!" Margin="171,10,-8,10">
-                </TextBlock>
+            <TextBlock x:Name="AlertText" TextWrapping="NoWrap" FontSize="16" Margin="171,10,-8,10">
+                Поздравления! <LineBreak/>Ти спечели 15 точки!</TextBlock>
                 <Button Content="OK" FontSize="20" Margin="130,120,0,0" Width="100" Click="Button_Click" Background="#FF03B60B">
                 </Button>
         </Grid>

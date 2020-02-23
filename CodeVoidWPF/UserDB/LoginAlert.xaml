@@ -38,7 +38,7 @@
             
             <Button Content="OK" x:Name="OK" FontSize="20" Margin="130,120,0,0" Width="100" Click="OK_Click" Background="#FFE60000">
             </Button>
-            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16"  FontStyle="Italic" Margin="185,28,23,14" RenderTransformOrigin="0.5,0.5">Login failed! <LineBreak/> Wrong username or password!
+            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16"  FontStyle="Italic" Margin="185,28,23,14" RenderTransformOrigin="0.5,0.5">Неуспешно влизане!<LineBreak/> Грешно име или парола!
             </TextBlock>
         </Grid>
     </Border>

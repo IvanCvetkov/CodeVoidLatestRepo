@@ -12,46 +12,42 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="OrangeRed">
-                <Grid BackgroundColor="Red">
-                    <Label Margin="60" Text="Quizes"
+            <StackLayout BackgroundColor="Purple">
+                <Grid BackgroundColor="Purple">
+                    <Label Margin="30" Text="Quizes"
                    FontSize="40" BackgroundColor="Default"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
                 </Grid>
-                <Grid  x:Name="CSharpGrid" BackgroundColor="Red"
-                  Opacity="0.50" HeightRequest="140">
-                    <Button
-                        Text="" Image="ic_bookmark_border_black_48dp.png"
-                        FontSize="60" 
-    WidthRequest      ="70"
-    HeightRequest     ="70"
-    CornerRadius      ="40"
-    VerticalOptions   ="StartAndExpand"
-    HorizontalOptions ="Start"
-    BackgroundColor   ="MediumVioletRed"/>
+                <Grid  x:Name="d" BackgroundColor="Azure"
+                  Opacity="0.50" HeightRequest="1">
+
                     <Button VerticalOptions="Center"
                             HorizontalOptions="Center"
-                            FontSize="40" 
-                            HeightRequest="140" 
+                            FontSize="40" CornerRadius="20"
+                            HeightRequest="120" 
                             WidthRequest="380"
                             BackgroundColor="Transparent"
-                            Text="C#"
+                            Text="C#"/>
+                    
+                </Grid>
+                <Grid  x:Name="CSharpGrid" BackgroundColor="Azure"
+                  Opacity="0.50" HeightRequest="100">
+                  
+                    <Button VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            FontSize="40" CornerRadius="20"
+                            HeightRequest="120" 
+                            WidthRequest="380"
+                            BackgroundColor="Transparent"
+                            Text="C#" 
                             Clicked="CSharp_Clicked"/>
 
 
                 </Grid>
-                <Grid x:Name="PythonGrid" BackgroundColor="Red"
-                  Opacity="0.50" HeightRequest="140">
-                    <Button
-                        Text="" Image="ic_bookmark_border_black_48dp.png"
-                        FontSize="60" 
-    WidthRequest      ="70"
-    HeightRequest     ="70"
-    CornerRadius      ="40"
-    VerticalOptions   ="StartAndExpand"
-    HorizontalOptions ="Start"
-    BackgroundColor   ="MediumVioletRed"/>
+                <Grid x:Name="PythonGrid" BackgroundColor="Azure"
+                  Opacity="0.50" HeightRequest="100">
+                 
                     <Button VerticalOptions="Center"
                             HorizontalOptions="Center"
                             FontSize="30" 
@@ -61,17 +57,9 @@
                             Text="Python"
                             Clicked="Python_Clicked"/>
                 </Grid>
-                    <Grid x:Name="CPPGrid" BackgroundColor="Red"
-                  Opacity="0.50" HeightRequest="140">
-                      <Button
-                        Text="" Image="ic_bookmark_border_black_48dp.png"
-                        FontSize="60" 
-    WidthRequest      ="70"
-    HeightRequest     ="70"
-    CornerRadius      ="40"
-    VerticalOptions   ="StartAndExpand"
-    HorizontalOptions ="Start"
-    BackgroundColor   ="MediumVioletRed"/>
+                <Grid x:Name="CPPGrid" BackgroundColor="Azure"
+                  Opacity="0.50" HeightRequest="100">
+                     
                     <Button VerticalOptions="Center"
                             HorizontalOptions="Center"
                             FontSize="35" 
@@ -81,17 +69,9 @@
                             Text="C++"
                             Clicked="CPP_Clicked"/>
                 </Grid>
-                <Grid x:Name="JSGrid" BackgroundColor="Red"
-                  Opacity="0.50" HeightRequest="140">
-                    <Button
-                        Text="" Image="ic_bookmark_border_black_48dp.png"
-                        FontSize="60" 
-    WidthRequest      ="70"
-    HeightRequest     ="70"
-    CornerRadius      ="40"
-    VerticalOptions   ="StartAndExpand"
-    HorizontalOptions ="Start"
-    BackgroundColor   ="MediumVioletRed"/>
+                <Grid x:Name="JSGrid" BackgroundColor="Azure"
+                  Opacity="0.50" HeightRequest="100">
+                  
                     <Button VerticalOptions="Center"
                             HorizontalOptions="Center"
                             FontSize="30" 
@@ -100,6 +80,17 @@
                             BackgroundColor="Transparent"
                             Text="JavaScript"
                             Clicked="JS_Clicked"/>
+                </Grid>
+                <Grid x:Name="d1" BackgroundColor="Azure"
+                  Opacity="0.50" HeightRequest="1">
+                    
+                    <Button VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            FontSize="30" 
+                            HeightRequest="250" 
+                            WidthRequest="380"
+                            BackgroundColor="Transparent"
+                            Text="JavaScript"/>
                 </Grid>
             </StackLayout>
         </ScrollView>

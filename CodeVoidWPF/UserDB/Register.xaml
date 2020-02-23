@@ -25,7 +25,7 @@
             </Border>
             <TextBox  x:Name="username" PreviewMouseLeftButtonDown="Username_PreviewMouseLeftButtonDown"
                             FontWeight="Light"
-                            Text="Username"
+                            Text="Потребителско име"
                             FontSize="20"
                             HorizontalAlignment="Center"
                             Foreground="White"
@@ -38,7 +38,7 @@
                             Margin="65,172,500,237"/>
             <TextBox  x:Name="mail" PreviewMouseLeftButtonDown="Mail_PreviewMouseLeftButtonDown"
                             FontWeight="Light"
-                            Text="E-Mail"
+                            Text="Имейл"
                             FontSize="20"
                             HorizontalAlignment="Center"
                             Foreground="White"
@@ -70,7 +70,7 @@
 
             <TextBox  x:Name="pass" PreviewMouseLeftButtonDown="Pass_PreviewMouseLeftButtonDown"
                             FontWeight="Light"
-                            Text="Password"
+                            Text="Парола"
                             FontSize="20"
                             HorizontalAlignment="Center"
                             Foreground="White"
@@ -86,7 +86,7 @@
                         Height="2"
                        Background="White"
                        Opacity="0.5"/>
-            <Button x:Name="RegisterBtn" Width="258" Height="40" FontSize="20" Content="REGISTER" Margin="57,383,485,27" Click="Register_Click"/>
+            <Button x:Name="RegisterBtn" Width="258" Height="40" FontSize="20" Content="РЕГИСТРИРАЙ СЕ" Margin="57,383,485,27" Click="Register_Click"/>
             <Border Width="250"
                 Margin="65,154,485,294"
                 Height="2"
@@ -94,7 +94,7 @@
                 Opacity="0.5"/>
             <TextBox  x:Name="lastName" PreviewMouseLeftButtonDown="Lastname_PreviewMouseLeftButtonDown"
                 FontWeight="Light"
-                Text="Last name"
+                Text="Фамилия"
                 FontSize="20"
                 HorizontalAlignment="Center"
                 Foreground="White"
@@ -107,7 +107,7 @@
                 Margin="65,113,500,296"/>
             <TextBox  x:Name="firstName" PreviewMouseLeftButtonDown="Firstname_PreviewMouseLeftButtonDown"
                 FontWeight="Light"
-                Text="First name"
+                Text="Име"
                 FontSize="20"
                 HorizontalAlignment="Center"
                 Foreground="White"

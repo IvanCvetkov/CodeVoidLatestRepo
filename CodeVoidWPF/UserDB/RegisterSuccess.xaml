@@ -40,7 +40,7 @@
                     </EventTrigger>
                 </Image.Triggers>
             </Image>
-            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16" Text="You have registered successfully in CodeVoid!" Margin="185,28,23,14">
+            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16" Text="Успешна регистрация в CodeVoid!" Margin="198,23,10,19">
             </TextBlock>
             <Button Content="OK" FontSize="20" Margin="130,120,0,0" Width="100" Click="OK_Click" Background="#FF03B60B">
             </Button>

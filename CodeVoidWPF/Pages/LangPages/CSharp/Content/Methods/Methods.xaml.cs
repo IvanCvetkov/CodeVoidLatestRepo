@@ -20,7 +20,7 @@ namespace CodeVoidWPF.Pages.LangPages.CSharp.Content.Methods
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfo.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/LangPages/CSharp/Content/IntroToCSharp/CSharpInfoTwo.xaml", UriKind.Relative));
         }
         private void Forward_Click(object sender, RoutedEventArgs e) 
         {

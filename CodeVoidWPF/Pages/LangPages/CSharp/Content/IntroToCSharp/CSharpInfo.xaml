@@ -51,7 +51,7 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <materialDesign:PackIcon Kind="InteractionTap" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
-                                    <TextBlock HorizontalAlignment="Center" Text="INTRODUCTION" FontSize="17" FontFamily="Bernard MT Condensed" Margin="32,0,24,-27" Width="94" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="ВЪВЕДЕНИЕ" FontSize="17" FontFamily="Bernard MT Condensed" Margin="32,0,24,-27" Width="94" Grid.ColumnSpan="2"/>
 
                                     <Grid.Triggers>
                                         <EventTrigger RoutedEvent="TextBlock.Loaded">
@@ -89,7 +89,7 @@
                                     </EventTrigger>
                                 </Button.Triggers>
                             </Button>
-                            <TextBlock FontSize="25" x:Name="Intro" Text="Get started with C#" FontFamily="Champagne &amp; Limousines" Margin="84,10,560,0" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="25" x:Name="Intro" Text="Въведение във C#" FontFamily="Champagne &amp; Limousines" Margin="84,10,560,0" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -104,7 +104,7 @@
                                     </EventTrigger>
                                 </TextBlock.Triggers>
                             </TextBlock>
-                            <TextBlock FontSize="21" x:Name="textIntro" Text="  - Introduction to C#" FontFamily="Champagne &amp; Limousines" Margin="94,48,223,0" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="21" x:Name="textIntro" Text="  - Основни команди и първа програма" FontFamily="Champagne &amp; Limousines" Margin="94,48,223,0" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -142,7 +142,7 @@
                                         <ColumnDefinition Width="71*"/>
                                     </Grid.ColumnDefinitions>
                                     <materialDesign:PackIcon Kind="Variable" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
-                                    <TextBlock HorizontalAlignment="Center" Text="VARIABLES" FontSize="17" FontFamily="Bernard MT Condensed" Margin="40,0,16,-27" Width="94" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="ПРОМЕНЛИВИ" FontSize="17" FontFamily="Bernard MT Condensed" Margin="19,0,16,-27" Width="115" Grid.ColumnSpan="2"/>
 
                                     <Grid.Triggers>
                                         <EventTrigger RoutedEvent="TextBlock.Loaded">
@@ -179,7 +179,7 @@
                                     </EventTrigger>
                                 </Button.Triggers>
                             </Button>
-                            <TextBlock FontSize="25" x:Name="Var" Text="Variables - C#" FontFamily="Champagne &amp; Limousines" Margin="-902,156,1546,-76" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="25" x:Name="Var" Text="Променливи - C#" FontFamily="Champagne &amp; Limousines" Margin="-902,156,1546,-76" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -194,7 +194,7 @@
                                     </EventTrigger>
                                 </TextBlock.Triggers>
                             </TextBlock>
-                            <TextBlock FontSize="21" x:Name="textVar" Text="    - Introduction to variables" FontFamily="Champagne &amp; Limousines" Margin="-902,198,1317,-118" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="21" x:Name="textVar" Text="    - Основни типове данни" FontFamily="Champagne &amp; Limousines" Margin="-902,198,1317,-118" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -276,7 +276,7 @@
                                         <ColumnDefinition Width="71*"/>
                                     </Grid.ColumnDefinitions>
                                     <materialDesign:PackIcon Kind="Filter8" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
-                                    <TextBlock HorizontalAlignment="Center" Text="OPERATORS" FontSize="17" FontFamily="Bernard MT Condensed" Margin="40,1,16,-28" Width="94" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="ОПЕРАТОРИ" FontSize="17" FontFamily="Bernard MT Condensed" Margin="30,1,16,-28" Width="104" Grid.ColumnSpan="2"/>
                                     <Grid.Triggers>
                                         <EventTrigger RoutedEvent="TextBlock.Loaded">
                                             <BeginStoryboard>
@@ -312,7 +312,7 @@
                                     </EventTrigger>
                                 </Button.Triggers>
                             </Button>
-                            <TextBlock FontSize="25" x:Name="Oper" Text="Operators - C#" FontFamily="Champagne &amp; Limousines" Margin="-1898,308,2542,-228" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="25" x:Name="Oper" Text="Оператори - C#" FontFamily="Champagne &amp; Limousines" Margin="-1898,308,2542,-228" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -327,7 +327,7 @@
                                     </EventTrigger>
                                 </TextBlock.Triggers>
                             </TextBlock>
-                            <TextBlock FontSize="21" x:Name="textOper" Text="   - Introduction to operators" FontFamily="Champagne &amp; Limousines" Margin="-1898,353,2313,-273" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="21" x:Name="textOper" Text="   - Основни оператори" FontFamily="Champagne &amp; Limousines" Margin="-1898,353,2313,-273" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -366,7 +366,7 @@
                                         <ColumnDefinition Width="71*"/>
                                     </Grid.ColumnDefinitions>
                                     <materialDesign:PackIcon Kind="Loop" VerticalAlignment="Center" Margin="54,-34,0,16" Height="34" Width="42" Grid.ColumnSpan="2"/>
-                                    <TextBlock HorizontalAlignment="Center" Text="LOOPS" FontSize="17" FontFamily="Bernard MT Condensed" Margin="56,2,14,-29" Width="80" Grid.ColumnSpan="2"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="ЦИКЛИ" FontSize="17" FontFamily="Bernard MT Condensed" Margin="45,2,14,-29" Width="91" Grid.ColumnSpan="2"/>
                                     <Grid.Triggers>
                                         <EventTrigger RoutedEvent="TextBlock.Loaded">
                                             <BeginStoryboard>
@@ -402,7 +402,7 @@
                                     </EventTrigger>
                                 </Button.Triggers>
                             </Button>
-                            <TextBlock FontSize="25" x:Name="loop" Text="Loops - C#" FontFamily="Champagne &amp; Limousines" Margin="-1898,460,2542,-380" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="25" x:Name="loop" Text="Цикли - C#" FontFamily="Champagne &amp; Limousines" Margin="-1898,460,2542,-380" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -417,7 +417,7 @@
                                     </EventTrigger>
                                 </TextBlock.Triggers>
                             </TextBlock>
-                            <TextBlock FontSize="21" x:Name="textLoops" Text="  - Introduction to loops" FontFamily="Champagne &amp; Limousines" Margin="-1898,500,2313,-420" VerticalAlignment="Top" Foreground="Gray" Height="40">
+                            <TextBlock FontSize="21" x:Name="textLoops" Text="  - Основни цикли и използването им" FontFamily="Champagne &amp; Limousines" Margin="-1898,500,2313,-420" VerticalAlignment="Top" Foreground="Gray" Height="40">
                                 <TextBlock.Triggers>
                                     <EventTrigger RoutedEvent="TextBlock.Loaded">
                                         <BeginStoryboard>
@@ -523,10 +523,10 @@
                 </Canvas.Triggers>
             </Canvas>
         </Grid>
-        
-        
-        
-        
+
+
+
+
         <!--BUTTONS SCALABILITY AND ANIMATION ON CLICK RESOURCE-->
     </Grid>
     <Page.Resources>

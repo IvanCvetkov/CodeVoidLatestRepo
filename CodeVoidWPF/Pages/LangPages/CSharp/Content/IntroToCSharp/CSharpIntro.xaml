@@ -26,7 +26,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontWeight="SemiBold" Grid.Row="0" Padding="30" FontSize="38">Your First C# Program</TextBlock>
+        <TextBlock FontWeight="SemiBold" Grid.Row="0" Padding="30" FontSize="38">Твоята първа C# програма!</TextBlock>
         <RichTextBox IsReadOnly="True" FontSize="20" x:Name="txtStatus" HorizontalAlignment="Left" Height="617" Margin="37,97,0,0" VerticalAlignment="Top" Width="433" RenderTransformOrigin="0.56,0.6" Grid.RowSpan="2" TextChanged="txtStatus_TextChanged">
             <FlowDocument>
                 <Paragraph IsEnabled="False">
@@ -76,11 +76,9 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <TextBlock TextWrapping="WrapWithOverflow" FontSize="28" Margin="515,10,15,183" Grid.Row="1">A C# console application
-            must contain a Main method, in which control starts and ends. The Main method is where you create objects and execute other methods.
+        <TextBlock TextWrapping="WrapWithOverflow" FontSize="28" Margin="515,10,15,183" Grid.Row="1">Всяко C# приложение има метод наречен Main. В него се записва всичко което искаме да се изпълни от нашата програма.
         </TextBlock>
-        <TextBlock TextWrapping="WrapWithOverflow" FontSize="28" Margin="515,363,15,-263" Grid.Row="1" Grid.RowSpan="5">Console.WriteLine() 
-            is a method that works with Console applications.  It prints the string argument to the console screen. The Console.ReadKey() Method makes the program wait for a key press and it prevents the screen from closing until a key is pressed.
+        <TextBlock TextWrapping="WrapWithOverflow" FontSize="28" Margin="515,363,15,-263" Grid.Row="1" Grid.RowSpan="5">Командата Console.WriteLine(); изкарва текст на екрана, а с командата Console.ReadKey(); изчакваме да се натисне някой бутон преди програмата да спре. 
         </TextBlock>
         <Button x:Name="NextTutorial" Width="94" Height="52" Click="NextTutorial_Click" Margin="1043,54,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>

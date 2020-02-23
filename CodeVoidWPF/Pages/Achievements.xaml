@@ -28,8 +28,12 @@
             <RowDefinition Height="73*"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#FFCFCFCF" Grid.ColumnSpan="2" Margin="0,0,0,10" Grid.RowSpan="3" HorizontalAlignment="Left">
-            <ScrollViewer HorizontalAlignment="Left" HorizontalScrollBarVisibility="Visible" Margin="58,10,-58,-10">
+        <Grid Grid.ColumnSpan="2" Margin="0,0,0,505" Grid.RowSpan="3" HorizontalAlignment="Left" Width="1267">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="pack://application:,,,/Images\OOPBackground.png"
+                AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
+            <ScrollViewer HorizontalAlignment="Left" HorizontalScrollBarVisibility="Visible" Margin="58,10,-457,-374" Width="1666">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="200"/>
@@ -43,7 +47,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-                        <Rectangle Height="120" x:Name="FirstLoginRec" Margin="21,40,19,40" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle Height="120" Opacity="0.5" x:Name="FirstLoginRec" Margin="21,40,19,40" Fill="White" RadiusY="10" RadiusX="10" >
                             <Rectangle.Effect>
                                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
                             </Rectangle.Effect>
@@ -105,7 +109,7 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Rectangle Height="120" x:Name="FirstVSRec" Margin="-970,187,1010,-107" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle Opacity="0.5" Height="120" x:Name="FirstVSRec" Margin="-970,187,1010,-107" Fill="White" RadiusY="10" RadiusX="10" >
                             <Rectangle.Effect>
                                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
                             </Rectangle.Effect>
@@ -170,7 +174,7 @@
                         <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
                     </Button>
                     <Grid Grid.Column="2">
-                        <Rectangle Height="120" x:Name="FirstCodeCompRec" Margin="-1957,340,2021,-260" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle Opacity="0.5" Height="120" x:Name="FirstCodeCompRec" Margin="-1957,340,2021,-260" Fill="White" RadiusY="10" RadiusX="10" >
                             <Rectangle.Effect>
                                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
                             </Rectangle.Effect>
@@ -232,7 +236,7 @@
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <Rectangle Height="120" x:Name="DarkModeRec" Margin="-1958,493,2022,-413" Fill="White" RadiusY="10" RadiusX="10" >
+                        <Rectangle Height="120" Opacity="0.5" x:Name="DarkModeRec" Margin="-1958,493,2022,-413" Fill="White" RadiusY="10" RadiusX="10" >
                             <Rectangle.Effect>
                                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
                             </Rectangle.Effect>

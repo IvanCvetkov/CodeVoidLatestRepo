@@ -35,7 +35,7 @@
             </Grid.Background>
             <materialDesign:PackIcon materialDesign:ColorZoneAssist.Mode="Light" Kind="Alert" Height="140" Width="130" Margin="26,16,0,0"></materialDesign:PackIcon>
 
-            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16" Text="The following E-Mail is already registered!" FontStyle="Italic" Margin="185,28,23,14" RenderTransformOrigin="0.5,0.5">
+            <TextBlock x:Name="AlertText" TextWrapping="WrapWithOverflow" FontSize="16" Text="Имейлът е вече регистриран!" FontStyle="Italic" Margin="185,28,23,14" RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

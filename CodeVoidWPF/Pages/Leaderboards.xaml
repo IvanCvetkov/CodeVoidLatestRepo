@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CodeVoidWPF.Pages"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       TextElement.FontWeight="Regular"
       TextElement.FontSize="13"
@@ -15,15 +16,33 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Leaderboards">
-
-    <Grid>
-        <Button x:Name="BtnBackLB"
+    <ScrollViewer>
+        <Grid>
+            <Button x:Name="BtnBackLB"
                 IsEnabled="True" Click="BtnBackLB_Click" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
-        </Button>
+                <materialDesign:PackIcon Kind="ArrowLeftBoldOutline" Height="25" Width="33"></materialDesign:PackIcon>
+            </Button>
 
-        <materialDesign:Card Padding="32" Margin="85,90,70,0">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Leaderboards Page</TextBlock>
-        </materialDesign:Card>
-    </Grid>
+            <materialDesign:Card Padding="32" Margin="299,37,312,0">
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Класиране</TextBlock>
+            </materialDesign:Card>
+            <DataGrid
+                    x:Name="leaderboard" Height="Auto" Margin="10,140,10,10" AutoGenerateColumns="True" Grid.Column="0" Grid.Row="0"
+                    ScrollViewer.CanContentScroll="True" 
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto" IsReadOnly="True" >
+                <DataGridTextColumn Header="Score" Binding="{Binding Score}" SortDirection="Descending"></DataGridTextColumn>
+            </DataGrid>
+        </Grid>
+    </ScrollViewer>
+
+    
+    
+    <!--<Page.Resources>
+        <CollectionViewSource x:Key="MyItemsViewSource" Source="{Binding MyItems}">
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="MyPropertyName"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </Page.Resources>-->
 </Page>

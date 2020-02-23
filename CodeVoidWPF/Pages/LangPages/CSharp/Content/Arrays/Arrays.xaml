@@ -56,7 +56,7 @@
             </Button.Triggers>
         </Button>
         <TextBlock x:Name="a" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
-             <Run Foreground="CornflowerBlue">Arrays</Run>
+             <Run Foreground="CornflowerBlue">Масиви</Run>
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
                     <BeginStoryboard>
@@ -72,13 +72,19 @@
             </TextBlock.Triggers>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Text="The Array is a common collection of elements used to " Margin="16,186,52,154" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="store a collection of data. You can think of it as a" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,228,32,136" Text="collection of variables of the same type."/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,251,32,113" Text="Arrays can be accessed by index which means that you"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,271,32,93" Text="Can simply write array[0] and get the first element of"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,294,32,70" Text="the array. Yes, arrays indexes start from zero, but you "/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,314,32,50" Text="will most probably get used to it in the coding process! "/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow" Text="Масивът е набор от елементи използвани за" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="запазване на стойности. Може да гледате на него" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,228,32,136" Text="като на колекция от различни елементи."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,251,32,113" Text="Елементите в масивите могат да бъдат достъпени"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,271,32,93" Text="чрез индекс, което означава да напишем името"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,294,32,70" Text="на масива и индекса който искаме да достъпим."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,454,32,70" Text="Забележка: &#x0a;В масивите елементите започват от 0"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,502,32,50" Text="което означава ,че за да достъпим примерно"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,526,32,50" Text="първият елемент от масива, трябва да напишем"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,552,32,50" Text="името на масива последвано от квадратни скоби"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,576,32,50" Text="в които да напишем индекс 0."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,606,32,50" Text="Следователно за да достъпим вторият елемент"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,626,32,50" Text="от масива трябва да напишем 1 в кв. скоби."/>
         <Button x:Name="Next" Width="94" Height="52" Click="Next_Click" Margin="512,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.RenderTransform>

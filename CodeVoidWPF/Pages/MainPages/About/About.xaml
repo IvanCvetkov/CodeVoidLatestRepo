@@ -71,7 +71,7 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button x:Name="Contact" Content="Contact" FontSize="45" FontStretch="ExtraCondensed" FontWeight="SemiBold" Width="246" Height="78" Click="Contact_Click" Margin="770,478,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF6800FF" BorderBrush="Black">
+        <Button x:Name="Contact" Content="Свържи се с нас!" FontSize="27" FontStretch="ExtraCondensed" FontWeight="SemiBold" Width="246" Height="78" Click="Contact_Click" Margin="770,478,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF6800FF" BorderBrush="Black">
             <Button.RenderTransform>
                 <TranslateTransform x:Name="transTransformContact" X="0" Y="0"/>
             </Button.RenderTransform>
@@ -108,7 +108,7 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button x:Name="Donate" Content="Donate" FontSize="43" FontStretch="ExtraCondensed" FontWeight="SemiBold" Width="205" Height="78" Click="Donate_Click" Margin="116,478,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF1EB20F" BorderBrush="Black">
+        <Button x:Name="Donate" Content="Дарения" FontSize="43" FontStretch="ExtraCondensed" FontWeight="SemiBold" Width="205" Height="78" Click="Donate_Click" Margin="116,478,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF1EB20F" BorderBrush="Black">
             <Button.RenderTransform>
                 <TranslateTransform x:Name="transTransform" X="0" Y="0"/>
             </Button.RenderTransform>
@@ -147,12 +147,12 @@
         </Button>
        
         <TextBlock FontSize="39" FontStyle="Italic" FontWeight="Bold" TextWrapping="WrapWithOverflow"
-                       Margin="313,10,77,547" Text="                 -Our Mission-"/>
+                       Margin="229,92,161,465" Text="                 -Нашата цел-"/>
         <TextBlock FontSize="28" FontStyle="Oblique" TextWrapping="WrapWithOverflow"
-                       Margin="115,106,675,191" Width="900" Text="&#x0a; At CodeVoid, we provide you with resources, videos and quizes. Our goal is to teach people how to code, think and solve problems.&#x0a; &#x0a; CodeVoid is absolutely free! We believe that education should be freely available to everyone. &#x0a; &#x0a; Do you think you can support us in our mission? Head straight to the donate page and become our patron!"/>
+                       Margin="152,165,639,132" Width="900" Text="&#x0a; В CodeVoid ви предоставяме ресурси, клипове и изпити по програмиране. Нашата цел е да ви научим на програмиране, мислене и умението да разрешавате алгоритмични задачи."/>
        
         <TextBlock FontSize="28" FontStyle="Oblique" TextWrapping="WrapWithOverflow"
-                       Margin="313,63,495,396" Text="To provide the best programming education."/>
+                       Margin="152,140,656,319" Text="Да предоставим най-доброто образование по програмиране!"/>
     
     </Grid>
 </Page>

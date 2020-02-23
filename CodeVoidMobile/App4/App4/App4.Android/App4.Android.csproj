@@ -112,9 +112,6 @@
     <AndroidResource Include="Resources\drawable\smallerblackhole.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CSharp.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\ic_check_circle_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
@@ -262,9 +259,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_computer_black_48dp.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_computer_black_48dp.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-v21\ic_computer_black_48dp.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -281,9 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_bookmark_border_black_48dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_bookmark_border_black_48dp.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-v21\ic_bookmark_border_black_48dp.xml" />
