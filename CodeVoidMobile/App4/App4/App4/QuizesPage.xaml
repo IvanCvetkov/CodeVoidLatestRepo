@@ -12,86 +12,12 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="Purple">
-                <Grid BackgroundColor="Purple">
-                    <Label Margin="30" Text="Quizes"
-                   FontSize="40" BackgroundColor="Default"
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand" />
-                </Grid>
-                <Grid  x:Name="d" BackgroundColor="Azure"
-                  Opacity="0.50" HeightRequest="1">
-
-                    <Button VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            FontSize="40" CornerRadius="20"
-                            HeightRequest="120" 
-                            WidthRequest="380"
-                            BackgroundColor="Transparent"
-                            Text="C#"/>
-                    
-                </Grid>
-                <Grid  x:Name="CSharpGrid" BackgroundColor="Azure"
-                  Opacity="0.50" HeightRequest="100">
-                  
-                    <Button VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            FontSize="40" CornerRadius="20"
-                            HeightRequest="120" 
-                            WidthRequest="380"
-                            BackgroundColor="Transparent"
-                            Text="C#" 
-                            Clicked="CSharp_Clicked"/>
-
-
-                </Grid>
-                <Grid x:Name="PythonGrid" BackgroundColor="Azure"
-                  Opacity="0.50" HeightRequest="100">
-                 
-                    <Button VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            FontSize="30" 
-                            HeightRequest="250" 
-                            WidthRequest="380"
-                            BackgroundColor="Transparent"
-                            Text="Python"
-                            Clicked="Python_Clicked"/>
-                </Grid>
-                <Grid x:Name="CPPGrid" BackgroundColor="Azure"
-                  Opacity="0.50" HeightRequest="100">
-                     
-                    <Button VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            FontSize="35" 
-                            HeightRequest="250" 
-                            WidthRequest="380"
-                            BackgroundColor="Transparent"
-                            Text="C++"
-                            Clicked="CPP_Clicked"/>
-                </Grid>
-                <Grid x:Name="JSGrid" BackgroundColor="Azure"
-                  Opacity="0.50" HeightRequest="100">
-                  
-                    <Button VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            FontSize="30" 
-                            HeightRequest="250" 
-                            WidthRequest="380"
-                            BackgroundColor="Transparent"
-                            Text="JavaScript"
-                            Clicked="JS_Clicked"/>
-                </Grid>
-                <Grid x:Name="d1" BackgroundColor="Azure"
-                  Opacity="0.50" HeightRequest="1">
-                    
-                    <Button VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            FontSize="30" 
-                            HeightRequest="250" 
-                            WidthRequest="380"
-                            BackgroundColor="Transparent"
-                            Text="JavaScript"/>
-                </Grid>
+            <StackLayout BackgroundColor="Gray">
+                <Label Margin="106,0,0,0" FontSize="30">Езици</Label>
+                <Button x:Name="CSharp" TextColor="White" CornerRadius="20" Text="C#" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="CSharp_Clicked" Margin="40,20,40,20"></Button>
+                <Button x:Name="CPP" TextColor="White" CornerRadius="20" Text="C++" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="CPP_Clicked" Margin="40,-15,40,20"></Button>
+                <Button x:Name="Python" TextColor="White" CornerRadius="20" Text="Python" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="Python_Clicked" Margin="40,-15,40,20"></Button>
+                <Button x:Name="JS" TextColor="White" CornerRadius="20" Text="Javascript" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="JS_Clicked" Margin="40,-15,40,20"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

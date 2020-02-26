@@ -16,7 +16,6 @@ namespace App4
         public MainPage()
         {
             InitializeComponent();
-            
         }
 
         async Task RotateImageContinously()
@@ -27,6 +26,7 @@ namespace App4
                 await Logo.RotateTo(i * (360), 1000, Easing.CubicInOut);
             }
         }
+
         private async void Quizes_Clicked(object sender, EventArgs e)
         {
             await RotateImageContinously();

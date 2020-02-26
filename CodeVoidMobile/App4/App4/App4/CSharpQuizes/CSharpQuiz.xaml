@@ -3,10 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App4.CSharpQuizes.CSharpQuiz">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout BackgroundColor="DarkGray">
+                
+                <!--C# Logo-->
+                <Image x:Name="Logo" Source="CSharp.png" BackgroundColor="Transparent" Margin="15,-5,0,0"></Image>
+
+                <!--Content-->
+                <Button x:Name="BasicsFirst" TextColor="White" CornerRadius="20" Text="C# Basics I" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="BasicsFirst_Clicked" Margin="40,20,40,20"></Button>
+                <Button x:Name="BasicsSecond" TextColor="White" CornerRadius="20" Text="C# Basics II" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="BasicsSecond_Clicked" Margin="40,-15,40,20"></Button>
+                <Button x:Name="AdvancedFirst" TextColor="White" CornerRadius="20" Text="C# Advanced I" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="AdvancedFirst_Clicked" Margin="40,-15,40,20"></Button>
+                <Button x:Name="AdvancedSecond" TextColor="White" CornerRadius="20" Text="C# Advanced II" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="AdvancedSecond_Clicked" Margin="40,-15,40,20"></Button>
+                <Button x:Name="AdvancedThird" TextColor="White" CornerRadius="20" Text="C# ADvanced III" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="AdvancedThird_Clicked" Margin="40,-15,40,20"></Button>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
