@@ -30,19 +30,28 @@ namespace App4
         private async void Quizes_Clicked(object sender, EventArgs e)
         {
             await RotateImageContinously();
-            await Navigation.PushAsync(new QuizesPage());
+
+            if (Navigation.NavigationStack.Count == 0 || 
+                Navigation.NavigationStack.Last().GetType() != typeof(QuizesPage))
+            await Navigation.PushAsync(new QuizesPage(), true);
         }
 
         private async void About_Clicked(object sender, EventArgs e)
         {
             await RotateImageContinously();
-            await Navigation.PushAsync(new AboutPage());
+
+            if (Navigation.NavigationStack.Count == 0 ||
+                Navigation.NavigationStack.Last().GetType() != typeof(AboutPage))
+                await Navigation.PushAsync(new AboutPage(), true);
         }
 
         private async void Progress_Clicked(object sender, EventArgs e)
         {
             await RotateImageContinously();
-            await Navigation.PushAsync(new ProgressPage());
+
+            if (Navigation.NavigationStack.Count == 0 ||
+                Navigation.NavigationStack.Last().GetType() != typeof(ProgressPage))
+                await Navigation.PushAsync(new ProgressPage(), true);
         }
     }
 }

@@ -55,6 +55,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
+      <Version>2.6.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
@@ -76,7 +79,13 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\12929-christmas.json" />
     <AndroidAsset Include="Assets\13263-checkmark.json" />
-    <AndroidAsset Include="Assets\12882-green-check.json" />
+    <AndroidAsset Include="Assets\gcheck.json" />
+    <AndroidAsset Include="Assets\16320-piggy-bank-coins-in.json" />
+    <AndroidAsset Include="Assets\677-trophy.json" />
+    <AndroidAsset Include="Assets\1808-scaling-loader.json" />
+    <AndroidAsset Include="Assets\10159-fire.json" />
+    <AndroidAsset Include="Assets\10960-error.json" />
+    <AndroidAsset Include="Assets\2068-error-cross.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

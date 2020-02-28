@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App4.CSharpQuizes.AwaitRightPages;
+using App4.CSharpQuizes.AwaitWrongPages;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,20 +15,22 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
             InitializeComponent();
         }
 
-        public async void Await()
-        {
-            await Task.Delay(1000);
-        }
-        private void Forward_Clicked(object sender, EventArgs e)
+        //public async void Await()
+        //{
+        //    await Task.Delay(1000);
+        //}
+        private async void Forward_Clicked(object sender, EventArgs e)
         {
             if (Answer.Text == "15")
             {
-                DisplayAlert("Поздравления!", "Верен Отговор", "OK");
-                Await();
-                Navigation.PushAsync(new Basics2_10());
+                await Task.Delay(300);
+                await Navigation.PushAsync(new AwaitRight());
             }
             else
-                DisplayAlert("Грешен отговор!", "Опитай пак", "OK");
+            {
+                await Task.Delay(300);
+                await Navigation.PushAsync(new AwaitWrong());
+            }
         }
     }
 }

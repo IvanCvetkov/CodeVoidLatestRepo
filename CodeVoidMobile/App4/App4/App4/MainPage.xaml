@@ -5,17 +5,17 @@
              x:Class="App4.MainPage">
     <StackLayout BackgroundColor="Black">
         <!-- Place new controls here -->
-        <Image Source="smallerblackhole.png" x:Name="Logo"></Image>
         
+        <Image Source="smallerblackhole.png" x:Name="Logo"></Image>
         <Button Text="" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="185"></Button>
-        <Button CornerRadius="30" HeightRequest="55" WidthRequest="185" Text="Quizes" TextColor="White" BackgroundColor="#0c0b0a" HorizontalOptions="CenterAndExpand"
+        <Button CornerRadius="30" HeightRequest="55" WidthRequest="185" Text="Quizes" TextColor="White" BackgroundColor="DarkSlateGray" HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand" FontSize="20"
                 Clicked="Quizes_Clicked" x:Name="Quizes"></Button>
-        <Button FontSize="20" CornerRadius="30" Text="Progress" TextColor="White" BackgroundColor="#0c0b0a" HorizontalOptions="CenterAndExpand"
+        <Button FontSize="20" CornerRadius="30" Text="Progress" TextColor="White" BackgroundColor="DarkSlateGray" HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand" HeightRequest="55" WidthRequest="185"
                 Clicked="Progress_Clicked" x:Name="Progress"></Button>
-        <Button FontSize="20" CornerRadius="30" Text="About" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="#0c0b0a"
+        <Button FontSize="20" CornerRadius="30" Text="About" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="DarkSlateGray"
                 VerticalOptions="CenterAndExpand" HeightRequest="55" WidthRequest="185"
                 Clicked="About_Clicked" x:Name="About"></Button>
         <Button Text="" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"
