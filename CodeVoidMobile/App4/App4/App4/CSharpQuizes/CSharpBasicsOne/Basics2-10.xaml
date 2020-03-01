@@ -16,7 +16,6 @@
             HorizontalOptions="FillAndExpand" />
                 <Label />
 
-
                 <input:CheckBox x:Name="option1" Text="int[] arr = new int[5] {1,2,3,4,5};" Type="Box" Margin="40,20,20,100"></input:CheckBox>
                 <input:CheckBox x:Name="option3" Text="int[] arr = new int[5];" Type="Box" Margin="40,-50,20,0"></input:CheckBox>
                 <input:CheckBox x:Name="option2" Text="double arr;" Type="Box" Margin="40,-100,70,130" ></input:CheckBox>
@@ -24,7 +23,6 @@
                 <Button x:Name="Forward" TextColor="White" CornerRadius="30" Text="Напред" FontSize="22" FontFamily="Comic Sans MS"
                     HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="Forward_Clicked" Margin="140,-30,20,-2"></Button>
                 <BoxView BackgroundColor="Silver" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-               
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

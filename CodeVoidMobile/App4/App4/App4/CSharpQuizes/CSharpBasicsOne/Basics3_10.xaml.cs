@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App4.CSharpQuizes.AwaitRightPages;
+using App4.CSharpQuizes.AwaitWrongPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +19,20 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
             InitializeComponent();
         }
 
-        private void Forward_Clicked(object sender, EventArgs e)
+        private async void Forward_Clicked(object sender, EventArgs e)
         {
-
+            if (Answer.Text == "55")
+            {
+                await Task.Delay(300);
+                await Navigation.PushAsync(new ThirdToForthRight());
+            }
+            else
+            {
+                await Task.Delay(300);
+                await Navigation.PushAsync(new ThirdToForthWrong());
+            }
         }
-
+        
         protected override bool OnBackButtonPressed()
         {
             Navigation.PushAsync(new Basics2_10());
