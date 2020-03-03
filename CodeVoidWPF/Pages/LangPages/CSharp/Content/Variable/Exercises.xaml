@@ -55,12 +55,10 @@
         <Button x:Name="vs" Content="Open in Visual Studio" Width="290" FontSize="26" Height="52" Click="Vs_Click" Margin="181,568,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="10,67,-14,561"/>
 
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Let's start with the basic math exercises" Margin="42,210,26,294"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,153,10,423" Text="In the following exercise we will have to multiply two numbers."/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,182,10,394" Text="The two variables that we have multiplied will be showed on the console."/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,235,10,341" Text="Note that when we want to multiply two numbers we use the * symbol."/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,338,10,238" Text="You can also create a third variable and set the multiplication equal to it,"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,361,10,215" Text="this way you can simply write down variable {c}."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,153,10,423" Text="В следващото упражнение ще умножим две числа."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,182,10,394" Text="Умножените променливи ще се покажат на конзолата."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,235,10,341" Text="Запомнете че при умножение се използва символът *."/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="42,338,10,238" Text="Тук ние декларираме трета променлива със стойността на a*b."/>
         <Button x:Name="Next" Width="94" Height="52" Click="Next_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.RenderTransform>

@@ -56,7 +56,7 @@
             </Button.Triggers>
         </Button>
         <TextBlock x:Name="Operator" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
-             <Run Foreground="CornflowerBlue">Operators</Run>
+             <Run Foreground="CornflowerBlue">Оператори</Run>
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="TextBlock.Loaded">
                     <BeginStoryboard>
@@ -72,16 +72,11 @@
             </TextBlock.Triggers>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-68,695" Height="4" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="An operator is a symbol that tells the compiler to perform" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="specific mathematical or logical manipulations." Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="C# and provides many types of operators" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="We will start with the three basic operator types -" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,274,32,435" Text=" 1. Arithmetic Operators" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,302,32,422" Text=" 2. Relational Operators" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,330,32,396" Text=" 3. Logical Operators" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,358,32,368" Text="First of all we'll start with Arithmetic Operators" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,382,32,344" Text="Let's Assume that we have two variables A and B" Grid.ColumnSpan="2"/>
-        <TextBlock FontStyle="Italic" FontWeight="UltraBlack" FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,410,32,316" Text="A is 10 and B is 20 then - " Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Операторът казва на компилатора на извърши" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="някакво специфично математическо или" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="логическо действие." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,285,32,441" Text="Да приемем ,че имаме две променливи A и B." Grid.ColumnSpan="2"/>
+        <TextBlock FontStyle="Italic" FontWeight="UltraBlack" FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,321,32,405" Text="Ако A e 10 ,a B e 20 тогава - " Grid.ColumnSpan="2"/>
         <Button x:Name="Next" Width="94" Height="52" Click="Operators_Click" Margin="799,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.RenderTransform>

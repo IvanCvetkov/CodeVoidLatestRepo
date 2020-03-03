@@ -56,10 +56,9 @@
             </Button.Triggers>
         </Button>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,67,-20,680" Height="4" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Logical Operators are used to perform the logical" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="operation between two operands like AND, OR and NOT." Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="The Logical Operators always work with Boolean" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,246,32,120" Text="expressions - true or false" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" Grid.Row="0" TextWrapping="WrapWithOverflow"  Text="Логическите оператори изпълняват логически" Margin="16,186,52,154" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,208,32,156" Text="операции между две операнди. Примерно " Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="20,226,32,138" Text="операциите и/или." Grid.ColumnSpan="2"/>
         <Button x:Name="Next" Width="94" Height="52" Click="Operators_Click" Margin="799,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
             <Button.RenderTransform>

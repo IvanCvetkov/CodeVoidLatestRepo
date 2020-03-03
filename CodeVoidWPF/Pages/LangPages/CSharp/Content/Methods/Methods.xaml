@@ -38,13 +38,12 @@
              <Run Foreground="CornflowerBlue">Methods</Run>
         </TextBlock>
         <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,128,621,312" Text=" Methods are the blocks of code that give you the ability" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,152,621,288" Text="to reuse the same code over time. So basically, a method" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,174,621,266" Text="is a collection of statements that perform some specific" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,192,621,248" Text="task and return the result." Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,286,621,154" Text="The method in C# consists of the following elements:" Grid.ColumnSpan="2"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,474,621,-34" Text="The body is enclosed in the curly braces." Grid.ColumnSpan="2" Grid.RowSpan="7"/>
-        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,324,621,116" Grid.ColumnSpan="2"><Run Text="Modifier: It defines the access type of the method which we will talk about later on."/><LineBreak/><Run Text="The return type: It defines the data type returned by the method."/><LineBreak/><Run Text="The name of the method: It is the name by which the user calls the method or refers to it."/><LineBreak/><Run Text="Parameter list: List of the input with the same return type as the method."/><LineBreak/><Run Text="-&gt; For example: A method with a return type of int can not have string/double/float etc. as parameters."/><LineBreak/><Run Text="Body of the Method: It refers to the lines of code that will be executed when the method is called."/><LineBreak/><Run/></TextBlock>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,128,621,312" Text="Методите са блоковете код които ви дават възможността" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,152,621,288" Text="да използвате един и същ код многократно. Накратко методът" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,174,621,266" Text="изпълнява някаква определена функция и връща" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,192,621,248" Text="резултата от изчисленията." Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,286,621,154" Text="Методът в езикът C# изглежда по следният начин:" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="20" TextWrapping="WrapWithOverflow" Margin="31,324,621,116" Grid.ColumnSpan="2"><LineBreak/><Run Text="Тип на метода (return type): Дефинира типът данни от който е самият метод."/><LineBreak/><Run Text="Името на метода: Името с което потребителят ще достъпва метода"/><LineBreak/><Run Text="Параметри на метод (parameters list): Това са променливи които методът ще използва."/><Run/></TextBlock>
         <Button x:Name="Forward" Width="94" Height="52" Click="Forward_Click" Margin="430,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1">
             <materialDesign:PackIcon Kind="ArrowRightBold" Height="52" Width="54"></materialDesign:PackIcon>
         </Button>
