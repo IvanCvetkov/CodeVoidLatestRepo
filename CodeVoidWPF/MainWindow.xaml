@@ -85,9 +85,15 @@
                     <TextBlock FontSize="12" x:Name="BtnWebsiteText" HorizontalAlignment="Center" Text="УЕБСАЙТ" FontFamily="Champagne &amp; Limousines" Margin="26,0,-34,-1" Width="98"/>
                 </Grid>
             </Button>
+            <Button  x:Name= "BtnCompiler" Click ="BtnCompiler_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Grid Width="90">
+                    <materialDesign:PackIcon Kind="AspectRatio" VerticalAlignment="Center" Margin="-10,0,0,0"/>
+                    <TextBlock TextWrapping="WrapWithOverflow" FontSize="13" x:Name="BtnCompilerText" HorizontalAlignment="Center" Text="Компилатор" FontFamily="Champagne &amp; Limousines" Margin="18,0,-16,-7" Width="88"/>
+                </Grid>
+            </Button>
             <Button  x:Name= "BtnKids" Click ="BtnKids_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
-                    <materialDesign:PackIcon Kind="HumanChild" VerticalAlignment="Center" Margin="-10,0,0,0"/>
+                    <materialDesign:PackIcon Kind="Face" VerticalAlignment="Center" Margin="-10,0,0,0"/>
                     <TextBlock TextWrapping="WrapWithOverflow" FontSize="11" x:Name="BtnKidsText" HorizontalAlignment="Center" Text="ПРОГРАМИРАНЕ ЗА ДЕЦА" FontFamily="Champagne &amp; Limousines" Margin="18,0,-16,-7" Width="88"/>
                 </Grid>
             </Button>

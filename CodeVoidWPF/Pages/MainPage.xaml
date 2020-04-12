@@ -39,9 +39,6 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius = "10" Color="#FFDEDEDE" RenderingBias="Performance" ShadowDepth="1"/>
             </Grid.Effect>
-            <TextBlock 
-                FontSize="28" TextWrapping="NoWrap"
-                       Margin="114,181,661,396" Text="Заедно напред!" FontFamily="Dosis"/>
 
             <Image  x:Name="MainPagePic" Source="pack://application:,,,/Images/DesktopTwo.png"
                     Margin="570,10,66,330">

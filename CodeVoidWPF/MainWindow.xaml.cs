@@ -3,8 +3,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Diagnostics;
-using System.Windows.Media.Animation;
-using System.Threading.Tasks;
 
 namespace CodeVoidWPF
 {
@@ -12,14 +10,11 @@ namespace CodeVoidWPF
     //Scene Manager
     public enum CVScene
     {
-        NULL = -1, Home = 0, [System.Obsolete("Unused key!")] Courses = 1,
+        NULL = -1, Home = 0, Compiler = 1,
         LB = 2, Achievements = 3, Account = 4, Shop = 5, News = 6, Languages = 7, Progress = 9,
         Donate = 10, Website = 12, Settings = 11, Kids = 13
     }
-        
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public static CVScene CurrentScene;
@@ -61,9 +56,6 @@ namespace CodeVoidWPF
                 case CVScene.Home:
                     _mainFrame.NavigationService.Navigate(new Pages.MainPage());
                     break;
-                //case CVScene.Courses:
-                //    _mainFrame.NavigationService.Navigate(new Pages.Courses());
-                //    break;
                 case CVScene.LB:
                     _mainFrame.NavigationService.Navigate(new Pages.Leaderboards());
                     break;
@@ -90,6 +82,9 @@ namespace CodeVoidWPF
                     break;
                 case CVScene.Kids:
                     _mainFrame.NavigationService.Navigate(new Pages.Kids());
+                    break;
+                case CVScene.Compiler:
+                    _mainFrame.NavigationService.Navigate(new Pages.Compiler());
                     break;
 
                 //Settings
@@ -131,13 +126,11 @@ namespace CodeVoidWPF
             BtnDonate.IsEnabled = true;
             BtnWebsite.IsEnabled = true;
             BtnKids.IsEnabled = true;
+            BtnCompiler.IsEnabled = true;
             BtnSett.IsEnabled = true;
 
             switch (CurrentScene)
             {
-                //case CVScene.Courses:
-                //    BtnCources.IsEnabled = false;
-                //    break;
                 case CVScene.Home:
                     BtnHome.IsEnabled = false;
                     break;
@@ -171,6 +164,11 @@ namespace CodeVoidWPF
                 case CVScene.Kids:
                     BtnKids.IsEnabled = false;
                     break;
+                case CVScene.Compiler:
+                    BtnCompiler.IsEnabled = false;
+                    break;
+
+                    //Settings
                 case CVScene.Settings:
                     BtnSett.IsEnabled = false;
                     break;
@@ -289,14 +287,13 @@ namespace CodeVoidWPF
             }
         }
         private void BtnKids_Click(object sender, RoutedEventArgs e)
-        {
+        { 
             if (CurrentScene != CVScene.Kids)
             {
                 //Go to the Kids page
                 _mainFrame.NavigationService.Navigate(new Pages.Kids());
                 LastScene = CurrentScene;
                 CurrentScene = CVScene.Kids;
-                ButtonControl();
             }
         }
         private void BtnSett_Click(object sender, RoutedEventArgs e)
@@ -315,6 +312,18 @@ namespace CodeVoidWPF
         {
             Process.Start("https://website000020190624120045.azurewebsites.net/");
         }
+        private void BtnCompiler_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentScene != CVScene.Compiler)
+            {
+                //Go to the Settings page
+                _mainFrame.NavigationService.Navigate(new Pages.Compiler());
+                LastScene = CurrentScene;
+                CurrentScene = CVScene.Compiler;
+                ButtonControl();
+            }
+        }
+
 
         #endregion
             //private bool isSpinning = false;
@@ -329,13 +338,13 @@ namespace CodeVoidWPF
             //    dblAnim.From = 120;
             //    dblAnim.To = 0;
 
-            //    RotateTransform rt = new RotateTransform();
-            //    rt.CenterX = BtnHome.ActualWidth;
+            //    ActualWidth;
             //    BtnHome.RenderTransform = rt;
 
             //    rt.BeginAnimation(RotateTransform.AngleProperty, dblAnim);
             //}
         }
 
+       
     }
 }

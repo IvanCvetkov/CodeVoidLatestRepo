@@ -1,0 +1,230 @@
+﻿<Page x:Class="CodeVoidWPF.Pages.Compiler"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CodeVoidWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d"
+      d:DesignHeight="3000" d:DesignWidth="3000"
+      Title="Compiler">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <RichTextBox FontSize="16" IsReadOnly="False" x:Name="txtStatus" HorizontalAlignment="Left" Height="318" Margin="42,96,0,0" VerticalAlignment="Top" Width="450" TextChanged="txtStatus_TextChanged">
+            <FlowDocument>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System;"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Collections.Generic;"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Linq;"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Text;"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="using"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=" System.Threading.Tasks;"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0"/>
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Blue">
+                        <Run Text="namespace"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text="Compiler"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="{}{"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="   "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="class"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text=""/>
+                    </Span>
+                    <Span Foreground="#FF2B91AF">
+                        <Run Text="Program"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="    {"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="       "/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="static"/>
+                    </Span>
+                    <Span Foreground="Blue">
+                        <Run Text="void"/>
+                    </Span>
+                    <Span Foreground="Black">
+                        <Run Text="Main()"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="        {"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="            "/>
+                    </Span>
+                    <Span Foreground="Green">
+                        <Run Text=""/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="        }"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="    }"/>
+                    </Span>
+                </Paragraph>
+
+                <Paragraph FontSize="12.6666666666667" FontFamily="Consolas" Margin="0">
+                    <Span Foreground="Black">
+                        <Run Text="}"/>
+                    </Span>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="BackToLast" Width="94" Height="52" Click="BackToLast_Click" Margin="42,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="52" Width="54"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="back" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="back"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <TextBlock x:Name ="TextCompiler" Padding="30" FontSize="35" Grid.Row="0" TextWrapping="WrapWithOverflow" Margin="133,-13,-133,688">
+             <Run Foreground="CornflowerBlue">Компилатор</Run>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                                            Storyboard.TargetName="TextCompiler" 
+                                                            Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                                            From="0" To="2" Duration="0:0:1.5" 
+                                                            AutoReverse="True" RepeatBehavior="0:0:0.75" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <Grid/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Blue" Margin="16,80,-79,697" Height="4" Grid.ColumnSpan="2"/>
+        <Button x:Name="Homebtn" Width="94" Height="52" Click="Home_Click" Margin="1039,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1,0.298">
+            <materialDesign:PackIcon Kind="HomeCircle" Height="42" Width="56"></materialDesign:PackIcon>
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="LoopsFront" X="0" Y="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="5" Duration="00:00:01"
+                                Storyboard.TargetName="LoopsFront"
+                                Storyboard.TargetProperty="Y"
+                                AutoReverse="True" RepeatBehavior="Forever">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase Bounces="1" EasingMode="EaseOut"
+                                            Bounciness="7" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button x:Name="BtnCompile" BorderThickness="20" Content="Компилирай" Width="450" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="42,480,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
+        <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="42,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
+    </Grid>
+</Page>
