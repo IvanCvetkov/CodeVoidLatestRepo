@@ -37,11 +37,11 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Label>
+                <Label>  
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="This app is written in Xamarin C#."/>
+                                <Span Text="Това приложение е написано с технологията Xamarin на езика C#."/>
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -50,14 +50,14 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="The source code" />
+                                <Span Text="Сорс кода" />
                                 <Span Text=" " />
-                                <Span Text="can be found on the github repository of the app." FontAttributes="None" />
+                                <Span Text="може да намерите на github страницата на проекта." FontAttributes="None" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Button x:Name="CodeVoidGithub" CornerRadius="10" Margin="0,29,0,0" Text="Learn more"
+                <Button x:Name="CodeVoidGithub" CornerRadius="25" Margin="50,35,50,0" Text="научете повече"
                         BackgroundColor="{StaticResource LMButton}"
                         TextColor="White"
                         Clicked="CodeVoidGithub_Clicked"/>

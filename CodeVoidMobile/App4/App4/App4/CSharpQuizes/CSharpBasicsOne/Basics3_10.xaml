@@ -36,7 +36,8 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="            class" ForegroundColor="Blue" FontAttributes="Bold"/>
-                            <Span Text=" Program {"/>
+                            <Span Text=" Program" ForegroundColor = "SpringGreen"/>
+                            <Span Text="{} {"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
@@ -44,7 +45,8 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="              static void" ForegroundColor="Blue" FontAttributes="Bold"/>
-                            <Span Text=" Main() {"/>
+                            <Span Text=" Main" ForegroundColor = "YellowGreen"/>
+                            <Span Text="() {"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
@@ -74,15 +76,17 @@
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="                           Console" ForegroundColor="Green"  FontAttributes="Bold"/>
-                        <Span Text=".WriteLine(c);" FontAttributes="Bold"/>
-                    </FormattedString>
+                            <Span Text="                        Console" ForegroundColor="Green"/>
+                            <Span Text="." ForegroundColor="Black"/>
+                            <Span Text="WriteLine" ForegroundColor="YellowGreen"/>
+                            <Span Text="(c);"/>
+                        </FormattedString>
                 </Label.FormattedText>
             </Label>
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="                   }" FontAttributes="Bold"/>
+                        <Span Text="                     }" FontAttributes="Bold"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -104,15 +108,17 @@
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="                           Console" ForegroundColor="Green"  FontAttributes="Bold"/>
-                        <Span Text=".WriteLine(b);" FontAttributes="Bold"/>
+                        <Span Text="                        Console" ForegroundColor="Green"/>
+                        <Span Text="." ForegroundColor="Black"/>
+                        <Span Text="WriteLine" ForegroundColor="YellowGreen"/>
+                        <Span Text="(b);"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="                   }" FontAttributes="Bold"/>
+                        <Span Text="                     }" FontAttributes="Bold"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -141,15 +147,6 @@
                 <Button x:Name="Forward" TextColor="White" CornerRadius="30" Text="Напред" FontSize="22" FontFamily="Comic Sans MS"
                     HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="Forward_Clicked" Margin="140,0,20,-2"></Button>
                 <BoxView BackgroundColor="Silver" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-                <lottie:AnimationView 
-                    x:Name="checkmark"
-                    IsEnabled="True"
-                    Animation="13263-checkmark.json" 
-                    AutoPlay="False" Loop="False"
-                    HeightRequest="200"
-                    WidthRequest="200"
-                    VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

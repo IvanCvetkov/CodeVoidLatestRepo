@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using App4.CSharpQuizes.AwaitRightPages;
+using App4.CSharpQuizes.AwaitWrongPages;
 
 namespace App4.CSharpQuizes.CSharpBasicsOne
 {
@@ -16,6 +14,22 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
         {
             InitializeComponent();
         }
+
+        private async void Forward_Clicked(object sender, EventArgs e)
+        {
+            if (option3.IsChecked == true && option1.IsChecked == false
+                && option2.IsChecked == false && option4.IsChecked == false)
+            {
+                await Task.Delay(300);
+                await Navigation.PushAsync(new ForthToFifthRight());
+            }
+            else
+            {
+                await Navigation.PushAsync(new ForthToFifthWrong());
+                await Task.Delay(300);
+            }
+        }
+
         protected override bool OnBackButtonPressed()
         {
             Navigation.PushAsync(new Basics3_10());

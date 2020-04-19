@@ -98,8 +98,8 @@
                                 </Button.Triggers>
                             </Button>
 
-                            <TextBlock FontSize="25" Text="Login in your account" FontFamily="Champagne &amp; Limousines" Margin="84,10,560,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
-                            <TextBlock FontSize="21" Text="- Only the first login is recorded" FontFamily="Champagne &amp; Limousines" Margin="94,48,223,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="25" Text="Влез в акаунта си" FontFamily="Champagne &amp; Limousines" Margin="84,10,560,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text="- Само първото влизане се записва" FontFamily="Champagne &amp; Limousines" Margin="94,48,223,0" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
                             <Grid x:Name="log" Width="35" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
@@ -158,8 +158,8 @@
                                     </EventTrigger>
                                 </Button.Triggers>
                             </Button>
-                            <TextBlock FontSize="25" Text="Open Visual Studio" FontFamily="Champagne &amp; Limousines" Margin="-902,156,1546,-76" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
-                            <TextBlock FontSize="21" Text=" - Open Visual Studio from CodeVoid" FontFamily="Champagne &amp; Limousines" Margin="-902,198,1317,-118" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="25" Text="Отвори Visual Studio" FontFamily="Champagne &amp; Limousines" Margin="-902,156,1546,-76" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text=" - Отвори Visual Studio от CodeVoid за първи път" FontFamily="Champagne &amp; Limousines" Margin="-902,198,1317,-118" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
                             <Grid x:Name="vs" Width="35" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-972,147,0,-77">
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
@@ -223,8 +223,8 @@
                                     </EventTrigger>
                                 </Button.Triggers>
                             </Button>
-                            <TextBlock FontSize="25" Text="Compile your code" FontFamily="Champagne &amp; Limousines" Margin="-1898,308,2542,-228" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
-                            <TextBlock FontSize="21" Text=" - First code compilation from CodeVoid" FontFamily="Champagne &amp; Limousines" Margin="-1898,353,2313,-273" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="25" Text="Компилирай кода си" FontFamily="Champagne &amp; Limousines" Margin="-1898,308,2542,-228" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text=" - Първото ти компилиране на код през CodeVoid" FontFamily="Champagne &amp; Limousines" Margin="-1898,353,2313,-273" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
                             <Grid x:Name="codecomp" Width="34" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-1970,0,0,-230">
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
@@ -285,8 +285,8 @@
                                     </EventTrigger>
                                 </Button.Triggers>
                             </Button>
-                            <TextBlock FontSize="25" Text="Activate DarkMode" FontFamily="Champagne &amp; Limousines" Margin="-1898,460,2542,-380" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
-                            <TextBlock FontSize="21" Text=" - Activate the Dark Mode from the settings" FontFamily="Champagne &amp; Limousines" Margin="-1898,500,2313,-420" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="25" Text="Активирай тъмната тема" FontFamily="Champagne &amp; Limousines" Margin="-1898,460,2542,-380" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
+                            <TextBlock FontSize="21" Text=" - От страницата за настройки" FontFamily="Champagne &amp; Limousines" Margin="-1898,500,2313,-420" VerticalAlignment="Top" Foreground="Gray" Height="40"/>
                             <Grid x:Name="dm" Width="34" Height="50" Background="#FFFF1818" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-1970,452,0,-382">
                                 <Grid.Effect>
                                     <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Performance" ShadowDepth="1"/>
@@ -303,8 +303,11 @@
         <Grid x:Name="LayoutRoot" Background="Transparent"
              HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-142,10,1822,751" Width="1320" Grid.Row="2" Grid.ColumnSpan="2" Height="334">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="122*"/>
-                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="361*"/>
+                <ColumnDefinition Width="151*"/>
+                <ColumnDefinition Width="58*"/>
+                <ColumnDefinition Width="406*"/>
+                <ColumnDefinition Width="344*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RenderTransform>
@@ -317,7 +320,7 @@
             <Canvas RenderTransformOrigin="0.5,0.5"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                  Width="120" Height="120" Margin="600,107,256,107" >
+                  Width="120" Height="120" Margin="30,107,256,107" Grid.Column="3" >
                 <Ellipse Width="21.835" Height="21.862"
                       Canvas.Left="20.1696"
                        Canvas.Top="9.76358"

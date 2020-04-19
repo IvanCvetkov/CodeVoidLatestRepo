@@ -7,7 +7,7 @@
             <StackLayout BackgroundColor="DarkGray">
                 
                 <!--C# Logo-->
-                <Image x:Name="Logo" Source="CSharp.png" BackgroundColor="Transparent" Margin="15,-5,0,0"></Image>
+                <Image x:Name="Logo" HeightRequest="205" Source="CSharp.png" BackgroundColor="Transparent" Margin="15,-5,0,0"></Image>
 
                 <!--Content-->
                 <Button x:Name="BasicsFirst" TextColor="White" CornerRadius="20" Text="C# Basics I" FontSize="22" FontFamily="Comic Sans MS" HeightRequest="60" BackgroundColor="DarkSlateGray" WidthRequest="30" Clicked="BasicsFirst_Clicked" Margin="40,20,40,20"></Button>

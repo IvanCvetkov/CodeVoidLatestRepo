@@ -226,5 +226,9 @@
         </Button>
         <Button x:Name="BtnCompile" BorderThickness="20" Content="Компилирай" Width="450" FontSize="26" Height="52" Click="BtnCompile_Click" Margin="42,480,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
         <TextBox x:Name="txtSource" HorizontalAlignment="Left" Height="56" Margin="42,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="BtnCSharp" BorderThickness="20" Content="C#" Width="96" FontSize="26" Height="52" Click="BtnCSharp_Click" Margin="568,480,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
+        <Button x:Name="BtnCPP" BorderThickness="20" Content="C++" Width="96" FontSize="26" Height="52" Click="BtnCPP_Click" Margin="673,480,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
+        <Button x:Name="BtnPython" BorderThickness="20" Content="Py" Width="60" FontSize="26" Height="52" Click="BtnPython_Click" Margin="774,480,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
+        <Button x:Name="BtnJS" BorderThickness="20" Content="JS" Width="96" FontSize="26" Height="52" Click="BtnJS_Click" Margin="839,480,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="Red"/>
     </Grid>
 </Page>

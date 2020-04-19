@@ -36,5 +36,10 @@ namespace App4
             await Navigation.PushAsync(new JSQuizes.JSQuiz());
             //await JSGrid.FadeIn(1200, Easing.CubicIn);
         }
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PushAsync(new MainPage());
+            return true;
+        }
     }
 }

@@ -5,8 +5,8 @@
              x:Class="App4.MainPage">
     <StackLayout BackgroundColor="Black">
         <!-- Place new controls here -->
-        
-        <Image Source="smallerblackhole.png" x:Name="Logo"></Image>
+
+        <Image Source="smallerblackhole.png" HeightRequest="350" x:Name="Logo"></Image>
         <Button Text="" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="185"></Button>
         <Button CornerRadius="30" HeightRequest="55" WidthRequest="185" Text="Тестове" TextColor="White" BackgroundColor="DarkSlateGray" HorizontalOptions="CenterAndExpand"

@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -37,9 +38,9 @@ namespace CodeVoidWPF.Pages
         #region ctor
         static Compiler()
         {
-            string[] blueWords = { "string", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
-            string[] greenWords = { "Console" };
-            string[] yellowWords = { "ReadKey", "WriteLine", "Write" };
+            string[] blueWords = { "string","return", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
+            string[] greenWords = { "Console", "std", "printf", "cout", "cin","<bits/stdc++.h>", "<stdio.h>", "<math.h>", "<iomanip.h>", "<iostream.h>","scanf" };
+            string[] yellowWords = { "ReadKey", "WriteLine","#include", "Write" };
             blueTags = new List<string>(blueWords);
             grTags = new List<string>(greenWords);
             yellowTags = new List<string>(yellowWords);
@@ -367,6 +368,48 @@ namespace CodeVoidWPF.Pages
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("Pages/MainPage.xaml", UriKind.Relative));
+        }
+
+        private void BtnCSharp_Click(object sender, RoutedEventArgs e)
+        {
+            txtStatus.Document.Blocks.Clear();
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("using System;")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("using System.Collections.Generic;")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("using System.Linq;")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("using System.Text;")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("using System.Threading.Tasks;")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("namespace Compiler")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("{")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("    class  Program")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("{")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("        static void Main()")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("       {")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run(" ")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("       }")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("}")));
+        }
+
+        private void BtnCPP_Click(object sender, RoutedEventArgs e)
+        {
+            txtStatus.Document.Blocks.Clear();
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("#include <stdio.h>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("using namespace std;")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("int main()")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("{")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("return 0;")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("}")));
+        }
+
+        private void BtnPython_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnJS_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

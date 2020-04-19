@@ -13,6 +13,7 @@ namespace App4.CSharpQuizes.AwaitRightPages
         {
             InitializeComponent();
         }
+
         protected async override void OnAppearing()
         {
             await Task.Delay(1000);

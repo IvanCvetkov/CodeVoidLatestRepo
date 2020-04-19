@@ -17,7 +17,6 @@ namespace CodeVoidWPF.Pages
         }
         private void BtnBackProgress_Click(object sender, RoutedEventArgs e)
         {
-            LayoutRoot.Visibility = Visibility.Visible;
             Await();
         }
         private async void Await()
@@ -27,7 +26,7 @@ namespace CodeVoidWPF.Pages
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            LayoutRoot.Visibility = Visibility.Hidden;
+
         }
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {

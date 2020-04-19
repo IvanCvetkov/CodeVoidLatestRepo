@@ -32,5 +32,10 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
                 await Navigation.PushAsync(new AwaitWrong());
             }
         }
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PushAsync(new CSharpQuiz());
+            return true;
+        }
     }
 }

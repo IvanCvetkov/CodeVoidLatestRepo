@@ -51,9 +51,16 @@ namespace App4.CSharpQuizes
                 await Logo.RotateTo(i * (0), 1500, Easing.SinInOut);
             }
         }
+
         protected override async void OnAppearing()
         {
            await RotateImageContinously();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PushAsync(new QuizesPage());
+            return true;
         }
     }
 }

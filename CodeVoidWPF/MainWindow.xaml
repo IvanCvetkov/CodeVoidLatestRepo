@@ -91,12 +91,6 @@
                     <TextBlock TextWrapping="WrapWithOverflow" FontSize="13" x:Name="BtnCompilerText" HorizontalAlignment="Center" Text="Компилатор" FontFamily="Champagne &amp; Limousines" Margin="18,0,-16,-7" Width="88"/>
                 </Grid>
             </Button>
-            <Button  x:Name= "BtnKids" Click ="BtnKids_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
-                <Grid Width="90">
-                    <materialDesign:PackIcon Kind="Face" VerticalAlignment="Center" Margin="-10,0,0,0"/>
-                    <TextBlock TextWrapping="WrapWithOverflow" FontSize="11" x:Name="BtnKidsText" HorizontalAlignment="Center" Text="ПРОГРАМИРАНЕ ЗА ДЕЦА" FontFamily="Champagne &amp; Limousines" Margin="18,0,-16,-7" Width="88"/>
-                </Grid>
-            </Button>
             <Button  x:Name= "BtnSett" Click ="BtnSett_Click" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                 <Grid Width="90">
                     <Grid.RowDefinitions>
@@ -104,7 +98,12 @@
                         <RowDefinition Height="9*"/>
                     </Grid.RowDefinitions>
                     <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" Margin="-10,0,0,0" Grid.RowSpan="2" Width="21"/>
-                    <TextBlock FontSize="11" x:Name="BtnSettingsText" HorizontalAlignment="Center" Text="НАСТРОЙКИ" FontFamily="Champagne &amp; Limousines" Margin="26,2,-34,-9" Width="98" Grid.RowSpan="2"/>
+                    <TextBlock FontSize="11" x:Name="BtnSettingsText" HorizontalAlignment="Center" Text="НАСТРОЙКИ" FontFamily="Champagne &amp; Limousines" Margin="21,2,-34,-9" Width="103" Grid.RowSpan="2"/>
+                </Grid>
+            </Button>
+            <Button Background="Transparent" x:Name= "BtnKids" Click ="BtnKids_Click" Margin="10" BorderBrush="Transparent">
+                <Grid Width="90">
+                    <TextBlock TextWrapping="WrapWithOverflow" FontSize="11" x:Name="BtnKidsText" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="18,0,-16,-7" Width="88"/>
                 </Grid>
             </Button>
         </StackPanel>

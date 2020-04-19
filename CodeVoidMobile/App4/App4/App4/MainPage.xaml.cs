@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace App4
 {
@@ -52,6 +54,12 @@ namespace App4
             if (Navigation.NavigationStack.Count == 0 ||
                 Navigation.NavigationStack.Last().GetType() != typeof(ProgressPage))
                 await Navigation.PushAsync(new ProgressPage(), true);
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            return true;
         }
     }
 }
