@@ -6,7 +6,7 @@
         <ScrollView>
             <StackLayout BackgroundColor="DarkGray">
 
-                <!--C# Logo-->
+                <!--Python Logo-->
                 <Image x:Name="Logo" HeightRequest="205" Source="PythonLogo.png" BackgroundColor="Transparent" Margin="15,-5,0,0"></Image>
 
                 <!--Content-->

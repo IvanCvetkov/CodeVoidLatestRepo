@@ -61,24 +61,24 @@
                 <Label>
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="               if&#x0a;" ForegroundColor = "Purple"/>
-                            <Span Text="                       (i &lt; 2) k = 4;"/>
+                            <Span Text="                if" ForegroundColor = "Purple"/>
+                            <Span Text=" (i &lt; 2) &#x0a;                    k = 4;"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
                 <Label>
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="               else if&#x0a;" ForegroundColor = "Purple"/>
-                            <Span Text="                       (j &gt; 1) i = 1;"/>
+                            <Span Text="                else if" ForegroundColor = "Purple"/>
+                            <Span Text=" (j &gt; 1) &#x0a;                       i = 1;"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
                 <Label>
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="               else&#x0a;" ForegroundColor = "Purple"/>
-                            <Span Text="                        i = 3;"/>
+                            <Span Text="                else &#x0a;" ForegroundColor = "Purple"/>
+                            <Span Text="                       i = 3;"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>

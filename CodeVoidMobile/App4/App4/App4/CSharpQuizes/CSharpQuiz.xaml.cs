@@ -24,9 +24,13 @@ namespace App4.CSharpQuizes
 
         private void BasicsSecond_Clicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new CSharpBasicsTwo.Pages.Basics1_20());
+        }
+        private void BasicsThird_Clicked(object sender, EventArgs e)
+        {
 
         }
-
+    
         private void AdvancedFirst_Clicked(object sender, EventArgs e)
         {
 
@@ -62,5 +66,7 @@ namespace App4.CSharpQuizes
             Navigation.PushAsync(new QuizesPage());
             return true;
         }
+
+       
     }
 }

@@ -35,7 +35,6 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
 
         protected override bool OnBackButtonPressed()
         {
-            Navigation.PushAsync(new Basics8_10());
             return true;
         }
     }

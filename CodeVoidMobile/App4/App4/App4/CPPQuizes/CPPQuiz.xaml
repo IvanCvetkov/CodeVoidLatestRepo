@@ -6,7 +6,7 @@
         <ScrollView>
             <StackLayout BackgroundColor="DarkGray">
 
-                <!--C# Logo-->
+                <!--C++ Logo-->
                 <Image x:Name="Logo" HeightRequest="205" Source="CppLogoTransparent.png" BackgroundColor="Transparent" Margin="15,-5,0,0"></Image>
 
                 <!--Content-->
