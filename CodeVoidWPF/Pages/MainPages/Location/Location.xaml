@@ -124,8 +124,8 @@
         <TextBox PreviewMouseLeftButtonDown="LastName_PreviewMouseLeftButtonDown" Text="*Фамилия"  x:Name="LastName" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,408,-516,-407" Grid.Row="4" TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="LastName_TextChanged">
         </TextBox>
-        <TextBox PreviewMouseLeftButtonDown="School_PreviewMouseLeftButtonDown" Text="*Училище"  x:Name="School" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,508,-276,-470" Grid.Row="4" TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="School_TextChanged"/>
+        <TextBox PreviewMouseLeftButtonDown="Email_PreviewMouseLeftButtonDown" Text="*Поща"  x:Name="Email" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,508,-276,-470" Grid.Row="4" TextWrapping="Wrap"
+            VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="Email_TextChanged"/>
         <TextBox PreviewMouseLeftButtonDown="City_PreviewMouseLeftButtonDown" Text="*Град"  x:Name="City" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="352,508,-494,-467" Grid.Row="4" TextWrapping="Wrap"
             VerticalAlignment="Top" Width="216" Background="#FFBFBFBF" TextChanged="City_TextChanged"/>
         <TextBox PreviewMouseLeftButtonDown="Subject_PreviewMouseLeftButtonDown" Text="*Тема"  x:Name="Subject" FontSize="20"  Grid.Column="4" HorizontalAlignment="Left" Height="45" Margin="131,458,-277,-421" Grid.Row="4" TextWrapping="Wrap"

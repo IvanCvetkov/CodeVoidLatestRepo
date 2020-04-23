@@ -40,7 +40,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
 
         }
 
-        private void School_TextChanged(object sender, TextChangedEventArgs e)
+        private void Email_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -116,8 +116,8 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             if (LastName.IsEnabled == true)
                 LastName.IsEnabled = false;
 
-            if (School.IsEnabled == true)
-                School.IsEnabled = false;
+            if (Email.IsEnabled == true)
+                Email.IsEnabled = false;
 
             if (City.IsEnabled == true)
                 City.IsEnabled = false;
@@ -140,7 +140,7 @@ namespace CodeVoidWPF.Pages.MainPages.Location
             string RTBtext = new TextRange(MessageRTB.Document.ContentStart, MessageRTB.Document.ContentEnd).Text;
             string UserInformation = FirstName.Text + " " + LastName.Text + "\n" +
                                      Phone.Text + "\n" +
-                                     School.Text + "\n" +
+                                     Email.Text + "\n" +
                                      City.Text;
             string CodeVoidCopyRight = "CopyRight© CodeVoid";
             string message = subject + "\n" +
@@ -192,11 +192,11 @@ namespace CodeVoidWPF.Pages.MainPages.Location
                 Phone.Clear();
             }
         }
-        private void School_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Email_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (School.Text == "School")
+            if (Email.Text == "Email")
             {
-                School.Clear();
+                Email.Clear();
             }
         }
         private void City_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

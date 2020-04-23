@@ -277,14 +277,16 @@ namespace CodeVoidWPF
         }
         private void BtnDonate_Click(object sender, RoutedEventArgs e)
         {
-            if (CurrentScene != CVScene.Donate)
-            {
-                //Go to the Settings Donate page
-                _mainFrame.NavigationService.Navigate(new Pages.Donate());
-                LastScene = CurrentScene;
-                CurrentScene = CVScene.Donate;
-                ButtonControl();
-            }
+            //if (CurrentScene != CVScene.Donate)
+            //{
+            //    //Go to the Settings Donate page
+            //    _mainFrame.NavigationService.Navigate(new Pages.Donate());
+            //    LastScene = CurrentScene;
+            //    CurrentScene = CVScene.Donate;
+            //    ButtonControl();
+            //}
+            string patreonPage = "http://www.patreon.com/CodeVoid";
+            Process.Start(patreonPage);
         }
         private void BtnKids_Click(object sender, RoutedEventArgs e)
         { 

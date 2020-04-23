@@ -1,4 +1,6 @@
-﻿using Microsoft.CSharp;
+﻿using IronPython.Hosting;
+using Microsoft.CSharp;
+using Microsoft.Scripting.Hosting;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -6,6 +8,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,8 +42,8 @@ namespace CodeVoidWPF.Pages
         static Compiler()
         {
             string[] blueWords = { "string","return", "char", "null", "namespace", "class", "using", "public", "static", "void", "int" };
-            string[] greenWords = { "Console", "std", "printf", "cout", "cin","<bits/stdc++.h>", "<stdio.h>", "<math.h>", "<iomanip.h>", "<iostream.h>","scanf" };
-            string[] yellowWords = { "ReadKey", "WriteLine","#include", "Write" };
+            string[] greenWords = { "Console", "alert", "print", "std", "printf", "cout", "cin","<bits/stdc++.h>", "<stdio.h>", "<math.h>", "<iomanip.h>", "<iostream.h>","scanf" };
+            string[] yellowWords = { "ReadKey", "!DOCTYPE html", "<html>", "</html>", "<body>", "</body>", "WriteLine","#include", "Write" };
             blueTags = new List<string>(blueWords);
             grTags = new List<string>(greenWords);
             yellowTags = new List<string>(yellowWords);
@@ -338,26 +341,56 @@ namespace CodeVoidWPF.Pages
                 yellow_Tags.Add(yellowt);
             }
         }
-
+        private void RunPythonScript(string pythonCompiler, string pythonScript)
+        {
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = pythonCompiler;
+            start.Arguments = pythonScript;
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            using (Process process = Process.Start(start))
+            {
+                using (StreamReader reader = process.StandardOutput)
+                {
+                    string result = reader.ReadToEnd();
+                    Console.Write(result);
+                }
+            }
+        }
         private void BtnCompile_Click(object sender, RoutedEventArgs e)
         {
-            string Framework = 'v' + Environment.Version.ToString();
-            string OutputConsoleApp = "Output.exe";
-            string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
+            string code = new TextRange(txtStatus.Document.ContentStart, txtStatus.Document.ContentEnd).Text;
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string fullPath = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\PythonExecutable.txt";
+            string fullPathPy = desktopPath + "\\CodeVoidProject\\CodeVoid\\CodeVoidWPF\\bin\\Debug\\PythonExecutable.py";
 
-            txtSource.Clear();
-            CSharpCodeProvider csc = new CSharpCodeProvider();
-            CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
-            parameters.GenerateExecutable = true;
-            CompilerResults results = csc.CompileAssemblyFromSource(parameters, new TextRange
-                (txtStatus.Document.ContentStart, txtStatus.Document.ContentEnd).Text);
-            if (results.Errors.HasErrors)
-                results.Errors.Cast<CompilerError>().ToList().ForEach(error => txtSource.Text += error.ErrorText + "\r\n");
-            else
-            {
-                txtSource.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
-                Process.Start(StartupPath);
-            }
+            File.WriteAllText(fullPath, code);
+
+            //Make the file with the source code a python file
+            //a.k.a. can be executable by the Python.exe compiler
+            string result = Path.ChangeExtension(fullPath, ".py");
+            File.WriteAllText(result, code + "input()");
+            //File.WriteAllText(result, code + "input()");
+
+            RunPythonScript("Python.exe", "PythonExecutable.py");
+            //    string Framework = 'v' + Environment.Version.ToString();
+            //    string OutputConsoleApp = "Output.exe";
+            //    string StartupPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), OutputConsoleApp);
+
+            //    txtSource.Clear();
+            //    CSharpCodeProvider csc = new CSharpCodeProvider();
+            //    CompilerParameters parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, OutputConsoleApp, true);
+            //    parameters.GenerateExecutable = true;
+            //    CompilerResults results = csc.CompileAssemblyFromSource(parameters, new TextRange
+            //        (txtStatus.Document.ContentStart, txtStatus.Document.ContentEnd).Text);
+            //    if (results.Errors.HasErrors)
+            //        results.Errors.Cast<CompilerError>().ToList().ForEach(error => txtSource.Text += error.ErrorText + "\r\n");
+            //    else
+            //    {
+            //        txtSource.Text = "========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========";
+            //        Process.Start(StartupPath);
+            //    }
+            //
         }
 
         private void BackToLast_Click(object sender, RoutedEventArgs e)
@@ -404,12 +437,22 @@ namespace CodeVoidWPF.Pages
 
         private void BtnPython_Click(object sender, RoutedEventArgs e)
         {
-
+            txtStatus.Document.Blocks.Clear();
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("print(\"Hello World!\")")));
         }
 
         private void BtnJS_Click(object sender, RoutedEventArgs e)
         {
-
+            txtStatus.Document.Blocks.Clear();
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("<!DOCTYPE html>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("<html>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("<body>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("<p> CodeVoid </p>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("<script>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("alert(\"Hello World!\");")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("</script>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("</body>")));
+            txtStatus.Document.Blocks.Add(new Paragraph(new Run("</html>")));
         }
     }
 }
