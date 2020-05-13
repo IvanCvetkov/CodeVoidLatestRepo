@@ -25,8 +25,15 @@ namespace App4.CSharpQuizes.CSharpBasicsTwo.Pages
             else
             {
                 App.Counter++;
-                await Task.Delay(300);
-                await Navigation.PushAsync(new Nine_To_Ten_Wrong());
+                if (App.Counter == 3)
+                {
+                    await Navigation.PushAsync(new QuizFail());
+                }
+                else
+                {
+                    await Task.Delay(300);
+                    await Navigation.PushAsync(new Nine_To_Ten_Wrong());
+                }
             }
         }
 
@@ -38,6 +45,7 @@ namespace App4.CSharpQuizes.CSharpBasicsTwo.Pages
 
         public async Task BackButtonPressed()
         {
+            App.Counter = 0;
             var action = await DisplayAlert("Предупреждение", "Найстина ли искаш да излезеш от текущия тест?" +
                 " Ако го направиш ще изгубиш своя прогрес до тук!", "Не", "Да");
             if (!action)

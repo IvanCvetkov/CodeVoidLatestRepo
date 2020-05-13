@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="App4.QuizFail" 
+             NavigationPage.HasBackButton="False" 
+             BackgroundColor="Red">
+    <ContentPage.Content>
+        <StackLayout>
+            <lottie:AnimationView 
+                    x:Name="checkmark"
+                    IsEnabled="True"
+                    Animation="FailedQuiz.json" 
+                    AutoPlay="True" Loop="False"
+                    HeightRequest="150"
+                    WidthRequest="150"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand" />
+            <Label Text="Ти направи повече от 3 грешки!"
+                   Margin="100"
+                   TextColor="Black"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                HorizontalOptions="EndAndExpand"/>
+            <Label Text="Опитай Пак!"
+                   Margin="100"
+                   TextColor="Black"
+                   FontSize="28"
+                   HorizontalTextAlignment="Center"
+                HorizontalOptions="CenterAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

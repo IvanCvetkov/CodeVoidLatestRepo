@@ -28,13 +28,33 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
             }
             else
             {
-                await Task.Delay(300);
-                await Navigation.PushAsync(new AwaitWrong());
+                App.Counter++;
+                if (App.Counter == 3)
+                {
+                    await Navigation.PushAsync(new QuizFail());
+                }
+                else
+                {
+                    await Task.Delay(300);
+                    await Navigation.PushAsync(new AwaitWrong());
+                }
             }
         }
         protected override bool OnBackButtonPressed()
         {
+            BackButtonPressed();
             return true;
+        }
+
+        public async Task BackButtonPressed()
+        {
+            App.Counter = 0;
+            var action = await DisplayAlert("Предупреждение", "Найстина ли искаш да излезеш от текущия тест?" +
+                " Ако го направиш ще изгубиш своя прогрес до тук!", "Не", "Да");
+            if (!action)
+            {
+                await Navigation.PushAsync(new CSharpQuiz());
+            }
         }
     }
 }

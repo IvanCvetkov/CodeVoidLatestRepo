@@ -6,19 +6,19 @@ namespace App4
 {
     public partial class App : Application
     {
-        private static int _counter = 0;
+        static int _counter = 0;
         public static int Counter
         {
-            get => _counter;
-            set { value = _counter; }
+            get {  return _counter; }
+            set { _counter = value; }
         }
+
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
-
+            MainPage = new NavigationPage(new SplashScreen());
         }
 
         protected override void OnStart()

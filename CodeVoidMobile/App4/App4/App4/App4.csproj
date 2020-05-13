@@ -114,13 +114,22 @@
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsOne\Basics9_10.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsOne\Final.xaml">
+    <EmbeddedResource Update="CSharpQuizes\Final.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Eight_To_Nine.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Eleven_To_Twelve.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Fifteen_To_Sixteen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Five_To_Six.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Fourteen_To_Fifteen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Four_To_Five.xaml">
@@ -135,10 +144,22 @@
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Seven_To_Eight.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Sixteen_To_Seventeen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Six_To_Seven.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Ten_To_Eleven.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Thirteen_To_Fourteen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Three_To_Four.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Twelve_To_Thirteen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitRightPages\Two_To_Three.xaml">
@@ -147,7 +168,16 @@
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Eight_To_Nine_Wrong.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Eleven_To_Twelve_Wrong.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\FIfteen_To_Sixteen_Wrong.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Five_To_Six_Wrong.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Fourteen_To_Fifteen_Wrong.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Four_To_Five_Wrong.xaml">
@@ -162,16 +192,49 @@
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Seven_To_Eight_Wrong.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Sixteen_To_Seventeen_Wrong.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Six_To_Seven_Wrong.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Ten_To_Eleven_Wrong.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Thirteen_To_Fourteen_Wrong.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Three_To_Four_Wrong.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Twelve_To_Thirteen_Wrong.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\AwaitWrongPages\Two_To_Three_Wrong.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics10_20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics11_20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics12_20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics13_20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics14_20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics15_20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics16_20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics17_20.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="CSharpQuizes\CSharpBasicsTwo\Pages\Basics1_20.xaml">
@@ -216,5 +279,15 @@
     <EmbeddedResource Update="QuizesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="QuizFail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SplashScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Styles\" />
   </ItemGroup>
 </Project>

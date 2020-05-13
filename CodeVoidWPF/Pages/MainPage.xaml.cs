@@ -4,6 +4,7 @@ using System;
 using System.Windows.Media.Animation;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Management;
 
 namespace CodeVoidWPF.Pages
 {
@@ -97,5 +98,40 @@ namespace CodeVoidWPF.Pages
             this.NavigationService.Navigate(new Uri("Pages/News.xaml", UriKind.Relative));
         }
 
+        private void AboutIcon_Click(object sender, RoutedEventArgs e)
+        {
+            //UninstallProgram("Sourcetree");
+        }
+        //private bool UninstallProgram(string ProgramName)
+        //{
+        //    try
+        //    {
+        //        ManagementObjectSearcher mos = new ManagementObjectSearcher(
+        //          "SELECT * FROM Win32_Product WHERE Name = '" + ProgramName + "'");
+        //        foreach (ManagementObject mo in mos.Get())
+        //        {
+        //            try
+        //            {
+        //                if (mo["Name"].ToString() == ProgramName)
+        //                {
+        //                    object hr = mo.InvokeMethod("Uninstall", null);
+        //                    return (bool)hr;
+        //                }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show("nope");
+        //            }
+        //        }
+
+        //        //was not found...
+        //        return false;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }

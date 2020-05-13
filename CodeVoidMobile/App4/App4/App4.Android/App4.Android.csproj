@@ -86,6 +86,8 @@
     <AndroidAsset Include="Assets\10159-fire.json" />
     <AndroidAsset Include="Assets\10960-error.json" />
     <AndroidAsset Include="Assets\2068-error-cross.json" />
+    <AndroidAsset Include="Assets\FailedQuiz.json" />
+    <AndroidAsset Include="Assets\9764-loader.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -298,6 +300,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\PythonLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\transparentlogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

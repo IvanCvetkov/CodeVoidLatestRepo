@@ -32,7 +32,6 @@ namespace App4
         private async void Quizes_Clicked(object sender, EventArgs e)
         {
             await RotateImageContinously();
-
             if (Navigation.NavigationStack.Count == 0 || 
                 Navigation.NavigationStack.Last().GetType() != typeof(QuizesPage))
             await Navigation.PushAsync(new QuizesPage(), true);

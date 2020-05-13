@@ -26,8 +26,15 @@ namespace App4.CSharpQuizes.CSharpBasicsTwo.Pages
             }
             else
             {
-                await Task.Delay(300);
-                await Navigation.PushAsync(new Four_To_Five_Wrong());
+                App.Counter++;
+                if (App.Counter == 3)
+                {
+                    await Navigation.PushAsync(new QuizFail());
+                }
+                else
+                {
+                    await Navigation.PushAsync(new Four_To_Five_Wrong());
+                }
             }
         }
 

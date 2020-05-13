@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App4.CSharpQuizes.CSharpBasicsTwo.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,20 +8,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App4.CSharpQuizes.CSharpBasicsOne
+namespace App4.CSharpQuizes.CSharpBasicsTwo.AwaitWrongPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Final : ContentPage
+    public partial class Twelve_To_Thirteen_Wrong : ContentPage
     {
-        public Final()
+        public Twelve_To_Thirteen_Wrong()
         {
             InitializeComponent();
         }
         protected async override void OnAppearing()
         {
-            await Task.Delay(1000);
-            await Task.Delay(1000);
-            await Navigation.PushAsync(new CSharpQuiz());
+            await Task.Delay(2000);
+            await Navigation.PushAsync(new Basics13_20());
         }
     }
 }
