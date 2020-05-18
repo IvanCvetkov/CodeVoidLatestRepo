@@ -1,6 +1,5 @@
-﻿using App4.CSharpQuizes.AwaitRightPages;
-using App4.CSharpQuizes.AwaitWrongPages;
-using System;
+﻿using System;
+using App4.Awaitable;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -21,8 +20,10 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
             if (option2.IsChecked == true && option1.IsChecked == false
                && option3.IsChecked == false && option4.IsChecked == false)
             {
-                await Task.Delay(300);
-                await Navigation.PushAsync(new FifthToSixthRight());
+                await Task.Delay(250);
+                await Navigation.PushAsync(new SuccessPage());
+                await Task.Delay(2500);
+                await Navigation.PushAsync(new Basics6_10());
             }
             else
             {
@@ -33,8 +34,10 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
                 }
                 else
                 {
-                    await Task.Delay(300);
-                    await Navigation.PushAsync(new FifthToSixthWrong());
+                    await Task.Delay(250);
+                    await Navigation.PushAsync(new FailurePage());
+                    await Task.Delay(2500);
+                    await Navigation.PushAsync(new Basics6_10());
                 }
             }
         }

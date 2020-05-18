@@ -1,9 +1,5 @@
-﻿using App4.CSharpQuizes.AwaitRightPages;
-using App4.CSharpQuizes.AwaitWrongPages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
+using App4.Awaitable;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -23,8 +19,10 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
         {
             if(Answer.Text == "153")
             {
-                await Task.Delay(300);
-                await Navigation.PushAsync(new EightToNinthRight());
+                await Task.Delay(250);
+                await Navigation.PushAsync(new SuccessPage());
+                await Task.Delay(2500);
+                await Navigation.PushAsync(new Basics9_10());
             }
             else
             {
@@ -35,8 +33,10 @@ namespace App4.CSharpQuizes.CSharpBasicsOne
                 }
                 else
                 {
-                    await Task.Delay(300);
-                    await Navigation.PushAsync(new EightToNinthWrong());
+                    await Task.Delay(250);
+                    await Navigation.PushAsync(new FailurePage());
+                    await Task.Delay(2500);
+                    await Navigation.PushAsync(new Basics9_10());
                 }
             }
         }

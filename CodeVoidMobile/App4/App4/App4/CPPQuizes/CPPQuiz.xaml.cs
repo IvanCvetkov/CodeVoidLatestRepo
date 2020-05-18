@@ -62,5 +62,10 @@ namespace App4.CPPQuizes
         {
 
         }
+
+        private void BasicsThird_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

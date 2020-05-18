@@ -1,28 +1,27 @@
 ﻿using System;
 using App4.Awaitable;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App4.CSharpQuizes.CSharpBasicsTwo.Pages
+namespace App4.CSharpQuizes.CSharpBasicsOne
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Basics5_20 : ContentPage
+    public partial class Basics1_10 : ContentPage
     {
-        public Basics5_20()
+        public Basics1_10()
         {
             InitializeComponent();
         }
+
         private async void Forward_Clicked(object sender, EventArgs e)
         {
-            if (option2.IsChecked == true && option3.IsChecked == false
-                && option4.IsChecked == false && option1.IsChecked == false)
+            if (Answer.Text == "15")
             {
                 await Task.Delay(250);
                 await Navigation.PushAsync(new SuccessPage());
                 await Task.Delay(2500);
-                await Navigation.PushAsync(new Basics6_20());
+                await Navigation.PushAsync(new Basics2_10());
             }
             else
             {
@@ -36,11 +35,10 @@ namespace App4.CSharpQuizes.CSharpBasicsTwo.Pages
                     await Task.Delay(250);
                     await Navigation.PushAsync(new FailurePage());
                     await Task.Delay(2500);
-                    await Navigation.PushAsync(new Basics6_20());
+                    await Navigation.PushAsync(new Basics2_10());
                 }
             }
         }
-
         protected override bool OnBackButtonPressed()
         {
             BackButtonPressed();
@@ -49,6 +47,7 @@ namespace App4.CSharpQuizes.CSharpBasicsTwo.Pages
 
         public async Task BackButtonPressed()
         {
+            App.Counter = 0;
             var action = await DisplayAlert("Предупреждение", "Найстина ли искаш да излезеш от текущия тест?" +
                 " Ако го направиш ще изгубиш своя прогрес до тук!", "Не", "Да");
             if (!action)

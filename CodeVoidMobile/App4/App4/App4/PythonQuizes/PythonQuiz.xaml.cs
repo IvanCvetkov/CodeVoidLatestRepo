@@ -63,5 +63,10 @@ namespace App4.PythonQuizes
         {
 
         }
+
+        private void BasicsThird_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

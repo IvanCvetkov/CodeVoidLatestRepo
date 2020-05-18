@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
-             x:Class="App4.CSharpQuizes.CSharpBasicsTwo.Pages.Basics12_20">
+             x:Class="App4.CSharpQuizes.CSharpBasicsTwo.Pages.Basics12_20"
+             NavigationPage.HasBackButton="False">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
